@@ -1,0 +1,17 @@
+(mapcar fn
+        (do* ((x 1 (1+ x))
+              (result (list x) (push x result)))
+             ((= x 10) (nreverse result))))
+
+(setq x #'append)
+
+(setf (symbol-function 'double) #'(lambda (x) (* x 2)))
+
+(apply #'+ '(1 2))
+
+(funcall)
+
+(defun behave (animal)
+  (funcall (get animal 'behavior)))
+
+(push

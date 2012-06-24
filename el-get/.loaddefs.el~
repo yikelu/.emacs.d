@@ -1,0 +1,1567 @@
+;;; .loaddefs.el --- automatically extracted autoloads
+;;
+;;; Code:
+
+
+;;;### (autoloads (vassoc set-modified-alist modify-alist remove-alist
+;;;;;;  set-alist del-alist put-alist) "apel/site-lisp/apel/alist"
+;;;;;;  "apel/site-lisp/apel/alist.el" (20454 6127))
+;;; Generated autoloads from apel/site-lisp/apel/alist.el
+
+(autoload 'put-alist "apel/site-lisp/apel/alist" "\
+Set cdr of an element (KEY . ...) in ALIST to VALUE and return ALIST.
+If there is no such element, create a new pair (KEY . VALUE) and
+return a new alist whose car is the new pair and cdr is ALIST.
+
+\(fn KEY VALUE ALIST)" nil nil)
+
+(autoload 'del-alist "apel/site-lisp/apel/alist" "\
+Delete an element whose car equals KEY from ALIST.
+Return the modified ALIST.
+
+\(fn KEY ALIST)" nil nil)
+
+(autoload 'set-alist "apel/site-lisp/apel/alist" "\
+Set cdr of an element (KEY . ...) in the alist bound to SYMBOL to VALUE.
+
+\(fn SYMBOL KEY VALUE)" nil nil)
+
+(autoload 'remove-alist "apel/site-lisp/apel/alist" "\
+Delete an element whose car equals KEY from the alist bound to SYMBOL.
+
+\(fn SYMBOL KEY)" nil nil)
+
+(autoload 'modify-alist "apel/site-lisp/apel/alist" "\
+Store elements in the alist MODIFIER in the alist DEFAULT.
+Return the modified alist.
+
+\(fn MODIFIER DEFAULT)" nil nil)
+
+(autoload 'set-modified-alist "apel/site-lisp/apel/alist" "\
+Store elements in the alist MODIFIER in an alist bound to SYMBOL.
+If SYMBOL is not bound, set it to nil at first.
+
+\(fn SYMBOL MODIFIER)" nil nil)
+
+(autoload 'vassoc "apel/site-lisp/apel/alist" "\
+Search AVLIST for an element whose first element equals KEY.
+AVLIST is a list of vectors.
+See also `assoc'.
+
+\(fn KEY AVLIST)" nil nil)
+
+;;;***
+
+;;;### (autoloads (module-installed-p exec-installed-p file-installed-p
+;;;;;;  get-latest-path add-latest-path add-path) "apel/site-lisp/apel/path-util"
+;;;;;;  "apel/site-lisp/apel/path-util.el" (20454 6127))
+;;; Generated autoloads from apel/site-lisp/apel/path-util.el
+
+(autoload 'add-path "apel/site-lisp/apel/path-util" "\
+Add PATH to `load-path' if it exists under `default-load-path'
+directories and it does not exist in `load-path'.
+
+You can use following PATH styles:
+	load-path relative: \"PATH/\"
+			(it is searched from `default-load-path')
+	home directory relative: \"~/PATH/\" \"~USER/PATH/\"
+	absolute path: \"/HOO/BAR/BAZ/\"
+
+You can specify following OPTIONS:
+	'all-paths	search from `load-path'
+			instead of `default-load-path'
+	'append		add PATH to the last of `load-path'
+
+\(fn PATH &rest OPTIONS)" nil nil)
+
+(autoload 'add-latest-path "apel/site-lisp/apel/path-util" "\
+Add latest path matched by PATTERN to `load-path'
+if it exists under `default-load-path' directories
+and it does not exist in `load-path'.
+
+If optional argument ALL-PATHS is specified, it is searched from all
+of load-path instead of default-load-path.
+
+\(fn PATTERN &optional ALL-PATHS)" nil nil)
+
+(autoload 'get-latest-path "apel/site-lisp/apel/path-util" "\
+Return latest directory in default-load-path
+which is matched to regexp PATTERN.
+If optional argument ALL-PATHS is specified,
+it is searched from all of load-path instead of default-load-path.
+
+\(fn PATTERN &optional ALL-PATHS)" nil nil)
+
+(autoload 'file-installed-p "apel/site-lisp/apel/path-util" "\
+Return absolute-path of FILE if FILE exists in PATHS.
+If PATHS is omitted, `load-path' is used.
+
+\(fn FILE &optional PATHS)" nil nil)
+
+(defvar exec-suffix-list '("") "\
+*List of suffixes for executable.")
+
+(autoload 'exec-installed-p "apel/site-lisp/apel/path-util" "\
+Return absolute-path of FILE if FILE exists in PATHS.
+If PATHS is omitted, `exec-path' is used.
+If suffixes is omitted, `exec-suffix-list' is used.
+
+\(fn FILE &optional PATHS SUFFIXES)" nil nil)
+
+(autoload 'module-installed-p "apel/site-lisp/apel/path-util" "\
+Return t if module is provided or exists in PATHS.
+If PATHS is omitted, `load-path' is used.
+
+\(fn MODULE &optional PATHS)" nil nil)
+
+;;;***
+
+;;;### (autoloads (richtext-decode richtext-encode) "apel/site-lisp/emu/richtext"
+;;;;;;  "apel/site-lisp/emu/richtext.el" (20454 6127))
+;;; Generated autoloads from apel/site-lisp/emu/richtext.el
+
+(autoload 'richtext-encode "apel/site-lisp/emu/richtext" "\
+
+
+\(fn FROM TO)" nil nil)
+
+(autoload 'richtext-decode "apel/site-lisp/emu/richtext" "\
+
+
+\(fn FROM TO)" nil nil)
+
+;;;***
+
+;;;### (autoloads (bookmark-w3m-bookmark-jump) "bookmark-w3m" "emacs-w3m/bookmark-w3m.el"
+;;;;;;  (19648 52975))
+;;; Generated autoloads from emacs-w3m/bookmark-w3m.el
+
+(autoload 'bookmark-w3m-bookmark-jump "bookmark-w3m" "\
+Default bookmark handler for w3m buffers.
+
+\(fn BOOKMARK)" nil nil)
+
+;;;***
+
+;;;### (autoloads (camldebug) "camldebug" "tuareg-mode/camldebug.el"
+;;;;;;  (20447 61981))
+;;; Generated autoloads from tuareg-mode/camldebug.el
+
+(defvar camldebug-command-name "ocamldebug" "\
+Pathname for executing Caml debugger.")
+
+(autoload 'camldebug "camldebug" "\
+Run camldebug on program FILE in buffer *camldebug-FILE*.
+The directory containing FILE becomes the initial working directory
+and source-file directory for camldebug.  If you wish to change this, use
+the camldebug commands `cd DIR' and `directory'.
+
+\(fn PATH)" t nil)
+
+;;;***
+
+;;;### (autoloads (color-theme-initialize color-theme-submit color-theme-install
+;;;;;;  color-theme-compare color-theme-make-snapshot color-theme-analyze-defun
+;;;;;;  color-theme-print color-theme-install-at-point-for-current-frame
+;;;;;;  color-theme-install-at-mouse color-theme-describe color-theme-select)
+;;;;;;  "color-theme" "color-theme/color-theme.el" (17529 41105))
+;;; Generated autoloads from color-theme/color-theme.el
+
+(autoload 'color-theme-select "color-theme" "\
+Displays a special buffer for selecting and installing a color theme.
+With optional prefix ARG, this buffer will include color theme libraries
+as well.  A color theme library is in itself not complete, it must be
+used as part of another color theme to be useful.  Thus, color theme
+libraries are mainly useful for color theme authors.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'color-theme-describe "color-theme" "\
+Describe color theme listed at point.
+This shows the documentation of the value of text-property color-theme
+at point.  The text-property color-theme should be a color theme
+function.  See `color-themes'.
+
+\(fn)" t nil)
+
+(autoload 'color-theme-install-at-mouse "color-theme" "\
+Install color theme clicked upon using the mouse.
+First argument EVENT is used to set point.  Then
+`color-theme-install-at-point' is called.
+
+\(fn EVENT)" t nil)
+
+(autoload 'color-theme-install-at-point-for-current-frame "color-theme" "\
+Install color theme at point for current frame only.
+Binds `color-theme-is-global' to nil and calls
+`color-theme-install-at-point'.
+
+\(fn)" t nil)
+
+(autoload 'color-theme-print "color-theme" "\
+Print the current color theme function.
+
+You can contribute this function to <URL:news:gnu.emacs.sources> or
+paste it into your .emacs file and call it.  That should recreate all
+the settings necessary for your color theme.
+
+Example:
+
+    (require 'color-theme)
+    (defun my-color-theme ()
+      \"Color theme by Alex Schroeder, created 2000-05-17.\"
+      (interactive)
+      (color-theme-install
+       '(...
+	 ...
+	 ...)))
+    (my-color-theme)
+
+If you want to use a specific color theme function, you can call the
+color theme function in your .emacs directly.
+
+Example:
+
+    (require 'color-theme)
+    (color-theme-gnome2)
+
+\(fn &optional BUF)" t nil)
+
+(autoload 'color-theme-analyze-defun "color-theme" "\
+Once you have a color-theme printed, check for missing faces.
+This is used by maintainers who receive a color-theme submission
+and want to make sure it follows the guidelines by the color-theme
+author.
+
+\(fn)" t nil)
+
+(autoload 'color-theme-make-snapshot "color-theme" "\
+Return the definition of the current color-theme.
+The function returned will recreate the color-theme in use at the moment.
+
+\(fn)" nil nil)
+
+(autoload 'color-theme-compare "color-theme" "\
+Compare two color themes.
+This will print the differences between installing THEME-A and
+installing THEME-B.  Note that the order is important: If a face is
+defined in THEME-A and not in THEME-B, then this will not show up as a
+difference, because there is no reset before installing THEME-B.  If a
+face is defined in THEME-B and not in THEME-A, then this will show up as
+a difference.
+
+\(fn THEME-A THEME-B)" t nil)
+
+(autoload 'color-theme-install "color-theme" "\
+Install a color theme defined by frame parameters, variables and faces.
+
+The theme is installed for all present and future frames; any missing
+faces are created.  See `color-theme-install-faces'.
+
+THEME is a color theme definition.  See below for more information.
+
+If you want to install a color theme from your .emacs, use the output
+generated by `color-theme-print'.  This produces color theme function
+which you can copy to your .emacs.
+
+A color theme definition is a list:
+\([FUNCTION] FRAME-PARAMETERS VARIABLE-SETTINGS FACE-DEFINITIONS)
+
+FUNCTION is the color theme function which called `color-theme-install'.
+This is no longer used.  There was a time when this package supported
+automatic factoring of color themes.  This has been abandoned.
+
+FRAME-PARAMETERS is an alist of frame parameters.  These are installed
+with `color-theme-install-frame-params'.  These are installed last such
+that any changes to the default face can be changed by the frame
+parameters.
+
+VARIABLE-DEFINITIONS is an alist of variable settings.  These are
+installed with `color-theme-install-variables'.
+
+FACE-DEFINITIONS is an alist of face definitions.  These are installed
+with `color-theme-install-faces'.
+
+If `color-theme-is-cumulative' is nil, a color theme will undo face and
+frame-parameter settings of previous color themes.
+
+\(fn THEME)" nil nil)
+
+(autoload 'color-theme-submit "color-theme" "\
+Submit your color-theme to the maintainer.
+
+\(fn)" t nil)
+
+(autoload 'color-theme-initialize "color-theme" "\
+Initialize the color theme package by loading color-theme-libraries.
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "evil-core" "evil/evil-core.el" (20412 16654))
+;;; Generated autoloads from evil/evil-core.el
+ (autoload 'evil-mode "evil")
+
+;;;***
+
+;;;### (autoloads (mime-decode-header-in-buffer mime-decode-header-in-region
+;;;;;;  mime-decode-field-body mime-update-field-decoder-cache mime-find-field-decoder
+;;;;;;  mime-find-field-presentation-method mime-set-field-decoder)
+;;;;;;  "flim/site-lisp/flim/eword-decode" "flim/site-lisp/flim/eword-decode.el"
+;;;;;;  (20454 7330))
+;;; Generated autoloads from flim/site-lisp/flim/eword-decode.el
+
+(autoload 'mime-set-field-decoder "flim/site-lisp/flim/eword-decode" "\
+Set decoder of FIELD.
+SPECS must be like `MODE1 DECODER1 MODE2 DECODER2 ...'.
+Each mode must be `nil', `plain', `wide', `summary' or `nov'.
+If mode is `nil', corresponding decoder is set up for every modes.
+
+\(fn FIELD &rest SPECS)" nil nil)
+
+(autoload 'mime-find-field-presentation-method "flim/site-lisp/flim/eword-decode" "\
+Return field-presentation-method from NAME.
+NAME must be `plain', `wide', `summary' or `nov'.
+
+\(fn NAME)" nil t)
+
+(autoload 'mime-find-field-decoder "flim/site-lisp/flim/eword-decode" "\
+Return function to decode field-body of FIELD in MODE.
+Optional argument MODE must be object or name of
+field-presentation-method.  Name of field-presentation-method must be
+`plain', `wide', `summary' or `nov'.
+Default value of MODE is `summary'.
+
+\(fn FIELD &optional MODE)" nil nil)
+
+(autoload 'mime-update-field-decoder-cache "flim/site-lisp/flim/eword-decode" "\
+Update field decoder cache `mime-field-decoder-cache'.
+
+\(fn FIELD MODE &optional FUNCTION)" nil nil)
+
+(autoload 'mime-decode-field-body "flim/site-lisp/flim/eword-decode" "\
+Decode FIELD-BODY as FIELD-NAME in MODE, and return the result.
+Optional argument MODE must be `plain', `wide', `summary' or `nov'.
+Default mode is `summary'.
+
+If MODE is `wide' and MAX-COLUMN is non-nil, the result is folded with
+MAX-COLUMN.
+
+Non MIME encoded-word part in FILED-BODY is decoded with
+`default-mime-charset'.
+
+\(fn FIELD-BODY FIELD-NAME &optional MODE MAX-COLUMN)" nil nil)
+
+(autoload 'mime-decode-header-in-region "flim/site-lisp/flim/eword-decode" "\
+Decode MIME encoded-words in region between START and END.
+If CODE-CONVERSION is nil, it decodes only encoded-words.  If it is
+mime-charset, it decodes non-ASCII bit patterns as the mime-charset.
+Otherwise it decodes non-ASCII bit patterns as the
+default-mime-charset.
+
+\(fn START END &optional CODE-CONVERSION)" t nil)
+
+(autoload 'mime-decode-header-in-buffer "flim/site-lisp/flim/eword-decode" "\
+Decode MIME encoded-words in header fields.
+If CODE-CONVERSION is nil, it decodes only encoded-words.  If it is
+mime-charset, it decodes non-ASCII bit patterns as the mime-charset.
+Otherwise it decodes non-ASCII bit patterns as the
+default-mime-charset.
+If SEPARATOR is not nil, it is used as header separator.
+
+\(fn &optional CODE-CONVERSION SEPARATOR)" t nil)
+
+;;;***
+
+;;;### (autoloads (mime-encode-header-in-buffer mime-encode-field-body)
+;;;;;;  "flim/site-lisp/flim/eword-encode" "flim/site-lisp/flim/eword-encode.el"
+;;;;;;  (20454 7330))
+;;; Generated autoloads from flim/site-lisp/flim/eword-encode.el
+
+(autoload 'mime-encode-field-body "flim/site-lisp/flim/eword-encode" "\
+Encode FIELD-BODY as FIELD-NAME, and return the result.
+A lexical token includes non-ASCII character is encoded as MIME
+encoded-word.  ASCII token is not encoded.
+
+\(fn FIELD-BODY FIELD-NAME)" nil nil)
+
+(autoload 'mime-encode-header-in-buffer "flim/site-lisp/flim/eword-encode" "\
+Encode header fields to network representation, such as MIME encoded-word.
+It refers the `mime-field-encoding-method-alist' variable.
+
+\(fn &optional CODE-CONVERSION)" t nil)
+
+;;;***
+
+;;;### (autoloads (mime-write-decoded-region mime-insert-encoded-file
+;;;;;;  mime-decode-string mime-decode-region mime-encode-region)
+;;;;;;  "flim/site-lisp/flim/mel" "flim/site-lisp/flim/mel.el" (20454
+;;;;;;  7330))
+;;; Generated autoloads from flim/site-lisp/flim/mel.el
+
+(autoload 'mime-encode-region "flim/site-lisp/flim/mel" "\
+Encode region START to END of current buffer using ENCODING.
+ENCODING must be string.
+
+\(fn START END ENCODING)" t nil)
+
+(autoload 'mime-decode-region "flim/site-lisp/flim/mel" "\
+Decode region START to END of current buffer using ENCODING.
+ENCODING must be string.
+
+\(fn START END ENCODING)" t nil)
+
+(autoload 'mime-decode-string "flim/site-lisp/flim/mel" "\
+Decode STRING using ENCODING.
+ENCODING must be string.  If ENCODING is found in
+`mime-string-decoding-method-alist' as its key, this function decodes
+the STRING by its value.
+
+\(fn STRING ENCODING)" nil nil)
+
+(autoload 'mime-insert-encoded-file "flim/site-lisp/flim/mel" "\
+Insert file FILENAME encoded by ENCODING format.
+
+\(fn FILENAME ENCODING)" t nil)
+
+(autoload 'mime-write-decoded-region "flim/site-lisp/flim/mel" "\
+Decode and write current region encoded by ENCODING into FILENAME.
+START and END are buffer positions.
+
+\(fn START END FILENAME ENCODING)" t nil)
+
+;;;***
+
+;;;### (autoloads (mime-format-mailcap-command mime-parse-mailcap-file
+;;;;;;  mime-parse-mailcap-buffer) "flim/site-lisp/flim/mime-conf"
+;;;;;;  "flim/site-lisp/flim/mime-conf.el" (20454 7330))
+;;; Generated autoloads from flim/site-lisp/flim/mime-conf.el
+
+(autoload 'mime-parse-mailcap-buffer "flim/site-lisp/flim/mime-conf" "\
+Parse BUFFER as a mailcap, and return the result.
+If optional argument ORDER is a function, result is sorted by it.
+If optional argument ORDER is not specified, result is sorted original
+order.  Otherwise result is not sorted.
+
+\(fn &optional BUFFER ORDER)" nil nil)
+
+(defvar mime-mailcap-file "~/.mailcap" "\
+*File name of user's mailcap file.")
+
+(autoload 'mime-parse-mailcap-file "flim/site-lisp/flim/mime-conf" "\
+Parse FILENAME as a mailcap, and return the result.
+If optional argument ORDER is a function, result is sorted by it.
+If optional argument ORDER is not specified, result is sorted original
+order.  Otherwise result is not sorted.
+
+\(fn &optional FILENAME ORDER)" nil nil)
+
+(autoload 'mime-format-mailcap-command "flim/site-lisp/flim/mime-conf" "\
+Return formated command string from MTEXT and SITUATION.
+
+MTEXT is a command text of mailcap specification, such as
+view-command.
+
+SITUATION is an association-list about information of entity.  Its key
+may be:
+
+	'type		primary media-type
+	'subtype	media-subtype
+	'filename	filename
+	STRING		parameter of Content-Type field
+
+\(fn MTEXT SITUATION)" nil nil)
+
+;;;***
+
+;;;### (autoloads (mime-parse-buffer mime-uri-parse-cid mime-parse-msg-id
+;;;;;;  mime-read-Content-Transfer-Encoding mime-parse-Content-Transfer-Encoding
+;;;;;;  mime-read-Content-Disposition mime-parse-Content-Disposition
+;;;;;;  mime-read-Content-Type mime-parse-Content-Type) "flim/site-lisp/flim/mime-parse"
+;;;;;;  "flim/site-lisp/flim/mime-parse.el" (20454 7330))
+;;; Generated autoloads from flim/site-lisp/flim/mime-parse.el
+
+(autoload 'mime-parse-Content-Type "flim/site-lisp/flim/mime-parse" "\
+Parse FIELD-BODY as a Content-Type field.
+FIELD-BODY is a string.
+Return value is a mime-content-type object.
+If FIELD-BODY is not a valid Content-Type field, return nil.
+
+\(fn FIELD-BODY)" nil nil)
+
+(autoload 'mime-read-Content-Type "flim/site-lisp/flim/mime-parse" "\
+Parse field-body of Content-Type field of current-buffer.
+Return value is a mime-content-type object.
+If Content-Type field is not found, return nil.
+
+\(fn)" nil nil)
+
+(autoload 'mime-parse-Content-Disposition "flim/site-lisp/flim/mime-parse" "\
+Parse FIELD-BODY as a Content-Disposition field.
+FIELD-BODY is a string.
+Return value is a mime-content-disposition object.
+If FIELD-BODY is not a valid Content-Disposition field, return nil.
+
+\(fn FIELD-BODY)" nil nil)
+
+(autoload 'mime-read-Content-Disposition "flim/site-lisp/flim/mime-parse" "\
+Parse field-body of Content-Disposition field of current-buffer.
+Return value is a mime-content-disposition object.
+If Content-Disposition field is not found, return nil.
+
+\(fn)" nil nil)
+
+(autoload 'mime-parse-Content-Transfer-Encoding "flim/site-lisp/flim/mime-parse" "\
+Parse FIELD-BODY as a Content-Transfer-Encoding field.
+FIELD-BODY is a string.
+Return value is a string.
+If FIELD-BODY is not a valid Content-Transfer-Encoding field, return nil.
+
+\(fn FIELD-BODY)" nil nil)
+
+(autoload 'mime-read-Content-Transfer-Encoding "flim/site-lisp/flim/mime-parse" "\
+Parse field-body of Content-Transfer-Encoding field of current-buffer.
+Return value is a string.
+If Content-Transfer-Encoding field is not found, return nil.
+
+\(fn)" nil nil)
+
+(autoload 'mime-parse-msg-id "flim/site-lisp/flim/mime-parse" "\
+Parse TOKENS as msg-id of Content-ID or Message-ID field.
+
+\(fn TOKENS)" nil nil)
+
+(autoload 'mime-uri-parse-cid "flim/site-lisp/flim/mime-parse" "\
+Parse STRING as cid URI.
+
+\(fn STRING)" nil nil)
+
+(autoload 'mime-parse-buffer "flim/site-lisp/flim/mime-parse" "\
+Parse BUFFER as a MIME message.
+If buffer is omitted, it parses current-buffer.
+
+\(fn &optional BUFFER REPRESENTATION-TYPE)" nil nil)
+
+;;;***
+
+;;;### (autoloads (qmtp-send-buffer qmtp-via-qmtp) "flim/site-lisp/flim/qmtp"
+;;;;;;  "flim/site-lisp/flim/qmtp.el" (20454 7330))
+;;; Generated autoloads from flim/site-lisp/flim/qmtp.el
+
+(defvar qmtp-open-connection-function #'open-network-stream)
+
+(autoload 'qmtp-via-qmtp "flim/site-lisp/flim/qmtp" "\
+
+
+\(fn SENDER RECIPIENTS BUFFER)" nil nil)
+
+(autoload 'qmtp-send-buffer "flim/site-lisp/flim/qmtp" "\
+
+
+\(fn SENDER RECIPIENTS BUFFER)" nil nil)
+
+;;;***
+
+;;;### (autoloads (sha1) "flim/site-lisp/flim/sha1-el" "flim/site-lisp/flim/sha1-el.el"
+;;;;;;  (20454 7330))
+;;; Generated autoloads from flim/site-lisp/flim/sha1-el.el
+
+(autoload 'sha1 "flim/site-lisp/flim/sha1-el" "\
+Return the SHA1 (Secure Hash Algorithm) of an object.
+OBJECT is either a string or a buffer.
+Optional arguments BEG and END denote buffer positions for computing the
+hash of a portion of OBJECT.
+If BINARY is non-nil, return a string in binary form.
+
+\(fn OBJECT &optional BEG END BINARY)" nil nil)
+
+;;;***
+
+;;;### (autoloads (smtp-send-buffer smtp-via-smtp) "flim/site-lisp/flim/smtp"
+;;;;;;  "flim/site-lisp/flim/smtp.el" (20454 7330))
+;;; Generated autoloads from flim/site-lisp/flim/smtp.el
+
+(defvar smtp-open-connection-function #'open-network-stream "\
+*Function used for connecting to a SMTP server.
+The function will be called with the same four arguments as
+`open-network-stream' and should return a process object.
+Here is an example:
+
+\(setq smtp-open-connection-function
+      #'(lambda (name buffer host service)
+	  (let ((process-connection-type nil))
+	    (start-process name buffer \"ssh\" \"-C\" host
+			   \"nc\" host service))))
+
+It connects to a SMTP server using \"ssh\" before actually connecting
+to the SMTP port.  Where the command \"nc\" is the netcat executable;
+see http://www.atstake.com/research/tools/index.html#network_utilities
+for details.")
+
+(autoload 'smtp-via-smtp "flim/site-lisp/flim/smtp" "\
+Like `smtp-send-buffer', but sucks in any errors.
+
+\(fn SENDER RECIPIENTS BUFFER)" nil nil)
+
+(autoload 'smtp-send-buffer "flim/site-lisp/flim/smtp" "\
+Send a message.
+SENDER is an envelope sender address.
+RECIPIENTS is a list of envelope recipient addresses.
+BUFFER may be a buffer or a buffer name which contains mail message.
+
+\(fn SENDER RECIPIENTS BUFFER)" nil nil)
+
+;;;***
+
+;;;### (autoloads (std11-extract-address-components std11-parse-msg-ids-string
+;;;;;;  std11-parse-msg-id-string std11-parse-addresses-string std11-parse-address-string
+;;;;;;  std11-fill-msg-id-list-string std11-msg-id-string std11-full-name-string
+;;;;;;  std11-address-string std11-lexical-analyze std11-unfold-string
+;;;;;;  std11-field-body std11-narrow-to-header std11-fetch-field)
+;;;;;;  "flim/site-lisp/flim/std11" "flim/site-lisp/flim/std11.el"
+;;;;;;  (20454 7330))
+;;; Generated autoloads from flim/site-lisp/flim/std11.el
+
+(autoload 'std11-fetch-field "flim/site-lisp/flim/std11" "\
+Return the value of the header field NAME.
+The buffer is expected to be narrowed to just the headers of the message.
+
+\(fn NAME)" nil nil)
+
+(autoload 'std11-narrow-to-header "flim/site-lisp/flim/std11" "\
+Narrow to the message header.
+If BOUNDARY is not nil, it is used as message header separator.
+
+\(fn &optional BOUNDARY)" nil nil)
+
+(autoload 'std11-field-body "flim/site-lisp/flim/std11" "\
+Return the value of the header field NAME.
+If BOUNDARY is not nil, it is used as message header separator.
+
+\(fn NAME &optional BOUNDARY)" nil nil)
+
+(autoload 'std11-unfold-string "flim/site-lisp/flim/std11" "\
+Unfold STRING as message header field.
+
+\(fn STRING)" nil nil)
+
+(autoload 'std11-lexical-analyze "flim/site-lisp/flim/std11" "\
+Analyze STRING as lexical tokens of STD 11.
+
+\(fn STRING &optional ANALYZER START)" nil nil)
+
+(autoload 'std11-address-string "flim/site-lisp/flim/std11" "\
+Return string of address part from parsed ADDRESS of RFC 822.
+
+\(fn ADDRESS)" nil nil)
+
+(autoload 'std11-full-name-string "flim/site-lisp/flim/std11" "\
+Return string of full-name part from parsed ADDRESS of RFC 822.
+
+\(fn ADDRESS)" nil nil)
+
+(autoload 'std11-msg-id-string "flim/site-lisp/flim/std11" "\
+Return string from parsed MSG-ID of RFC 822.
+
+\(fn MSG-ID)" nil nil)
+
+(autoload 'std11-fill-msg-id-list-string "flim/site-lisp/flim/std11" "\
+Fill list of msg-id in STRING, and return the result.
+
+\(fn STRING &optional COLUMN)" nil nil)
+
+(autoload 'std11-parse-address-string "flim/site-lisp/flim/std11" "\
+Parse STRING as mail address.
+
+\(fn STRING)" nil nil)
+
+(autoload 'std11-parse-addresses-string "flim/site-lisp/flim/std11" "\
+Parse STRING as mail address list.
+
+\(fn STRING)" nil nil)
+
+(autoload 'std11-parse-msg-id-string "flim/site-lisp/flim/std11" "\
+Parse STRING as msg-id.
+
+\(fn STRING)" nil nil)
+
+(autoload 'std11-parse-msg-ids-string "flim/site-lisp/flim/std11" "\
+Parse STRING as `*(phrase / msg-id)'.
+
+\(fn STRING)" nil nil)
+
+(autoload 'std11-extract-address-components "flim/site-lisp/flim/std11" "\
+Extract full name and canonical address from STRING.
+Returns a list of the form (FULL-NAME CANONICAL-ADDRESS).
+If no name can be extracted, FULL-NAME will be nil.
+
+\(fn STRING)" nil nil)
+
+;;;***
+
+;;;### (autoloads (mime-w3m-preview-text/html) "mime-w3m" "emacs-w3m/mime-w3m.el"
+;;;;;;  (19727 57154))
+;;; Generated autoloads from emacs-w3m/mime-w3m.el
+
+(autoload 'mime-w3m-preview-text/html "mime-w3m" "\
+Not documented
+
+\(fn ENTITY SITUATION)" nil nil)
+
+;;;***
+
+;;;### (autoloads (multi-term) "multi-term" "multi-term/multi-term.el"
+;;;;;;  (20418 45020))
+;;; Generated autoloads from multi-term/multi-term.el
+
+(autoload 'multi-term "multi-term" "\
+Create new term buffer.
+Will prompt you shell name when you type `C-u' before this command.
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads (octet-mime-setup mime-view-octet mime-preview-octet
+;;;;;;  octet-find-file octet-buffer) "octet" "emacs-w3m/octet.el"
+;;;;;;  (19563 28233))
+;;; Generated autoloads from emacs-w3m/octet.el
+
+(autoload 'octet-buffer "octet" "\
+View octet-stream content according to `octet-type-filter-alist'.
+Optional NAME is the filename.
+If optional CONTENT-TYPE is specified, it is used for type guess.
+
+\(fn &optional NAME CONTENT-TYPE)" t nil)
+
+(autoload 'octet-find-file "octet" "\
+Find FILE with octet-stream decoding.
+
+\(fn FILE)" t nil)
+
+(autoload 'mime-preview-octet "octet" "\
+A method for mime-view to preview octet message.
+
+\(fn ENTITY SITUATION)" nil nil)
+
+(autoload 'mime-view-octet "octet" "\
+A method for mime-view to display octet message.
+
+\(fn ENTITY SITUATION)" nil nil)
+
+(autoload 'octet-mime-setup "octet" "\
+Octet setting for MIME module.
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads (common-lisp-indent-function) "slime/contrib/slime-cl-indent"
+;;;;;;  "slime/contrib/slime-cl-indent.el" (20454 6913))
+;;; Generated autoloads from slime/contrib/slime-cl-indent.el
+
+(autoload 'common-lisp-indent-function "slime/contrib/slime-cl-indent" "\
+Function to indent the arguments of a Lisp function call.
+This is suitable for use as the value of the variable
+`lisp-indent-function'.  INDENT-POINT is the point at which the
+indentation function is called, and STATE is the
+`parse-partial-sexp' state at that position.  Browse the
+`lisp-indent' customize group for options affecting the behavior
+of this function.
+
+If the indentation point is in a call to a Lisp function, that
+function's common-lisp-indent-function property specifies how
+this function should indent it.  Possible values for this
+property are:
+
+* defun, meaning indent according to `lisp-indent-defun-method';
+  i.e., like (4 &lambda &body), as explained below.
+
+* any other symbol, meaning a function to call.  The function should
+  take the arguments: PATH STATE INDENT-POINT SEXP-COLUMN NORMAL-INDENT.
+  PATH is a list of integers describing the position of point in terms of
+  list-structure with respect to the containing lists.  For example, in
+  ((a b c (d foo) f) g), foo has a path of (0 3 1).  In other words,
+  to reach foo take the 0th element of the outermost list, then
+  the 3rd element of the next list, and finally the 1st element.
+  STATE and INDENT-POINT are as in the arguments to
+  `common-lisp-indent-function'.  SEXP-COLUMN is the column of
+  the open parenthesis of the innermost containing list.
+  NORMAL-INDENT is the column the indentation point was
+  originally in.  This function should behave like `lisp-indent-259'.
+
+* an integer N, meaning indent the first N arguments like
+  function arguments, and any further arguments like a body.
+  This is equivalent to (4 4 ... &body).
+
+* a list starting with `as' specifies an indirection: indentation is done as
+  if the form being indented had started with the second element of the list.
+
+* any other list.  The list element in position M specifies how to indent the
+  Mth function argument.  If there are fewer elements than function arguments,
+  the last list element applies to all remaining arguments.  The accepted list
+  elements are:
+
+  * nil, meaning the default indentation.
+
+  * an integer, specifying an explicit indentation.
+
+  * &lambda.  Indent the argument (which may be a list) by 4.
+
+  * &rest.  When used, this must be the penultimate element.  The
+    element after this one applies to all remaining arguments.
+
+  * &body.  This is equivalent to &rest lisp-body-indent, i.e., indent
+    all remaining elements by `lisp-body-indent'.
+
+  * &whole.  This must be followed by nil, an integer, or a
+    function symbol.  This indentation is applied to the
+    associated argument, and as a base indent for all remaining
+    arguments.  For example, an integer P means indent this
+    argument by P, and all remaining arguments by P, plus the
+    value specified by their associated list element.
+
+  * a symbol.  A function to call, with the 6 arguments specified above.
+
+  * a list, with elements as described above.  This applies when the
+    associated function argument is itself a list.  Each element of the list
+    specifies how to indent the associated argument.
+
+For example, the function `case' has an indent property
+\(4 &rest (&whole 2 &rest 1)), meaning:
+  * indent the first argument by 4.
+  * arguments after the first should be lists, and there may be any number
+    of them.  The first list element has an offset of 2, all the rest
+    have an offset of 2+1=3.
+
+\(fn INDENT-POINT STATE)" nil nil)
+
+;;;***
+
+;;;### (autoloads (tuareg-mode) "tuareg" "tuareg-mode/tuareg.el"
+;;;;;;  (20447 61981))
+;;; Generated autoloads from tuareg-mode/tuareg.el
+ (add-to-list 'auto-mode-alist '("\\.ml[ily]?\\'" . tuareg-mode))
+
+(autoload 'tuareg-mode "tuareg" "\
+Major mode for editing Caml code.
+
+Dedicated to Emacs and XEmacs, version 21 and higher. Provides
+automatic indentation and compilation interface. Performs font/color
+highlighting using Font-Lock. It is designed for Objective Caml but
+handles Objective Labl and Caml Light as well.
+
+Report bugs, remarks and questions to Albert.Cohen@prism.uvsq.fr.
+
+The Font-Lock minor-mode is used according to your customization
+options. Within XEmacs (non-MULE versions only) you may also want to
+use Sym-Lock:
+
+\(if (and (boundp 'window-system) window-system)
+    (when (string-match \"XEmacs\" emacs-version)
+       	(if (not (and (boundp 'mule-x-win-initted) mule-x-win-initted))
+            (require 'sym-lock))
+       	(require 'font-lock)))
+
+You have better byte-compile tuareg.el (and sym-lock.el if you use it)
+because symbol highlighting is very time consuming.
+
+For customization purposes, you should use `tuareg-mode-hook'
+\(run for every file) or `tuareg-load-hook' (run once) and not patch
+the mode itself. You should add to your configuration file something like:
+  (add-hook 'tuareg-mode-hook
+            (lambda ()
+               ... ; your customization code
+            ))
+For example you can change the indentation of some keywords, the
+`electric' flags, Font-Lock colors... Every customizable variable is
+documented, use `C-h-v' or look at the mode's source code.
+
+A special case is Sym-Lock customization: You may set
+`tuareg-sym-lock-keywords' in your `.emacs' configuration file
+to override default Sym-Lock patterns.
+
+`custom-tuareg.el' is a sample customization file for standard changes.
+You can append it to your `.emacs' or use it as a tutorial.
+
+`M-x camldebug' FILE starts the Caml debugger camldebug on the executable
+FILE, with input and output in an Emacs buffer named *camldebug-FILE*.
+
+A Tuareg Interactive Mode to evaluate expressions in a toplevel is included.
+Type `M-x tuareg-run-caml' or see special-keys below.
+
+Some elementary rules have to be followed in order to get the best of
+indentation facilities.
+  - Because the `function' keyword has a special indentation (to handle
+    case matches) use the `fun' keyword when no case match is performed.
+  - In OCaml, `;;' is no longer necessary for correct indentation,
+    except before top level phrases not introduced by `type', `val', `let'
+    etc. (i.e., phrases used for their side-effects or to be executed
+    in a top level.)
+  - Long sequences of `and's may slow down indentation slightly, since
+    some computations (few) require to go back to the beginning of the
+    sequence. Some very long nested blocks may also lead to slow
+    processing of `end's, `else's, `done's...
+  - Multiline strings are handled properly, but the string concatenation `^'
+    is preferred to break long strings (the C-j keystroke can help).
+
+Known bugs:
+  - When writting a line with mixed code and comments, avoid putting
+    comments at the beginning or middle of the text. More precisely, 
+    writing comments immediately after `=' or parentheses then writing
+    some more code on the line leads to indentation errors. You may write
+    `let x (* blah *) = blah' but should avoid `let x = (* blah *) blah'.
+
+Special keys for Tuareg mode:\\{tuareg-mode-map}
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads (global-undo-tree-mode undo-tree-mode) "undo-tree"
+;;;;;;  "undo-tree/undo-tree.el" (20412 16604))
+;;; Generated autoloads from undo-tree/undo-tree.el
+
+(autoload 'undo-tree-mode "undo-tree" "\
+Toggle undo-tree mode.
+With no argument, this command toggles the mode.
+A positive prefix argument turns the mode on.
+A negative prefix argument turns it off.
+
+Undo-tree-mode replaces Emacs' standard undo feature with a more
+powerful yet easier to use version, that treats the undo history
+as what it is: a tree.
+
+The following keys are available in `undo-tree-mode':
+
+  \\{undo-tree-map}
+
+Within the undo-tree visualizer, the following keys are available:
+
+  \\{undo-tree-visualizer-map}
+
+\(fn &optional ARG)" t nil)
+
+(defvar global-undo-tree-mode nil "\
+Non-nil if Global-Undo-Tree mode is enabled.
+See the command `global-undo-tree-mode' for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `global-undo-tree-mode'.")
+
+(custom-autoload 'global-undo-tree-mode "undo-tree" nil)
+
+(autoload 'global-undo-tree-mode "undo-tree" "\
+Toggle Undo-Tree mode in every possible buffer.
+With prefix ARG, turn Global-Undo-Tree mode on if and only if
+ARG is positive.
+Undo-Tree mode is enabled in all buffers where
+`turn-on-undo-tree-mode' would do it.
+See `undo-tree-mode' for more information on Undo-Tree mode.
+
+\(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads (w3m-buffer w3m-region w3m-find-file w3m-browse-url
+;;;;;;  w3m w3m-create-empty-session w3m-gohome w3m-goto-url-new-session
+;;;;;;  w3m-goto-url w3m-download w3m-retrieve) "w3m" "emacs-w3m/w3m.el"
+;;;;;;  (20400 20557))
+;;; Generated autoloads from emacs-w3m/w3m.el
+
+(autoload 'w3m-retrieve "w3m" "\
+Retrieve web contents pointed to by URL.
+It will put the retrieved contents into the current buffer.
+
+If HANDLER is nil, this function will retrieve web contents, return
+the content type of the retrieved data, and then come to an end.  This
+behavior is what is called a synchronous operation.  You have to
+specify HANDLER in order to make this function show its real ability,
+which is called an asynchronous operation.
+
+If HANDLER is a function, this function will come to an end in no time.
+In this case, contents will be retrieved by the asynchronous process
+after a while.  And after finishing retrieving contents successfully,
+HANDLER will be called on the buffer where this function starts.  The
+content type of the retrieved data will be passed to HANDLER as a
+string argument.
+
+NO-UNCOMPRESS specifies whether this function should not uncompress contents.
+NO-CACHE specifies whether this function should not use cached contents.
+POST-DATA and REFERER will be sent to the web server with a request.
+
+\(fn URL &optional NO-UNCOMPRESS NO-CACHE POST-DATA REFERER HANDLER)" nil nil)
+
+(autoload 'w3m-download "w3m" "\
+Download contents of URL to a file named FILENAME.
+NO-CHACHE (which the prefix argument gives when called interactively)
+specifies not using the cached data.
+
+\(fn &optional URL FILENAME NO-CACHE HANDLER POST-DATA)" t nil)
+
+(autoload 'w3m-goto-url "w3m" "\
+Visit World Wide Web pages.  This is the primitive function of `w3m'.
+If the second argument RELOAD is non-nil, reload a content of URL.
+Except that if it is 'redisplay, re-display the page without reloading.
+The third argument CHARSET specifies a charset to be used for decoding
+a content.
+The fourth argument POST-DATA should be a string or a cons cell.  If
+it is a string, it makes this function request a body as if the
+content-type is \"x-www-form-urlencoded\".  If it is a cons cell, the
+car of a cell is used as the content-type and the cdr of a cell is
+used as the body.
+If the fifth argument REFERER is specified, it is used for a Referer:
+field for this request.
+The remaining HANDLER, ELEMENT[1], and NO-POPUP are for the
+internal operations of emacs-w3m.
+You can also use \"quicksearch\" url schemes such as \"gg:emacs\" which
+would search for the term \"emacs\" with the Google search engine.  See
+the `w3m-search' function and the variable `w3m-uri-replace-alist'.
+
+\[1] A note for the developers: ELEMENT is a history element which has
+already been registered in the `w3m-history-flat' variable.  It is
+corresponding to URL to be retrieved at this time, not for the url of
+the current page.
+
+\(fn URL &optional RELOAD CHARSET POST-DATA REFERER HANDLER ELEMENT NO-POPUP)" t nil)
+
+(autoload 'w3m-goto-url-new-session "w3m" "\
+Visit World Wide Web pages in a new session.
+If you invoke this command in the emacs-w3m buffer, the new session
+will be created by copying the current session.  Otherwise, the new
+session will start afresh.
+
+\(fn URL &optional RELOAD CHARSET POST-DATA REFERER)" t nil)
+
+(autoload 'w3m-gohome "w3m" "\
+Go to the Home page.
+
+\(fn)" t nil)
+
+(autoload 'w3m-create-empty-session "w3m" "\
+Create an empty page as a new session and visit it.
+
+\(fn)" t nil)
+
+(autoload 'w3m "w3m" "\
+Visit World Wide Web pages using the external w3m command.
+
+When you invoke this command interactively for the first time, it will
+visit a page which is pointed to by a string like url around the
+cursor position or the home page specified by the `w3m-home-page'
+variable, but you will be prompted for a URL if `w3m-quick-start' is
+nil (default t) or `w3m-home-page' is nil.
+
+The variables `w3m-pop-up-windows' and `w3m-pop-up-frames' control
+whether this command should pop to a window or a frame up for the
+session.
+
+When emacs-w3m sessions have already been opened, this command will
+pop to the existing window or frame up, but if `w3m-quick-start' is
+nil, (default t), you will be prompted for a URL (which defaults to
+`popup' meaning to pop to an existing emacs-w3m buffer up).
+
+In addition, if the prefix argument is given or you enter the empty
+string for the prompt, it will visit the home page specified by the
+`w3m-home-page' variable or the \"about:\" page.
+
+You can also run this command in the batch mode as follows:
+
+  emacs -f w3m http://emacs-w3m.namazu.org/ &
+
+In that case, or if this command is called non-interactively, the
+variables `w3m-pop-up-windows' and `w3m-pop-up-frames' will be ignored
+\(treated as nil) and it will run emacs-w3m at the current (or the
+initial) window.
+
+If the optional NEW-SESSION is non-nil, this function makes a new
+emacs-w3m buffer.  Besides that, it also makes a new emacs-w3m buffer
+if `w3m-make-new-session' is non-nil and a user specifies a url string.
+
+The optional INTERACTIVE-P is for the internal use; it is mainly used
+to check whether Emacs 22 or later calls this function as an
+interactive command in the batch mode.
+
+\(fn &optional URL NEW-SESSION INTERACTIVE-P)" t nil)
+
+(autoload 'w3m-browse-url "w3m" "\
+Ask emacs-w3m to browse URL.
+NEW-SESSION specifies whether to create a new emacs-w3m session.  URL
+defaults to the string looking like a url around the cursor position.
+Pop to a window or a frame up according to `w3m-pop-up-windows' and
+`w3m-pop-up-frames'.
+
+\(fn URL &optional NEW-SESSION)" t nil)
+
+(autoload 'w3m-find-file "w3m" "\
+Function used to open FILE whose name is expressed in ordinary format.
+The file name will be converted into the file: scheme.
+
+\(fn FILE)" t nil)
+
+(autoload 'w3m-region "w3m" "\
+Render the region of the current buffer between START and END.
+URL specifies the address where the contents come from.  It can be
+omitted or nil when the address is not identified.  CHARSET is used
+for decoding the contents.  If it is nil, this function attempts to
+parse the meta tag to extract the charset.
+
+\(fn START END &optional URL CHARSET)" t nil)
+
+(autoload 'w3m-buffer "w3m" "\
+Render the current buffer.
+See `w3m-region' for the optional arguments.
+
+\(fn &optional URL CHARSET)" t nil)
+
+;;;***
+
+;;;### (autoloads (w3m-antenna w3m-about-antenna) "w3m-antenna" "emacs-w3m/w3m-antenna.el"
+;;;;;;  (19187 58267))
+;;; Generated autoloads from emacs-w3m/w3m-antenna.el
+
+(autoload 'w3m-about-antenna "w3m-antenna" "\
+Not documented
+
+\(fn URL &optional NO-DECODE NO-CACHE POST-DATA REFERER HANDLER)" nil nil)
+
+(autoload 'w3m-antenna "w3m-antenna" "\
+Report changes of WEB sites, which is specified in `w3m-antenna-sites'.
+
+\(fn &optional NO-CACHE)" t nil)
+
+;;;***
+
+;;;### (autoloads (w3m-setup-bookmark-menu w3m-about-bookmark w3m-bookmark-view-new-session
+;;;;;;  w3m-bookmark-view w3m-bookmark-add-current-url-group w3m-bookmark-add-all-urls
+;;;;;;  w3m-bookmark-add-current-url w3m-bookmark-add-this-url) "w3m-bookmark"
+;;;;;;  "emacs-w3m/w3m-bookmark.el" (20280 23920))
+;;; Generated autoloads from emacs-w3m/w3m-bookmark.el
+
+(autoload 'w3m-bookmark-add-this-url "w3m-bookmark" "\
+Add link under cursor to bookmark.
+
+\(fn)" t nil)
+
+(autoload 'w3m-bookmark-add-current-url "w3m-bookmark" "\
+Add a url of the current page to the bookmark.
+With prefix, ask for a new url instead of the present one.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'w3m-bookmark-add-all-urls "w3m-bookmark" "\
+Add urls of all pages being visited to the bookmark.
+
+\(fn)" t nil)
+
+(autoload 'w3m-bookmark-add-current-url-group "w3m-bookmark" "\
+Add link of the group of current urls to the bookmark.
+
+\(fn)" t nil)
+
+(autoload 'w3m-bookmark-view "w3m-bookmark" "\
+Display the bookmark.
+
+\(fn &optional RELOAD)" t nil)
+
+(autoload 'w3m-bookmark-view-new-session "w3m-bookmark" "\
+Display the bookmark on a new session.
+
+\(fn &optional RELOAD)" t nil)
+
+(autoload 'w3m-about-bookmark "w3m-bookmark" "\
+Not documented
+
+\(fn &rest ARGS)" nil nil)
+
+(autoload 'w3m-setup-bookmark-menu "w3m-bookmark" "\
+Setup w3m bookmark items in menubar.
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads (w3m-about-cookie w3m-cookie w3m-cookie-get w3m-cookie-set
+;;;;;;  w3m-cookie-shutdown) "w3m-cookie" "emacs-w3m/w3m-cookie.el"
+;;;;;;  (19449 53703))
+;;; Generated autoloads from emacs-w3m/w3m-cookie.el
+
+(autoload 'w3m-cookie-shutdown "w3m-cookie" "\
+Save cookies, and reset cookies' data.
+
+\(fn)" t nil)
+
+(autoload 'w3m-cookie-set "w3m-cookie" "\
+Register cookies which correspond to URL.
+BEG and END should be an HTTP response header region on current buffer.
+
+\(fn URL BEG END)" nil nil)
+
+(autoload 'w3m-cookie-get "w3m-cookie" "\
+Get a cookie field string which corresponds to the URL.
+
+\(fn URL)" nil nil)
+
+(autoload 'w3m-cookie "w3m-cookie" "\
+Display cookies and enable you to manage them.
+
+\(fn &optional NO-CACHE)" t nil)
+
+(autoload 'w3m-about-cookie "w3m-cookie" "\
+Make the html contents to display and to enable you to manage cookies.
+
+\(fn URL &optional NO-DECODE NO-CACHE POST-DATA &rest ARGS)" nil nil)
+
+;;;***
+
+;;;### (autoloads (w3m-dtree w3m-about-dtree) "w3m-dtree" "emacs-w3m/w3m-dtree.el"
+;;;;;;  (18964 36505))
+;;; Generated autoloads from emacs-w3m/w3m-dtree.el
+
+(autoload 'w3m-about-dtree "w3m-dtree" "\
+Not documented
+
+\(fn URL &optional NODECODE ALLFILES &rest ARGS)" nil nil)
+
+(autoload 'w3m-dtree "w3m-dtree" "\
+Display directory tree on local file system.
+If called with 'prefix argument', display all directorys and files.
+
+\(fn ALLFILES PATH)" t nil)
+
+;;;***
+
+;;;### (autoloads (w3m-fb-mode) "w3m-fb" "emacs-w3m/w3m-fb.el" (17681
+;;;;;;  2386))
+;;; Generated autoloads from emacs-w3m/w3m-fb.el
+
+(defvar w3m-fb-mode nil "\
+Non-nil if W3m-Fb mode is enabled.
+See the command `w3m-fb-mode' for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `w3m-fb-mode'.")
+
+(custom-autoload 'w3m-fb-mode "w3m-fb" nil)
+
+(autoload 'w3m-fb-mode "w3m-fb" "\
+Toggle W3M Frame Buffer mode.
+This allows frame-local lists of buffers (tabs).
+
+\(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads (w3m-filter) "w3m-filter" "emacs-w3m/w3m-filter.el"
+;;;;;;  (18560 15090))
+;;; Generated autoloads from emacs-w3m/w3m-filter.el
+
+(autoload 'w3m-filter "w3m-filter" "\
+Apply filtering rule of URL against a content in this buffer.
+
+\(fn URL)" nil nil)
+
+;;;***
+
+;;;### (autoloads (w3m-fontify-forms) "w3m-form" "emacs-w3m/w3m-form.el"
+;;;;;;  (20280 23920))
+;;; Generated autoloads from emacs-w3m/w3m-form.el
+
+(autoload 'w3m-fontify-forms "w3m-form" "\
+Process half-dumped data and fontify forms in this buffer.
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads (w3m-lnum-bookmark-add-this-url w3m-lnum-download-this-url
+;;;;;;  w3m-lnum-print-this-url w3m-lnum-edit-this-url w3m-lnum-external-view-this-url
+;;;;;;  w3m-lnum-save-image w3m-lnum-view-image w3m-lnum-toggle-inline-image
+;;;;;;  w3m-lnum-universal w3m-lnum-follow w3m-lnum-goto w3m-lnum-mode)
+;;;;;;  "w3m-lnum" "emacs-w3m/w3m-lnum.el" (20365 64910))
+;;; Generated autoloads from emacs-w3m/w3m-lnum.el
+
+(autoload 'w3m-lnum-mode "w3m-lnum" "\
+Minor mode to extend point commands by using Conkeror style number selection.
+With prefix ARG 0 disable battery included point functions, otherwise
+enable them.  With no prefix ARG - toggle.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'w3m-lnum-goto "w3m-lnum" "\
+Turn on link, image and form numbers and ask for one to go to.
+0 corresponds to location url.
+
+\(fn)" t nil)
+
+(autoload 'w3m-lnum-follow "w3m-lnum" "\
+Turn on link numbers, ask for one and execute appropriate action on it.
+If link - visit it, when button - press, when input - activate it,
+If image - toggle it.
+With prefix ARG visit link in new session or don't move over
+field/button/image on activation/push/toggle.
+With `-' ARG, for link image - go to it and toggle it.
+With -4 ARG, for link image - toggle it.
+With double prefix ARG, prompt for url to visit.
+With triple prefix ARG, prompt for url to visit in new session.
+
+\(fn ARG)" t nil)
+
+(autoload 'w3m-lnum-universal "w3m-lnum" "\
+Turn on link numbers, ask for one and offer actions over it depending on selection type.
+Actions may be selected either by hitting corresponding key,
+pressing <return> over the action line or left clicking.
+
+\(fn)" t nil)
+
+(autoload 'w3m-lnum-toggle-inline-image "w3m-lnum" "\
+If image at point, toggle it.
+Otherwise turn on link numbers and toggle selected image.
+With prefix ARG open url under image in new session.
+If no such url, move over image and toggle it.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'w3m-lnum-view-image "w3m-lnum" "\
+Display the image under point in the external viewer.
+If no image at poing, turn on image numbers and display selected.
+The viewer is defined in `w3m-content-type-alist' for every type of an
+image.
+
+\(fn)" t nil)
+
+(autoload 'w3m-lnum-save-image "w3m-lnum" "\
+Save the image under point to a file.
+If no image at poing, turn on image numbers and save selected.
+The default name will be the original name of the image.
+
+\(fn)" t nil)
+
+(autoload 'w3m-lnum-external-view-this-url "w3m-lnum" "\
+Launch the external browser and display the link at point.
+If no link at point, turn on link numbers and open selected externally.
+
+\(fn)" t nil)
+
+(autoload 'w3m-lnum-edit-this-url "w3m-lnum" "\
+Edit the page linked from the anchor under the cursor.
+If no such, turn on link numbers and edit selected.
+
+\(fn)" t nil)
+
+(autoload 'w3m-lnum-print-this-url "w3m-lnum" "\
+Display the url under point in the echo area and put it into `kill-ring'.
+If no url under point, activate numbering and select one.
+
+\(fn)" t nil)
+
+(autoload 'w3m-lnum-download-this-url "w3m-lnum" "\
+Download the file or the page pointed to by the link under point.
+If no point, activate numbering and select andchor to download.
+
+\(fn)" t nil)
+
+(autoload 'w3m-lnum-bookmark-add-this-url "w3m-lnum" "\
+Add link under cursor to bookmarks.
+If no link under point, activate numbering and ask for one.
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads (w3m-namazu w3m-about-namazu) "w3m-namazu" "emacs-w3m/w3m-namazu.el"
+;;;;;;  (18964 36505))
+;;; Generated autoloads from emacs-w3m/w3m-namazu.el
+
+(autoload 'w3m-about-namazu "w3m-namazu" "\
+Not documented
+
+\(fn URL &optional NO-DECODE NO-CACHE &rest ARGS)" nil nil)
+
+(autoload 'w3m-namazu "w3m-namazu" "\
+Search indexed files with Namazu.
+
+\(fn INDEX QUERY &optional RELOAD)" t nil)
+
+;;;***
+
+;;;### (autoloads (w3m-perldoc w3m-about-perldoc) "w3m-perldoc" "emacs-w3m/w3m-perldoc.el"
+;;;;;;  (18197 61165))
+;;; Generated autoloads from emacs-w3m/w3m-perldoc.el
+
+(autoload 'w3m-about-perldoc "w3m-perldoc" "\
+Not documented
+
+\(fn URL &optional NO-DECODE NO-CACHE &rest ARGS)" nil nil)
+
+(autoload 'w3m-perldoc "w3m-perldoc" "\
+View Perl documents.
+
+\(fn DOCNAME)" t nil)
+
+;;;***
+
+;;;### (autoloads (w3m-search-uri-replace w3m-search-new-session
+;;;;;;  w3m-search) "w3m-search" "emacs-w3m/w3m-search.el" (20184
+;;;;;;  29830))
+;;; Generated autoloads from emacs-w3m/w3m-search.el
+
+(autoload 'w3m-search "w3m-search" "\
+Search QUERY using SEARCH-ENGINE.
+When called interactively with a prefix argument, you can choose one of
+the search engines defined in `w3m-search-engine-alist'.  Otherwise use
+`w3m-search-default-engine'.
+If Transient Mark mode, use the region as an initial string of query
+and deactivate the mark.
+
+\(fn SEARCH-ENGINE QUERY)" t nil)
+
+(autoload 'w3m-search-new-session "w3m-search" "\
+Like `w3m-search', but do the search in a new session.
+
+\(fn SEARCH-ENGINE QUERY)" t nil)
+
+(autoload 'w3m-search-uri-replace "w3m-search" "\
+Generate query string for ENGINE from URI matched by last search.
+
+\(fn URI ENGINE)" nil nil)
+
+;;;***
+
+;;;### (autoloads (w3m-session-last-crashed-session w3m-session-last-autosave-session
+;;;;;;  w3m-setup-session-menu w3m-session-select w3m-session-crash-recovery-remove
+;;;;;;  w3m-session-save) "w3m-session" "emacs-w3m/w3m-session.el"
+;;;;;;  (20280 23920))
+;;; Generated autoloads from emacs-w3m/w3m-session.el
+
+(autoload 'w3m-session-save "w3m-session" "\
+Save list of displayed session.
+
+\(fn)" t nil)
+
+(autoload 'w3m-session-crash-recovery-remove "w3m-session" "\
+Remove crash recovery session set.
+
+\(fn)" nil nil)
+
+(autoload 'w3m-session-select "w3m-session" "\
+Select session from session list.
+
+\(fn)" t nil)
+
+(autoload 'w3m-setup-session-menu "w3m-session" "\
+Setup w3m session items in menubar.
+
+\(fn)" nil nil)
+
+(autoload 'w3m-session-last-autosave-session "w3m-session" "\
+Not documented
+
+\(fn)" nil nil)
+
+(autoload 'w3m-session-last-crashed-session "w3m-session" "\
+Not documented
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads (w3m-replace-symbol) "w3m-symbol" "emacs-w3m/w3m-symbol.el"
+;;;;;;  (18791 2971))
+;;; Generated autoloads from emacs-w3m/w3m-symbol.el
+
+(autoload 'w3m-replace-symbol "w3m-symbol" "\
+Not documented
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads (w3m-about-weather w3m-weather) "w3m-weather" "emacs-w3m/w3m-weather.el"
+;;;;;;  (18197 61165))
+;;; Generated autoloads from emacs-w3m/w3m-weather.el
+
+(autoload 'w3m-weather "w3m-weather" "\
+Display weather report.
+
+\(fn AREA)" t nil)
+
+(autoload 'w3m-about-weather "w3m-weather" "\
+Not documented
+
+\(fn URL NO-DECODE NO-CACHE POST-DATA REFERER HANDLER)" nil nil)
+
+;;;***
+
+;;;### (autoloads nil nil ("apel/site-lisp/apel/calist.el" "apel/site-lisp/apel/filename.el"
+;;;;;;  "apel/site-lisp/apel/install.el" "apel/site-lisp/emu/apel-ver.el"
+;;;;;;  "apel/site-lisp/emu/broken.el" "apel/site-lisp/emu/emu.el"
+;;;;;;  "apel/site-lisp/emu/inv-23.el" "apel/site-lisp/emu/invisible.el"
+;;;;;;  "apel/site-lisp/emu/mcharset.el" "apel/site-lisp/emu/mcs-20.el"
+;;;;;;  "apel/site-lisp/emu/mcs-e20.el" "apel/site-lisp/emu/mule-caesar.el"
+;;;;;;  "apel/site-lisp/emu/pccl-20.el" "apel/site-lisp/emu/pccl.el"
+;;;;;;  "apel/site-lisp/emu/pces-20.el" "apel/site-lisp/emu/pces-e20.el"
+;;;;;;  "apel/site-lisp/emu/pces.el" "apel/site-lisp/emu/pcustom.el"
+;;;;;;  "apel/site-lisp/emu/poe.el" "apel/site-lisp/emu/poem-e20.el"
+;;;;;;  "apel/site-lisp/emu/poem-e20_3.el" "apel/site-lisp/emu/poem.el"
+;;;;;;  "apel/site-lisp/emu/product.el" "apel/site-lisp/emu/pym.el"
+;;;;;;  "apel/site-lisp/emu/static.el" "byte-code-cache/byte-code-cache.el"
+;;;;;;  "color-theme/color-theme-autoloads.el" "el-get/el-get-install.el"
+;;;;;;  "el-get/el-get.el" "elscreen/elscreen.el" "emacs-w3m/mew-w3m.el"
+;;;;;;  "emacs-w3m/w3m-bug.el" "emacs-w3m/w3m-ccl.el" "emacs-w3m/w3m-ems.el"
+;;;;;;  "emacs-w3m/w3m-favicon.el" "emacs-w3m/w3m-hist.el" "emacs-w3m/w3m-image.el"
+;;;;;;  "emacs-w3m/w3m-load.el" "emacs-w3m/w3m-mail.el" "emacs-w3m/w3m-proc.el"
+;;;;;;  "emacs-w3m/w3m-rss.el" "emacs-w3m/w3m-tabmenu.el" "emacs-w3m/w3m-ucs.el"
+;;;;;;  "emacs-w3m/w3m-util.el" "emacs-w3m/w3m-xmas.el" "emacs-w3m/w3mhack.el"
+;;;;;;  "escreen/escreen.el" "evil/evil-cjk.el" "evil/evil-commands.el"
+;;;;;;  "evil/evil-common.el" "evil/evil-digraphs.el" "evil/evil-ex.el"
+;;;;;;  "evil/evil-integration.el" "evil/evil-macros.el" "evil/evil-maps.el"
+;;;;;;  "evil/evil-pkg.el" "evil/evil-repeat.el" "evil/evil-search.el"
+;;;;;;  "evil/evil-states.el" "evil/evil-tests.el" "evil/evil-types.el"
+;;;;;;  "evil/evil-vars.el" "evil/evil.el" "flim/site-lisp/flim/hex-util.el"
+;;;;;;  "flim/site-lisp/flim/hmac-def.el" "flim/site-lisp/flim/hmac-md5.el"
+;;;;;;  "flim/site-lisp/flim/hmac-sha1.el" "flim/site-lisp/flim/luna.el"
+;;;;;;  "flim/site-lisp/flim/lunit.el" "flim/site-lisp/flim/md4.el"
+;;;;;;  "flim/site-lisp/flim/md5.el" "flim/site-lisp/flim/mel-b-ccl.el"
+;;;;;;  "flim/site-lisp/flim/mel-b-el.el" "flim/site-lisp/flim/mel-g.el"
+;;;;;;  "flim/site-lisp/flim/mel-q-ccl.el" "flim/site-lisp/flim/mel-q.el"
+;;;;;;  "flim/site-lisp/flim/mel-u.el" "flim/site-lisp/flim/mime-def.el"
+;;;;;;  "flim/site-lisp/flim/mime.el" "flim/site-lisp/flim/mmbuffer.el"
+;;;;;;  "flim/site-lisp/flim/mmcooked.el" "flim/site-lisp/flim/mmexternal.el"
+;;;;;;  "flim/site-lisp/flim/mmgeneric.el" "flim/site-lisp/flim/ntlm.el"
+;;;;;;  "flim/site-lisp/flim/sasl-cram.el" "flim/site-lisp/flim/sasl-digest.el"
+;;;;;;  "flim/site-lisp/flim/sasl-ntlm.el" "flim/site-lisp/flim/sasl-scram.el"
+;;;;;;  "flim/site-lisp/flim/sasl.el" "flim/site-lisp/flim/sha1.el"
+;;;;;;  "maxframe/maxframe.el" "quack/quack.el" "redo+/redo+.el"
+;;;;;;  "slime-loads/slime-loads.el" "slime/contrib/bridge.el" "slime/contrib/inferior-slime.el"
+;;;;;;  "slime/contrib/slime-asdf.el" "slime/contrib/slime-autodoc.el"
+;;;;;;  "slime/contrib/slime-banner.el" "slime/contrib/slime-c-p-c.el"
+;;;;;;  "slime/contrib/slime-clipboard.el" "slime/contrib/slime-compiler-notes-tree.el"
+;;;;;;  "slime/contrib/slime-editing-commands.el" "slime/contrib/slime-enclosing-context.el"
+;;;;;;  "slime/contrib/slime-fancy-inspector.el" "slime/contrib/slime-fancy.el"
+;;;;;;  "slime/contrib/slime-fontifying-fu.el" "slime/contrib/slime-fuzzy.el"
+;;;;;;  "slime/contrib/slime-highlight-edits.el" "slime/contrib/slime-hyperdoc.el"
+;;;;;;  "slime/contrib/slime-indentation.el" "slime/contrib/slime-mdot-fu.el"
+;;;;;;  "slime/contrib/slime-media.el" "slime/contrib/slime-motd.el"
+;;;;;;  "slime/contrib/slime-mrepl.el" "slime/contrib/slime-package-fu.el"
+;;;;;;  "slime/contrib/slime-parse.el" "slime/contrib/slime-presentation-streams.el"
+;;;;;;  "slime/contrib/slime-presentations.el" "slime/contrib/slime-references.el"
+;;;;;;  "slime/contrib/slime-repl.el" "slime/contrib/slime-sbcl-exts.el"
+;;;;;;  "slime/contrib/slime-scheme.el" "slime/contrib/slime-scratch.el"
+;;;;;;  "slime/contrib/slime-snapshot.el" "slime/contrib/slime-sprof.el"
+;;;;;;  "slime/contrib/slime-tramp.el" "slime/contrib/slime-typeout-frame.el"
+;;;;;;  "slime/contrib/slime-xref-browser.el" "slime/hyperspec.el"
+;;;;;;  "slime/slime-autoloads.el" "slime/slime.el" "tuareg-mode/append-tuareg.el"
+;;;;;;  "tuareg-mode/custom-tuareg.el" "tuareg-mode/sym-lock.el")
+;;;;;;  (20454 7357 162867))
+
+;;;***
+
+(provide '.loaddefs)
+;; Local Variables:
+;; version-control: never
+;; no-update-autoloads: t
+;; coding: utf-8
+;; End:
+;;; .loaddefs.el ends here

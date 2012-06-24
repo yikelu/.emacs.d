@@ -1,0 +1,19 @@
+    
+* Org Mode Notes
+** Origins
+   -- Note taking mode for emacs. Dual note and task oriented.
+   -- old thing for emacs - outline mode. too broken
+   -- enhance the sub heading stuff and indentation
+   -- fix and simplify the shortcuts.
+** New Shortcuts
+   -- Two main commands - tab (cycle subtree) and shift tab (cycle globally)
+   -- Cycle of 3 in each. First tab is direct children, second is entire subtree, third is refold
+   -- Global - first is TOC, second is full expansion, third is collapse
+** Structure editing
+   -- M or M-S while using cursors
+   -- up/down are transposes, left and right are promote/demote
+** Other nice features
+   -- Edits ordered and unordered lists
+   -- Hyperlinks works (gnus, emacs mail programs, man pages etc)
+   -- Table editor/spreadsheet
+   -- Embedded LaTeX

@@ -1,0 +1,56 @@
+The initial thrust of this project:
+
+Keep a webserver up on a cloud. Take daily snapshots of global macro futures prices and the corresponding options.
+
+Make a dashboard (?) with volatility surface and implied probability surface.
+
+The list is to be built up from Jim Liew's Stat Arb HW1 list.
+
+Equities
+ES, Emini SP500
+TF, Emini Russell 2000
+DAX, DAX
+ESX, EuroStoxx
+LFT, FTSE100
+KOS, Kospi200
+SNI, Nikkei225
+HS, Hang Seng
+SIN, Nifty 50
+SSG, Singapore
+
+Fixed Income
+FV, US 5 yr
+TY, US 10 Yr
+US, US Long Bond
+GBL, Euro Bund
+GBM, Euro BOBL
+SJB, Jap Govt Bond Mini
+LLG, Long Gilt
+
+Energy
+BC, Brent Crude
+CL, Crude
+GO, Gas Oil
+HO, Heating Oil
+NG, Nat Gas
+RB, RBOB Gasoline
+WT, WTI
+
+Metals
+GC, Gold
+PA, Palladium
+PL, Platinum
+SI, Silver
+HG, Copper
+[..] need more research
+
+FX
+EUR
+GBP
+JY
+Aussie
+CHF
+[..] to be expanded
+
+Agriculture
+[..] need way more research

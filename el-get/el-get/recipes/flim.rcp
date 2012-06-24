@@ -1,0 +1,21 @@
+(:name flim
+       :description "A library to provide basic features about message representation or encoding"
+       :depends apel
+       :type git
+       :module "flim"
+       :url "https://github.com/wanderlust/flim.git"
+       :build 
+       (append
+        (mapcar
+         (lambda (target) 
+           (list el-get-emacs 
+                 (mapcar (lambda (pkg) 
+                           (mapcar (lambda (d) `("-L" ,d)) (el-get-load-path pkg)))
+                         '("apel"))
+
+                 (split-string "-batch -q -no-site-file -l FLIM-MK -f")
+                 target
+                 "prefix" "site-lisp" "site-lisp"))
+         '("compile-flim" "install-flim")))
+       :load-path ("site-lisp/flim"))
+

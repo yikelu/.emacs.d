@@ -1,0 +1,113 @@
+; 1.3
+
+(define (larger_of x y)
+  (if (> x y) x y))
+
+(define (smaller_of x y)
+  (if (> x y) y x))
+
+(define (sq x) (* x x))
+
+(define (ssq_larger x y z)
+  (+
+      (sq (larger_of (larger_of x y) (larger_of y z))) ; x must be the greatest
+      (sq (smaller_of (larger_of x y) (larger_of y z)))))
+
+; 1.4
+
+(define (a-plus-abs-b a b)
+  ((if (> b 0) + -) a b))
+
+(a-plus-abs-b 1 -1)
+; should yield 2 as the if statement returns the '- operator for b < 0
+
+; 1.5
+(define (p) (p))
+
+(define (test x y)
+  (if (= x 0)
+      0
+      y))
+
+; if the eval order is strict, then (test 0 (p)) would loop infinitely
+; if it were lazy, it would return 0
+
+; 1.6
+
+(define (improve guess x)
+  (average guess (/ x guess)))
+
+(define (average x y)
+  (/ (+ x y) 2))
+
+(define (good-enough? guess x)
+  (< (abs (- (sq guess) x)) 0.001))
+
+(define (sqrt x)
+  (sqrt-iter 1.0 x))
+
+(define (new-if predicate then-clause else-clause)
+  (cond (predicate then-clause)
+        (else else-clause)))
+
+(define (sqrt-iter guess x)
+  (new-if (good-enough? guess x)
+          guess
+          (sqrt-iter (improve guess x)
+                     x)))
+
+; This would go into an infinite loop because of the recursion
+; Evaluating with a function forces the arguments, in contrast
+; to the special form which does not
+; Note we could have equivalently used the cond special form for this
+
+(define (sqrt-iter guess x)
+  (cond ((good-enough? guess x) guess)
+        (else (sqrt-iter (improve guess x) x))))
+
+;; this works
+
+; 1.7
+; the small number case is extremely obvious - if the number is too small
+; then fixed tolerance can easily become larger than x, making the tol
+; comparison completely worthless.
+; For very large numbers, it would never converge because of lack of precision
+
+(define (sqrt-iter guess x)
+  (if (good-enough? guess x)
+      guess
+      (sqrt-iter (improve guess x)
+                 x)))
+
+(sqrt 0.01)
+(sqrt 0.0001) ; failure
+(sqrt 0.000001) ; failure as well
+(sqrt 1e15) ; hangs
+
+;; block structure - to see the paren match
+(define (sqrt x)
+  (define (good-enough? guess x)
+    (< (abs (- (square guess) x)) 0.001))
+  (define (improve guess x)
+    (average guess (/ x guess)))
+  (define (sqrt-iter guess x)
+    (if (good-enough? guess x)
+        guess
+        (sqrt-iter (improve guess x) x)))
+  (sqrt-iter 1.0 x))
+
+; so basically this allows you to define a program linearly
+; i.e. more of a procedural style.
+
+; accumulative factorial - tail recursive
+(define (factorial n)
+  (define (fact_acc n acc)
+    (if (= n 1)
+        acc
+        (fact_acc (- n 1) (* n acc))))
+  (fact_acc n 1))
+
+; 1.9
+
+(lambda (x)
+  1 + x)
