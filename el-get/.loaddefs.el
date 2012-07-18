@@ -3,33 +3,9 @@
 ;;; Code:
 
 
-;;;### (autoloads (set-up-slime-ac) "ac-slime/ac-slime" "ac-slime/ac-slime.el"
-;;;;;;  (20469 5405))
-;;; Generated autoloads from ac-slime/ac-slime.el
-
-(defface ac-slime-menu-face '((t (:inherit 'ac-candidate-face))) "\
-Face for slime candidate menu." :group (quote auto-complete))
-
-(defface ac-slime-selection-face '((t (:inherit 'ac-selection-face))) "\
-Face for the slime selected candidate." :group (quote auto-complete))
-
-(defvar ac-source-slime-fuzzy '((init . ac-slime-init) (candidates . ac-source-slime-fuzzy-candidates) (candidate-face . ac-slime-menu-face) (selection-face . ac-slime-selection-face) (prefix . slime-symbol-start-pos) (symbol . "l") (match lambda (prefix candidates) candidates) (document . ac-slime-documentation)) "\
-Source for fuzzy slime completion")
-
-(defvar ac-source-slime-simple '((init . ac-slime-init) (candidates . ac-source-slime-simple-candidates) (candidate-face . ac-slime-menu-face) (selection-face . ac-slime-selection-face) (prefix . slime-symbol-start-pos) (symbol . "l") (document . ac-slime-documentation)) "\
-Source for slime completion")
-
-(autoload 'set-up-slime-ac "ac-slime/ac-slime" "\
-Add an optionally-fuzzy slime completion source to the
-front of `ac-sources' for the current buffer.
-
-\(fn &optional FUZZY)" t nil)
-
-;;;***
-
 ;;;### (autoloads (vassoc set-modified-alist modify-alist remove-alist
 ;;;;;;  set-alist del-alist put-alist) "apel/site-lisp/apel/alist"
-;;;;;;  "apel/site-lisp/apel/alist.el" (20454 6127))
+;;;;;;  "apel/site-lisp/apel/alist.el" (20486 21104))
 ;;; Generated autoloads from apel/site-lisp/apel/alist.el
 
 (autoload 'put-alist "apel/site-lisp/apel/alist" "\
@@ -78,7 +54,7 @@ See also `assoc'.
 
 ;;;### (autoloads (module-installed-p exec-installed-p file-installed-p
 ;;;;;;  get-latest-path add-latest-path add-path) "apel/site-lisp/apel/path-util"
-;;;;;;  "apel/site-lisp/apel/path-util.el" (20454 6127))
+;;;;;;  "apel/site-lisp/apel/path-util.el" (20486 21104))
 ;;; Generated autoloads from apel/site-lisp/apel/path-util.el
 
 (autoload 'add-path "apel/site-lisp/apel/path-util" "\
@@ -141,7 +117,7 @@ If PATHS is omitted, `load-path' is used.
 ;;;***
 
 ;;;### (autoloads (richtext-decode richtext-encode) "apel/site-lisp/emu/richtext"
-;;;;;;  "apel/site-lisp/emu/richtext.el" (20454 6127))
+;;;;;;  "apel/site-lisp/emu/richtext.el" (20486 21104))
 ;;; Generated autoloads from apel/site-lisp/emu/richtext.el
 
 (autoload 'richtext-encode "apel/site-lisp/emu/richtext" "\
@@ -156,25 +132,36 @@ If PATHS is omitted, `load-path' is used.
 
 ;;;***
 
-;;;### (autoloads (bookmark-w3m-bookmark-jump) "bookmark-w3m" "emacs-w3m/bookmark-w3m.el"
-;;;;;;  (19648 52975))
+;;;### (autoloads (auto-complete) "auto-complete/auto-complete" "auto-complete/auto-complete.el"
+;;;;;;  (20486 21583))
+;;; Generated autoloads from auto-complete/auto-complete.el
+
+(autoload 'auto-complete "auto-complete/auto-complete" "\
+Start auto-completion at current point.
+
+\(fn &optional SOURCES)" t nil)
+
+;;;***
+
+;;;### (autoloads (bookmark-w3m-bookmark-jump) "emacs-w3m/bookmark-w3m"
+;;;;;;  "emacs-w3m/bookmark-w3m.el" (20486 21104))
 ;;; Generated autoloads from emacs-w3m/bookmark-w3m.el
 
-(autoload 'bookmark-w3m-bookmark-jump "bookmark-w3m" "\
+(autoload 'bookmark-w3m-bookmark-jump "emacs-w3m/bookmark-w3m" "\
 Default bookmark handler for w3m buffers.
 
 \(fn BOOKMARK)" nil nil)
 
 ;;;***
 
-;;;### (autoloads (camldebug) "camldebug" "tuareg-mode/camldebug.el"
-;;;;;;  (20447 61981))
+;;;### (autoloads (camldebug) "tuareg-mode/camldebug" "tuareg-mode/camldebug.el"
+;;;;;;  (20486 21104))
 ;;; Generated autoloads from tuareg-mode/camldebug.el
 
 (defvar camldebug-command-name "ocamldebug" "\
 Pathname for executing Caml debugger.")
 
-(autoload 'camldebug "camldebug" "\
+(autoload 'camldebug "tuareg-mode/camldebug" "\
 Run camldebug on program FILE in buffer *camldebug-FILE*.
 The directory containing FILE becomes the initial working directory
 and source-file directory for camldebug.  If you wish to change this, use
@@ -188,10 +175,11 @@ the camldebug commands `cd DIR' and `directory'.
 ;;;;;;  color-theme-compare color-theme-make-snapshot color-theme-analyze-defun
 ;;;;;;  color-theme-print color-theme-install-at-point-for-current-frame
 ;;;;;;  color-theme-install-at-mouse color-theme-describe color-theme-select)
-;;;;;;  "color-theme" "color-theme/color-theme.el" (17529 41105))
+;;;;;;  "color-theme/color-theme" "color-theme/color-theme.el" (20486
+;;;;;;  21104))
 ;;; Generated autoloads from color-theme/color-theme.el
 
-(autoload 'color-theme-select "color-theme" "\
+(autoload 'color-theme-select "color-theme/color-theme" "\
 Displays a special buffer for selecting and installing a color theme.
 With optional prefix ARG, this buffer will include color theme libraries
 as well.  A color theme library is in itself not complete, it must be
@@ -200,7 +188,7 @@ libraries are mainly useful for color theme authors.
 
 \(fn &optional ARG)" t nil)
 
-(autoload 'color-theme-describe "color-theme" "\
+(autoload 'color-theme-describe "color-theme/color-theme" "\
 Describe color theme listed at point.
 This shows the documentation of the value of text-property color-theme
 at point.  The text-property color-theme should be a color theme
@@ -208,21 +196,21 @@ function.  See `color-themes'.
 
 \(fn)" t nil)
 
-(autoload 'color-theme-install-at-mouse "color-theme" "\
+(autoload 'color-theme-install-at-mouse "color-theme/color-theme" "\
 Install color theme clicked upon using the mouse.
 First argument EVENT is used to set point.  Then
 `color-theme-install-at-point' is called.
 
 \(fn EVENT)" t nil)
 
-(autoload 'color-theme-install-at-point-for-current-frame "color-theme" "\
+(autoload 'color-theme-install-at-point-for-current-frame "color-theme/color-theme" "\
 Install color theme at point for current frame only.
 Binds `color-theme-is-global' to nil and calls
 `color-theme-install-at-point'.
 
 \(fn)" t nil)
 
-(autoload 'color-theme-print "color-theme" "\
+(autoload 'color-theme-print "color-theme/color-theme" "\
 Print the current color theme function.
 
 You can contribute this function to <URL:news:gnu.emacs.sources> or
@@ -251,7 +239,7 @@ Example:
 
 \(fn &optional BUF)" t nil)
 
-(autoload 'color-theme-analyze-defun "color-theme" "\
+(autoload 'color-theme-analyze-defun "color-theme/color-theme" "\
 Once you have a color-theme printed, check for missing faces.
 This is used by maintainers who receive a color-theme submission
 and want to make sure it follows the guidelines by the color-theme
@@ -259,13 +247,13 @@ author.
 
 \(fn)" t nil)
 
-(autoload 'color-theme-make-snapshot "color-theme" "\
+(autoload 'color-theme-make-snapshot "color-theme/color-theme" "\
 Return the definition of the current color-theme.
 The function returned will recreate the color-theme in use at the moment.
 
 \(fn)" nil nil)
 
-(autoload 'color-theme-compare "color-theme" "\
+(autoload 'color-theme-compare "color-theme/color-theme" "\
 Compare two color themes.
 This will print the differences between installing THEME-A and
 installing THEME-B.  Note that the order is important: If a face is
@@ -276,7 +264,7 @@ a difference.
 
 \(fn THEME-A THEME-B)" t nil)
 
-(autoload 'color-theme-install "color-theme" "\
+(autoload 'color-theme-install "color-theme/color-theme" "\
 Install a color theme defined by frame parameters, variables and faces.
 
 The theme is installed for all present and future frames; any missing
@@ -311,12 +299,12 @@ frame-parameter settings of previous color themes.
 
 \(fn THEME)" nil nil)
 
-(autoload 'color-theme-submit "color-theme" "\
+(autoload 'color-theme-submit "color-theme/color-theme" "\
 Submit your color-theme to the maintainer.
 
 \(fn)" t nil)
 
-(autoload 'color-theme-initialize "color-theme" "\
+(autoload 'color-theme-initialize "color-theme/color-theme" "\
 Initialize the color theme package by loading color-theme-libraries.
 
 \(fn)" t nil)
@@ -324,7 +312,7 @@ Initialize the color theme package by loading color-theme-libraries.
 ;;;***
 
 ;;;### (autoloads (ghc-core-mode ghc-core-create-core) "haskell-mode/ghc-core"
-;;;;;;  "haskell-mode/ghc-core.el" (20454 9240))
+;;;;;;  "haskell-mode/ghc-core.el" (20486 21104))
 ;;; Generated autoloads from haskell-mode/ghc-core.el
 
 (autoload 'ghc-core-create-core "haskell-mode/ghc-core" "\
@@ -342,7 +330,7 @@ Major mode for GHC Core files.
 ;;;***
 
 ;;;### (autoloads (haskell-align-imports) "haskell-mode/haskell-align-imports"
-;;;;;;  "haskell-mode/haskell-align-imports.el" (20454 9240))
+;;;;;;  "haskell-mode/haskell-align-imports.el" (20486 21104))
 ;;; Generated autoloads from haskell-mode/haskell-align-imports.el
 
 (autoload 'haskell-align-imports "haskell-mode/haskell-align-imports" "\
@@ -353,7 +341,7 @@ Align all the imports in the buffer.
 ;;;***
 
 ;;;### (autoloads (haskell-c-mode) "haskell-mode/haskell-c" "haskell-mode/haskell-c.el"
-;;;;;;  (20454 9240))
+;;;;;;  (20486 21104))
 ;;; Generated autoloads from haskell-mode/haskell-c.el
 
 (add-to-list 'auto-mode-alist '("\\.hsc\\'" . haskell-c-mode))
@@ -366,7 +354,7 @@ Major mode for Haskell FFI files.
 ;;;***
 
 ;;;### (autoloads (haskell-cabal-mode) "haskell-mode/haskell-cabal"
-;;;;;;  "haskell-mode/haskell-cabal.el" (20454 9240))
+;;;;;;  "haskell-mode/haskell-cabal.el" (20486 21104))
 ;;; Generated autoloads from haskell-mode/haskell-cabal.el
 
 (add-to-list 'auto-mode-alist '("\\.cabal\\'" . haskell-cabal-mode))
@@ -379,7 +367,7 @@ Major mode for Cabal package description files.
 ;;;***
 
 ;;;### (autoloads (haskell-decl-scan-mode) "haskell-mode/haskell-decl-scan"
-;;;;;;  "haskell-mode/haskell-decl-scan.el" (20454 9240))
+;;;;;;  "haskell-mode/haskell-decl-scan.el" (20486 21104))
 ;;; Generated autoloads from haskell-mode/haskell-decl-scan.el
 
 (autoload 'haskell-decl-scan-mode "haskell-mode/haskell-decl-scan" "\
@@ -429,7 +417,7 @@ Invokes `haskell-decl-scan-mode-hook'.
 ;;;***
 
 ;;;### (autoloads (haskell-doc-show-type haskell-doc-mode) "haskell-mode/haskell-doc"
-;;;;;;  "haskell-mode/haskell-doc.el" (20454 9240))
+;;;;;;  "haskell-mode/haskell-doc.el" (20486 21104))
 ;;; Generated autoloads from haskell-mode/haskell-doc.el
 
 (autoload 'haskell-doc-mode "haskell-mode/haskell-doc" "\
@@ -452,7 +440,7 @@ current buffer.
 ;;;***
 
 ;;;### (autoloads (haskell-indent-mode) "haskell-mode/haskell-indent"
-;;;;;;  "haskell-mode/haskell-indent.el" (20454 9240))
+;;;;;;  "haskell-mode/haskell-indent.el" (20486 21104))
 ;;; Generated autoloads from haskell-mode/haskell-indent.el
 
 (autoload 'haskell-indent-mode "haskell-mode/haskell-indent" "\
@@ -484,7 +472,7 @@ Invokes `haskell-indent-hook' if not nil.
 ;;;***
 
 ;;;### (autoloads (haskell-indentation-mode) "haskell-mode/haskell-indentation"
-;;;;;;  "haskell-mode/haskell-indentation.el" (20454 9240))
+;;;;;;  "haskell-mode/haskell-indentation.el" (20486 21104))
 ;;; Generated autoloads from haskell-mode/haskell-indentation.el
 
 (autoload 'haskell-indentation-mode "haskell-mode/haskell-indentation" "\
@@ -499,7 +487,7 @@ autofill-mode.
 
 ;;;### (autoloads (haskell-hayoo haskell-hoogle literate-haskell-mode
 ;;;;;;  haskell-mode) "haskell-mode/haskell-mode" "haskell-mode/haskell-mode.el"
-;;;;;;  (20454 9240))
+;;;;;;  (20486 21104))
 ;;; Generated autoloads from haskell-mode/haskell-mode.el
 
 (add-to-list 'load-path (or (file-name-directory load-file-name) (car load-path)))
@@ -568,7 +556,7 @@ Do a Hayoo search for QUERY.
 ;;;***
 
 ;;;### (autoloads (haskell-move-nested) "haskell-mode/haskell-move-nested"
-;;;;;;  "haskell-mode/haskell-move-nested.el" (20454 9240))
+;;;;;;  "haskell-mode/haskell-move-nested.el" (20486 21104))
 ;;; Generated autoloads from haskell-mode/haskell-move-nested.el
 
 (autoload 'haskell-move-nested "haskell-mode/haskell-move-nested" "\
@@ -580,7 +568,7 @@ Do a Hayoo search for QUERY.
 
 ;;;### (autoloads (haskell-navigate-imports-return haskell-navigate-imports-go
 ;;;;;;  haskell-navigate-imports) "haskell-mode/haskell-navigate-imports"
-;;;;;;  "haskell-mode/haskell-navigate-imports.el" (20454 9240))
+;;;;;;  "haskell-mode/haskell-navigate-imports.el" (20486 21104))
 ;;; Generated autoloads from haskell-mode/haskell-navigate-imports.el
 
 (autoload 'haskell-navigate-imports "haskell-mode/haskell-navigate-imports" "\
@@ -602,7 +590,7 @@ Return to the non-import point we were at before going to the module list.
 ;;;***
 
 ;;;### (autoloads (haskell-sort-imports) "haskell-mode/haskell-sort-imports"
-;;;;;;  "haskell-mode/haskell-sort-imports.el" (20454 9240))
+;;;;;;  "haskell-mode/haskell-sort-imports.el" (20486 21104))
 ;;; Generated autoloads from haskell-mode/haskell-sort-imports.el
 
 (autoload 'haskell-sort-imports "haskell-mode/haskell-sort-imports" "\
@@ -615,7 +603,7 @@ Sort the import list at the point.
 ;;;### (autoloads (inferior-haskell-find-haddock inferior-haskell-find-definition
 ;;;;;;  inferior-haskell-info inferior-haskell-type inferior-haskell-load-and-run
 ;;;;;;  inferior-haskell-load-file switch-to-haskell) "haskell-mode/inf-haskell"
-;;;;;;  "haskell-mode/inf-haskell.el" (20454 9240))
+;;;;;;  "haskell-mode/inf-haskell.el" (20486 21104))
 ;;; Generated autoloads from haskell-mode/inf-haskell.el
 
 (defalias 'run-haskell 'switch-to-haskell)
@@ -673,117 +661,22 @@ we load it.
 
 ;;;***
 
-;;;### (autoloads (magit-status) "magit/magit" "magit/magit.el" (20470
-;;;;;;  18794))
-;;; Generated autoloads from magit/magit.el
-
-(autoload 'magit-status "magit/magit" "\
-Open a Magit status buffer for the Git repository containing
-DIR.  If DIR is not within a Git repository, offer to create a
-Git repository in DIR.
-
-Interactively, a prefix argument means to ask the user which Git
-repository to use even if `default-directory' is under Git control.
-Two prefix arguments means to ignore `magit-repo-dirs' when asking for
-user input.
-
-\(fn DIR)" t nil)
-
-;;;***
-
-;;;### (autoloads (magit-blame-mode) "magit/magit-blame" "magit/magit-blame.el"
-;;;;;;  (20470 18794))
-;;; Generated autoloads from magit/magit-blame.el
-
-(autoload 'magit-blame-mode "magit/magit-blame" "\
-Display blame information inline.
-
-\(fn &optional ARG)" t nil)
-
-;;;***
-
-;;;### (autoloads (turn-on-magit-stgit magit-stgit-mode) "magit/magit-stgit"
-;;;;;;  "magit/magit-stgit.el" (20470 18794))
-;;; Generated autoloads from magit/magit-stgit.el
-
-(autoload 'magit-stgit-mode "magit/magit-stgit" "\
-StGit support for Magit
-
-\(fn &optional ARG)" t nil)
-
-(autoload 'turn-on-magit-stgit "magit/magit-stgit" "\
-Unconditionally turn on `magit-stgit-mode'.
-
-\(fn)" nil nil)
-
-;;;***
-
-;;;### (autoloads (turn-on-magit-svn magit-svn-mode) "magit/magit-svn"
-;;;;;;  "magit/magit-svn.el" (20470 18794))
-;;; Generated autoloads from magit/magit-svn.el
-
-(autoload 'magit-svn-mode "magit/magit-svn" "\
-SVN support for Magit
-
-\(fn &optional ARG)" t nil)
-
-(autoload 'turn-on-magit-svn "magit/magit-svn" "\
-Unconditionally turn on `magit-svn-mode'.
-
-\(fn)" nil nil)
-
-;;;***
-
-;;;### (autoloads (turn-on-magit-topgit magit-topgit-mode) "magit/magit-topgit"
-;;;;;;  "magit/magit-topgit.el" (20470 18794))
-;;; Generated autoloads from magit/magit-topgit.el
-
-(autoload 'magit-topgit-mode "magit/magit-topgit" "\
-Topgit support for Magit
-
-\(fn &optional ARG)" t nil)
-
-(autoload 'turn-on-magit-topgit "magit/magit-topgit" "\
-Unconditionally turn on `magit-topgit-mode'.
-
-\(fn)" nil nil)
-
-;;;***
-
-;;;### (autoloads (rebase-mode) "magit/rebase-mode" "magit/rebase-mode.el"
-;;;;;;  (20470 18794))
-;;; Generated autoloads from magit/rebase-mode.el
-
-(autoload 'rebase-mode "magit/rebase-mode" "\
-Major mode for editing of a Git rebase file.
-
-Rebase files are generated when you run 'git rebase -i' or run
-`magit-interactive-rebase'.  They describe how Git should perform
-the rebase.  See the documentation for git-rebase (e.g., by
-running 'man git-rebase' at the command line) for details.
-
-\(fn)" t nil)
-
-(add-to-list 'auto-mode-alist '("git-rebase-todo" . rebase-mode))
-
-;;;***
-
-;;;### (autoloads (mime-w3m-preview-text/html) "mime-w3m" "emacs-w3m/mime-w3m.el"
-;;;;;;  (19727 57154))
+;;;### (autoloads (mime-w3m-preview-text/html) "emacs-w3m/mime-w3m"
+;;;;;;  "emacs-w3m/mime-w3m.el" (20486 21104))
 ;;; Generated autoloads from emacs-w3m/mime-w3m.el
 
-(autoload 'mime-w3m-preview-text/html "mime-w3m" "\
-Not documented
+(autoload 'mime-w3m-preview-text/html "emacs-w3m/mime-w3m" "\
+
 
 \(fn ENTITY SITUATION)" nil nil)
 
 ;;;***
 
-;;;### (autoloads (multi-term) "multi-term" "multi-term/multi-term.el"
-;;;;;;  (20418 45020))
+;;;### (autoloads (multi-term) "multi-term/multi-term" "multi-term/multi-term.el"
+;;;;;;  (20486 21104))
 ;;; Generated autoloads from multi-term/multi-term.el
 
-(autoload 'multi-term "multi-term" "\
+(autoload 'multi-term "multi-term/multi-term" "\
 Create new term buffer.
 Will prompt you shell name when you type `C-u' before this command.
 
@@ -792,33 +685,33 @@ Will prompt you shell name when you type `C-u' before this command.
 ;;;***
 
 ;;;### (autoloads (octet-mime-setup mime-view-octet mime-preview-octet
-;;;;;;  octet-find-file octet-buffer) "octet" "emacs-w3m/octet.el"
-;;;;;;  (19563 28233))
+;;;;;;  octet-find-file octet-buffer) "emacs-w3m/octet" "emacs-w3m/octet.el"
+;;;;;;  (20486 21104))
 ;;; Generated autoloads from emacs-w3m/octet.el
 
-(autoload 'octet-buffer "octet" "\
+(autoload 'octet-buffer "emacs-w3m/octet" "\
 View octet-stream content according to `octet-type-filter-alist'.
 Optional NAME is the filename.
 If optional CONTENT-TYPE is specified, it is used for type guess.
 
 \(fn &optional NAME CONTENT-TYPE)" t nil)
 
-(autoload 'octet-find-file "octet" "\
+(autoload 'octet-find-file "emacs-w3m/octet" "\
 Find FILE with octet-stream decoding.
 
 \(fn FILE)" t nil)
 
-(autoload 'mime-preview-octet "octet" "\
+(autoload 'mime-preview-octet "emacs-w3m/octet" "\
 A method for mime-view to preview octet message.
 
 \(fn ENTITY SITUATION)" nil nil)
 
-(autoload 'mime-view-octet "octet" "\
+(autoload 'mime-view-octet "emacs-w3m/octet" "\
 A method for mime-view to display octet message.
 
 \(fn ENTITY SITUATION)" nil nil)
 
-(autoload 'octet-mime-setup "octet" "\
+(autoload 'octet-mime-setup "emacs-w3m/octet" "\
 Octet setting for MIME module.
 
 \(fn)" nil nil)
@@ -826,7 +719,7 @@ Octet setting for MIME module.
 ;;;***
 
 ;;;### (autoloads (common-lisp-indent-function) "slime/contrib/slime-cl-indent"
-;;;;;;  "slime/contrib/slime-cl-indent.el" (20454 25471))
+;;;;;;  "slime/contrib/slime-cl-indent.el" (20486 21104))
 ;;; Generated autoloads from slime/contrib/slime-cl-indent.el
 
 (autoload 'common-lisp-indent-function "slime/contrib/slime-cl-indent" "\
@@ -907,12 +800,12 @@ For example, the function `case' has an indent property
 
 ;;;***
 
-;;;### (autoloads (tuareg-mode) "tuareg" "tuareg-mode/tuareg.el"
-;;;;;;  (20447 61981))
+;;;### (autoloads (tuareg-mode) "tuareg-mode/tuareg" "tuareg-mode/tuareg.el"
+;;;;;;  (20486 21104))
 ;;; Generated autoloads from tuareg-mode/tuareg.el
  (add-to-list 'auto-mode-alist '("\\.ml[ily]?\\'" . tuareg-mode))
 
-(autoload 'tuareg-mode "tuareg" "\
+(autoload 'tuareg-mode "tuareg-mode/tuareg" "\
 Major mode for editing Caml code.
 
 Dedicated to Emacs and XEmacs, version 21 and higher. Provides
@@ -987,58 +880,13 @@ Special keys for Tuareg mode:\\{tuareg-mode-map}
 
 ;;;***
 
-;;;### (autoloads (global-undo-tree-mode undo-tree-mode) "undo-tree"
-;;;;;;  "undo-tree/undo-tree.el" (20412 16604))
-;;; Generated autoloads from undo-tree/undo-tree.el
-
-(autoload 'undo-tree-mode "undo-tree" "\
-Toggle undo-tree mode.
-With no argument, this command toggles the mode.
-A positive prefix argument turns the mode on.
-A negative prefix argument turns it off.
-
-Undo-tree-mode replaces Emacs' standard undo feature with a more
-powerful yet easier to use version, that treats the undo history
-as what it is: a tree.
-
-The following keys are available in `undo-tree-mode':
-
-  \\{undo-tree-map}
-
-Within the undo-tree visualizer, the following keys are available:
-
-  \\{undo-tree-visualizer-map}
-
-\(fn &optional ARG)" t nil)
-
-(defvar global-undo-tree-mode nil "\
-Non-nil if Global-Undo-Tree mode is enabled.
-See the command `global-undo-tree-mode' for a description of this minor mode.
-Setting this variable directly does not take effect;
-either customize it (see the info node `Easy Customization')
-or call the function `global-undo-tree-mode'.")
-
-(custom-autoload 'global-undo-tree-mode "undo-tree" nil)
-
-(autoload 'global-undo-tree-mode "undo-tree" "\
-Toggle Undo-Tree mode in every possible buffer.
-With prefix ARG, turn Global-Undo-Tree mode on if and only if
-ARG is positive.
-Undo-Tree mode is enabled in all buffers where
-`turn-on-undo-tree-mode' would do it.
-See `undo-tree-mode' for more information on Undo-Tree mode.
-
-\(fn &optional ARG)" t nil)
-
-;;;***
-
 ;;;### (autoloads (w3m-buffer w3m-region w3m-find-file w3m-browse-url
 ;;;;;;  w3m w3m-create-empty-session w3m-gohome w3m-goto-url-new-session
-;;;;;;  w3m-goto-url w3m-download w3m-retrieve) "w3m" "emacs-w3m/w3m.el"
-;;;;;;  (20400 20557))
+;;;;;;  w3m-goto-url w3m-download w3m-retrieve) "emacs-w3m/w3m" "emacs-w3m/w3m.el"
+;;;;;;  (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m.el
 
-(autoload 'w3m-retrieve "w3m" "\
+(autoload 'w3m-retrieve "emacs-w3m/w3m" "\
 Retrieve web contents pointed to by URL.
 It will put the retrieved contents into the current buffer.
 
@@ -1061,14 +909,14 @@ POST-DATA and REFERER will be sent to the web server with a request.
 
 \(fn URL &optional NO-UNCOMPRESS NO-CACHE POST-DATA REFERER HANDLER)" nil nil)
 
-(autoload 'w3m-download "w3m" "\
+(autoload 'w3m-download "emacs-w3m/w3m" "\
 Download contents of URL to a file named FILENAME.
 NO-CHACHE (which the prefix argument gives when called interactively)
 specifies not using the cached data.
 
 \(fn &optional URL FILENAME NO-CACHE HANDLER POST-DATA)" t nil)
 
-(autoload 'w3m-goto-url "w3m" "\
+(autoload 'w3m-goto-url "emacs-w3m/w3m" "\
 Visit World Wide Web pages.  This is the primitive function of `w3m'.
 If the second argument RELOAD is non-nil, reload a content of URL.
 Except that if it is 'redisplay, re-display the page without reloading.
@@ -1094,7 +942,7 @@ the current page.
 
 \(fn URL &optional RELOAD CHARSET POST-DATA REFERER HANDLER ELEMENT NO-POPUP)" t nil)
 
-(autoload 'w3m-goto-url-new-session "w3m" "\
+(autoload 'w3m-goto-url-new-session "emacs-w3m/w3m" "\
 Visit World Wide Web pages in a new session.
 If you invoke this command in the emacs-w3m buffer, the new session
 will be created by copying the current session.  Otherwise, the new
@@ -1102,17 +950,17 @@ session will start afresh.
 
 \(fn URL &optional RELOAD CHARSET POST-DATA REFERER)" t nil)
 
-(autoload 'w3m-gohome "w3m" "\
+(autoload 'w3m-gohome "emacs-w3m/w3m" "\
 Go to the Home page.
 
 \(fn)" t nil)
 
-(autoload 'w3m-create-empty-session "w3m" "\
+(autoload 'w3m-create-empty-session "emacs-w3m/w3m" "\
 Create an empty page as a new session and visit it.
 
 \(fn)" t nil)
 
-(autoload 'w3m "w3m" "\
+(autoload 'w3m "emacs-w3m/w3m" "\
 Visit World Wide Web pages using the external w3m command.
 
 When you invoke this command interactively for the first time, it will
@@ -1153,7 +1001,7 @@ interactive command in the batch mode.
 
 \(fn &optional URL NEW-SESSION INTERACTIVE-P)" t nil)
 
-(autoload 'w3m-browse-url "w3m" "\
+(autoload 'w3m-browse-url "emacs-w3m/w3m" "\
 Ask emacs-w3m to browse URL.
 NEW-SESSION specifies whether to create a new emacs-w3m session.  URL
 defaults to the string looking like a url around the cursor position.
@@ -1162,13 +1010,13 @@ Pop to a window or a frame up according to `w3m-pop-up-windows' and
 
 \(fn URL &optional NEW-SESSION)" t nil)
 
-(autoload 'w3m-find-file "w3m" "\
+(autoload 'w3m-find-file "emacs-w3m/w3m" "\
 Function used to open FILE whose name is expressed in ordinary format.
 The file name will be converted into the file: scheme.
 
 \(fn FILE)" t nil)
 
-(autoload 'w3m-region "w3m" "\
+(autoload 'w3m-region "emacs-w3m/w3m" "\
 Render the region of the current buffer between START and END.
 URL specifies the address where the contents come from.  It can be
 omitted or nil when the address is not identified.  CHARSET is used
@@ -1177,7 +1025,7 @@ parse the meta tag to extract the charset.
 
 \(fn START END &optional URL CHARSET)" t nil)
 
-(autoload 'w3m-buffer "w3m" "\
+(autoload 'w3m-buffer "emacs-w3m/w3m" "\
 Render the current buffer.
 See `w3m-region' for the optional arguments.
 
@@ -1185,16 +1033,16 @@ See `w3m-region' for the optional arguments.
 
 ;;;***
 
-;;;### (autoloads (w3m-antenna w3m-about-antenna) "w3m-antenna" "emacs-w3m/w3m-antenna.el"
-;;;;;;  (19187 58267))
+;;;### (autoloads (w3m-antenna w3m-about-antenna) "emacs-w3m/w3m-antenna"
+;;;;;;  "emacs-w3m/w3m-antenna.el" (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m-antenna.el
 
-(autoload 'w3m-about-antenna "w3m-antenna" "\
-Not documented
+(autoload 'w3m-about-antenna "emacs-w3m/w3m-antenna" "\
+
 
 \(fn URL &optional NO-DECODE NO-CACHE POST-DATA REFERER HANDLER)" nil nil)
 
-(autoload 'w3m-antenna "w3m-antenna" "\
+(autoload 'w3m-antenna "emacs-w3m/w3m-antenna" "\
 Report changes of WEB sites, which is specified in `w3m-antenna-sites'.
 
 \(fn &optional NO-CACHE)" t nil)
@@ -1203,47 +1051,47 @@ Report changes of WEB sites, which is specified in `w3m-antenna-sites'.
 
 ;;;### (autoloads (w3m-setup-bookmark-menu w3m-about-bookmark w3m-bookmark-view-new-session
 ;;;;;;  w3m-bookmark-view w3m-bookmark-add-current-url-group w3m-bookmark-add-all-urls
-;;;;;;  w3m-bookmark-add-current-url w3m-bookmark-add-this-url) "w3m-bookmark"
-;;;;;;  "emacs-w3m/w3m-bookmark.el" (20280 23920))
+;;;;;;  w3m-bookmark-add-current-url w3m-bookmark-add-this-url) "emacs-w3m/w3m-bookmark"
+;;;;;;  "emacs-w3m/w3m-bookmark.el" (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m-bookmark.el
 
-(autoload 'w3m-bookmark-add-this-url "w3m-bookmark" "\
+(autoload 'w3m-bookmark-add-this-url "emacs-w3m/w3m-bookmark" "\
 Add link under cursor to bookmark.
 
 \(fn)" t nil)
 
-(autoload 'w3m-bookmark-add-current-url "w3m-bookmark" "\
+(autoload 'w3m-bookmark-add-current-url "emacs-w3m/w3m-bookmark" "\
 Add a url of the current page to the bookmark.
 With prefix, ask for a new url instead of the present one.
 
 \(fn &optional ARG)" t nil)
 
-(autoload 'w3m-bookmark-add-all-urls "w3m-bookmark" "\
+(autoload 'w3m-bookmark-add-all-urls "emacs-w3m/w3m-bookmark" "\
 Add urls of all pages being visited to the bookmark.
 
 \(fn)" t nil)
 
-(autoload 'w3m-bookmark-add-current-url-group "w3m-bookmark" "\
+(autoload 'w3m-bookmark-add-current-url-group "emacs-w3m/w3m-bookmark" "\
 Add link of the group of current urls to the bookmark.
 
 \(fn)" t nil)
 
-(autoload 'w3m-bookmark-view "w3m-bookmark" "\
+(autoload 'w3m-bookmark-view "emacs-w3m/w3m-bookmark" "\
 Display the bookmark.
 
 \(fn &optional RELOAD)" t nil)
 
-(autoload 'w3m-bookmark-view-new-session "w3m-bookmark" "\
+(autoload 'w3m-bookmark-view-new-session "emacs-w3m/w3m-bookmark" "\
 Display the bookmark on a new session.
 
 \(fn &optional RELOAD)" t nil)
 
-(autoload 'w3m-about-bookmark "w3m-bookmark" "\
-Not documented
+(autoload 'w3m-about-bookmark "emacs-w3m/w3m-bookmark" "\
+
 
 \(fn &rest ARGS)" nil nil)
 
-(autoload 'w3m-setup-bookmark-menu "w3m-bookmark" "\
+(autoload 'w3m-setup-bookmark-menu "emacs-w3m/w3m-bookmark" "\
 Setup w3m bookmark items in menubar.
 
 \(fn)" nil nil)
@@ -1251,48 +1099,48 @@ Setup w3m bookmark items in menubar.
 ;;;***
 
 ;;;### (autoloads (w3m-about-cookie w3m-cookie w3m-cookie-get w3m-cookie-set
-;;;;;;  w3m-cookie-shutdown) "w3m-cookie" "emacs-w3m/w3m-cookie.el"
-;;;;;;  (19449 53703))
+;;;;;;  w3m-cookie-shutdown) "emacs-w3m/w3m-cookie" "emacs-w3m/w3m-cookie.el"
+;;;;;;  (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m-cookie.el
 
-(autoload 'w3m-cookie-shutdown "w3m-cookie" "\
+(autoload 'w3m-cookie-shutdown "emacs-w3m/w3m-cookie" "\
 Save cookies, and reset cookies' data.
 
 \(fn)" t nil)
 
-(autoload 'w3m-cookie-set "w3m-cookie" "\
+(autoload 'w3m-cookie-set "emacs-w3m/w3m-cookie" "\
 Register cookies which correspond to URL.
 BEG and END should be an HTTP response header region on current buffer.
 
 \(fn URL BEG END)" nil nil)
 
-(autoload 'w3m-cookie-get "w3m-cookie" "\
+(autoload 'w3m-cookie-get "emacs-w3m/w3m-cookie" "\
 Get a cookie field string which corresponds to the URL.
 
 \(fn URL)" nil nil)
 
-(autoload 'w3m-cookie "w3m-cookie" "\
+(autoload 'w3m-cookie "emacs-w3m/w3m-cookie" "\
 Display cookies and enable you to manage them.
 
 \(fn &optional NO-CACHE)" t nil)
 
-(autoload 'w3m-about-cookie "w3m-cookie" "\
+(autoload 'w3m-about-cookie "emacs-w3m/w3m-cookie" "\
 Make the html contents to display and to enable you to manage cookies.
 
 \(fn URL &optional NO-DECODE NO-CACHE POST-DATA &rest ARGS)" nil nil)
 
 ;;;***
 
-;;;### (autoloads (w3m-dtree w3m-about-dtree) "w3m-dtree" "emacs-w3m/w3m-dtree.el"
-;;;;;;  (18964 36505))
+;;;### (autoloads (w3m-dtree w3m-about-dtree) "emacs-w3m/w3m-dtree"
+;;;;;;  "emacs-w3m/w3m-dtree.el" (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m-dtree.el
 
-(autoload 'w3m-about-dtree "w3m-dtree" "\
-Not documented
+(autoload 'w3m-about-dtree "emacs-w3m/w3m-dtree" "\
+
 
 \(fn URL &optional NODECODE ALLFILES &rest ARGS)" nil nil)
 
-(autoload 'w3m-dtree "w3m-dtree" "\
+(autoload 'w3m-dtree "emacs-w3m/w3m-dtree" "\
 Display directory tree on local file system.
 If called with 'prefix argument', display all directorys and files.
 
@@ -1300,8 +1148,8 @@ If called with 'prefix argument', display all directorys and files.
 
 ;;;***
 
-;;;### (autoloads (w3m-fb-mode) "w3m-fb" "emacs-w3m/w3m-fb.el" (17681
-;;;;;;  2386))
+;;;### (autoloads (w3m-fb-mode) "emacs-w3m/w3m-fb" "emacs-w3m/w3m-fb.el"
+;;;;;;  (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m-fb.el
 
 (defvar w3m-fb-mode nil "\
@@ -1311,9 +1159,9 @@ Setting this variable directly does not take effect;
 either customize it (see the info node `Easy Customization')
 or call the function `w3m-fb-mode'.")
 
-(custom-autoload 'w3m-fb-mode "w3m-fb" nil)
+(custom-autoload 'w3m-fb-mode "emacs-w3m/w3m-fb" nil)
 
-(autoload 'w3m-fb-mode "w3m-fb" "\
+(autoload 'w3m-fb-mode "emacs-w3m/w3m-fb" "\
 Toggle W3M Frame Buffer mode.
 This allows frame-local lists of buffers (tabs).
 
@@ -1321,22 +1169,22 @@ This allows frame-local lists of buffers (tabs).
 
 ;;;***
 
-;;;### (autoloads (w3m-filter) "w3m-filter" "emacs-w3m/w3m-filter.el"
-;;;;;;  (18560 15090))
+;;;### (autoloads (w3m-filter) "emacs-w3m/w3m-filter" "emacs-w3m/w3m-filter.el"
+;;;;;;  (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m-filter.el
 
-(autoload 'w3m-filter "w3m-filter" "\
+(autoload 'w3m-filter "emacs-w3m/w3m-filter" "\
 Apply filtering rule of URL against a content in this buffer.
 
 \(fn URL)" nil nil)
 
 ;;;***
 
-;;;### (autoloads (w3m-fontify-forms) "w3m-form" "emacs-w3m/w3m-form.el"
-;;;;;;  (20280 23920))
+;;;### (autoloads (w3m-fontify-forms) "emacs-w3m/w3m-form" "emacs-w3m/w3m-form.el"
+;;;;;;  (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m-form.el
 
-(autoload 'w3m-fontify-forms "w3m-form" "\
+(autoload 'w3m-fontify-forms "emacs-w3m/w3m-form" "\
 Process half-dumped data and fontify forms in this buffer.
 
 \(fn)" nil nil)
@@ -1347,23 +1195,23 @@ Process half-dumped data and fontify forms in this buffer.
 ;;;;;;  w3m-lnum-print-this-url w3m-lnum-edit-this-url w3m-lnum-external-view-this-url
 ;;;;;;  w3m-lnum-save-image w3m-lnum-view-image w3m-lnum-toggle-inline-image
 ;;;;;;  w3m-lnum-universal w3m-lnum-follow w3m-lnum-goto w3m-lnum-mode)
-;;;;;;  "w3m-lnum" "emacs-w3m/w3m-lnum.el" (20365 64910))
+;;;;;;  "emacs-w3m/w3m-lnum" "emacs-w3m/w3m-lnum.el" (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m-lnum.el
 
-(autoload 'w3m-lnum-mode "w3m-lnum" "\
+(autoload 'w3m-lnum-mode "emacs-w3m/w3m-lnum" "\
 Minor mode to extend point commands by using Conkeror style number selection.
 With prefix ARG 0 disable battery included point functions, otherwise
 enable them.  With no prefix ARG - toggle.
 
 \(fn &optional ARG)" t nil)
 
-(autoload 'w3m-lnum-goto "w3m-lnum" "\
+(autoload 'w3m-lnum-goto "emacs-w3m/w3m-lnum" "\
 Turn on link, image and form numbers and ask for one to go to.
 0 corresponds to location url.
 
 \(fn)" t nil)
 
-(autoload 'w3m-lnum-follow "w3m-lnum" "\
+(autoload 'w3m-lnum-follow "emacs-w3m/w3m-lnum" "\
 Turn on link numbers, ask for one and execute appropriate action on it.
 If link - visit it, when button - press, when input - activate it,
 If image - toggle it.
@@ -1376,14 +1224,14 @@ With triple prefix ARG, prompt for url to visit in new session.
 
 \(fn ARG)" t nil)
 
-(autoload 'w3m-lnum-universal "w3m-lnum" "\
+(autoload 'w3m-lnum-universal "emacs-w3m/w3m-lnum" "\
 Turn on link numbers, ask for one and offer actions over it depending on selection type.
 Actions may be selected either by hitting corresponding key,
 pressing <return> over the action line or left clicking.
 
 \(fn)" t nil)
 
-(autoload 'w3m-lnum-toggle-inline-image "w3m-lnum" "\
+(autoload 'w3m-lnum-toggle-inline-image "emacs-w3m/w3m-lnum" "\
 If image at point, toggle it.
 Otherwise turn on link numbers and toggle selected image.
 With prefix ARG open url under image in new session.
@@ -1391,7 +1239,7 @@ If no such url, move over image and toggle it.
 
 \(fn &optional ARG)" t nil)
 
-(autoload 'w3m-lnum-view-image "w3m-lnum" "\
+(autoload 'w3m-lnum-view-image "emacs-w3m/w3m-lnum" "\
 Display the image under point in the external viewer.
 If no image at poing, turn on image numbers and display selected.
 The viewer is defined in `w3m-content-type-alist' for every type of an
@@ -1399,38 +1247,38 @@ image.
 
 \(fn)" t nil)
 
-(autoload 'w3m-lnum-save-image "w3m-lnum" "\
+(autoload 'w3m-lnum-save-image "emacs-w3m/w3m-lnum" "\
 Save the image under point to a file.
 If no image at poing, turn on image numbers and save selected.
 The default name will be the original name of the image.
 
 \(fn)" t nil)
 
-(autoload 'w3m-lnum-external-view-this-url "w3m-lnum" "\
+(autoload 'w3m-lnum-external-view-this-url "emacs-w3m/w3m-lnum" "\
 Launch the external browser and display the link at point.
 If no link at point, turn on link numbers and open selected externally.
 
 \(fn)" t nil)
 
-(autoload 'w3m-lnum-edit-this-url "w3m-lnum" "\
+(autoload 'w3m-lnum-edit-this-url "emacs-w3m/w3m-lnum" "\
 Edit the page linked from the anchor under the cursor.
 If no such, turn on link numbers and edit selected.
 
 \(fn)" t nil)
 
-(autoload 'w3m-lnum-print-this-url "w3m-lnum" "\
+(autoload 'w3m-lnum-print-this-url "emacs-w3m/w3m-lnum" "\
 Display the url under point in the echo area and put it into `kill-ring'.
 If no url under point, activate numbering and select one.
 
 \(fn)" t nil)
 
-(autoload 'w3m-lnum-download-this-url "w3m-lnum" "\
+(autoload 'w3m-lnum-download-this-url "emacs-w3m/w3m-lnum" "\
 Download the file or the page pointed to by the link under point.
 If no point, activate numbering and select andchor to download.
 
 \(fn)" t nil)
 
-(autoload 'w3m-lnum-bookmark-add-this-url "w3m-lnum" "\
+(autoload 'w3m-lnum-bookmark-add-this-url "emacs-w3m/w3m-lnum" "\
 Add link under cursor to bookmarks.
 If no link under point, activate numbering and ask for one.
 
@@ -1438,32 +1286,32 @@ If no link under point, activate numbering and ask for one.
 
 ;;;***
 
-;;;### (autoloads (w3m-namazu w3m-about-namazu) "w3m-namazu" "emacs-w3m/w3m-namazu.el"
-;;;;;;  (18964 36505))
+;;;### (autoloads (w3m-namazu w3m-about-namazu) "emacs-w3m/w3m-namazu"
+;;;;;;  "emacs-w3m/w3m-namazu.el" (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m-namazu.el
 
-(autoload 'w3m-about-namazu "w3m-namazu" "\
-Not documented
+(autoload 'w3m-about-namazu "emacs-w3m/w3m-namazu" "\
+
 
 \(fn URL &optional NO-DECODE NO-CACHE &rest ARGS)" nil nil)
 
-(autoload 'w3m-namazu "w3m-namazu" "\
+(autoload 'w3m-namazu "emacs-w3m/w3m-namazu" "\
 Search indexed files with Namazu.
 
 \(fn INDEX QUERY &optional RELOAD)" t nil)
 
 ;;;***
 
-;;;### (autoloads (w3m-perldoc w3m-about-perldoc) "w3m-perldoc" "emacs-w3m/w3m-perldoc.el"
-;;;;;;  (18197 61165))
+;;;### (autoloads (w3m-perldoc w3m-about-perldoc) "emacs-w3m/w3m-perldoc"
+;;;;;;  "emacs-w3m/w3m-perldoc.el" (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m-perldoc.el
 
-(autoload 'w3m-about-perldoc "w3m-perldoc" "\
-Not documented
+(autoload 'w3m-about-perldoc "emacs-w3m/w3m-perldoc" "\
+
 
 \(fn URL &optional NO-DECODE NO-CACHE &rest ARGS)" nil nil)
 
-(autoload 'w3m-perldoc "w3m-perldoc" "\
+(autoload 'w3m-perldoc "emacs-w3m/w3m-perldoc" "\
 View Perl documents.
 
 \(fn DOCNAME)" t nil)
@@ -1471,11 +1319,11 @@ View Perl documents.
 ;;;***
 
 ;;;### (autoloads (w3m-search-uri-replace w3m-search-new-session
-;;;;;;  w3m-search) "w3m-search" "emacs-w3m/w3m-search.el" (20184
-;;;;;;  29830))
+;;;;;;  w3m-search) "emacs-w3m/w3m-search" "emacs-w3m/w3m-search.el"
+;;;;;;  (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m-search.el
 
-(autoload 'w3m-search "w3m-search" "\
+(autoload 'w3m-search "emacs-w3m/w3m-search" "\
 Search QUERY using SEARCH-ENGINE.
 When called interactively with a prefix argument, you can choose one of
 the search engines defined in `w3m-search-engine-alist'.  Otherwise use
@@ -1485,12 +1333,12 @@ and deactivate the mark.
 
 \(fn SEARCH-ENGINE QUERY)" t nil)
 
-(autoload 'w3m-search-new-session "w3m-search" "\
+(autoload 'w3m-search-new-session "emacs-w3m/w3m-search" "\
 Like `w3m-search', but do the search in a new session.
 
 \(fn SEARCH-ENGINE QUERY)" t nil)
 
-(autoload 'w3m-search-uri-replace "w3m-search" "\
+(autoload 'w3m-search-uri-replace "emacs-w3m/w3m-search" "\
 Generate query string for ENGINE from URI matched by last search.
 
 \(fn URI ENGINE)" nil nil)
@@ -1499,118 +1347,72 @@ Generate query string for ENGINE from URI matched by last search.
 
 ;;;### (autoloads (w3m-session-last-crashed-session w3m-session-last-autosave-session
 ;;;;;;  w3m-setup-session-menu w3m-session-select w3m-session-crash-recovery-remove
-;;;;;;  w3m-session-save) "w3m-session" "emacs-w3m/w3m-session.el"
-;;;;;;  (20280 23920))
+;;;;;;  w3m-session-save) "emacs-w3m/w3m-session" "emacs-w3m/w3m-session.el"
+;;;;;;  (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m-session.el
 
-(autoload 'w3m-session-save "w3m-session" "\
+(autoload 'w3m-session-save "emacs-w3m/w3m-session" "\
 Save list of displayed session.
 
 \(fn)" t nil)
 
-(autoload 'w3m-session-crash-recovery-remove "w3m-session" "\
+(autoload 'w3m-session-crash-recovery-remove "emacs-w3m/w3m-session" "\
 Remove crash recovery session set.
 
 \(fn)" nil nil)
 
-(autoload 'w3m-session-select "w3m-session" "\
+(autoload 'w3m-session-select "emacs-w3m/w3m-session" "\
 Select session from session list.
 
 \(fn)" t nil)
 
-(autoload 'w3m-setup-session-menu "w3m-session" "\
+(autoload 'w3m-setup-session-menu "emacs-w3m/w3m-session" "\
 Setup w3m session items in menubar.
 
 \(fn)" nil nil)
 
-(autoload 'w3m-session-last-autosave-session "w3m-session" "\
-Not documented
+(autoload 'w3m-session-last-autosave-session "emacs-w3m/w3m-session" "\
+
 
 \(fn)" nil nil)
 
-(autoload 'w3m-session-last-crashed-session "w3m-session" "\
-Not documented
+(autoload 'w3m-session-last-crashed-session "emacs-w3m/w3m-session" "\
+
 
 \(fn)" nil nil)
 
 ;;;***
 
-;;;### (autoloads (w3m-replace-symbol) "w3m-symbol" "emacs-w3m/w3m-symbol.el"
-;;;;;;  (18791 2971))
+;;;### (autoloads (w3m-replace-symbol) "emacs-w3m/w3m-symbol" "emacs-w3m/w3m-symbol.el"
+;;;;;;  (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m-symbol.el
 
-(autoload 'w3m-replace-symbol "w3m-symbol" "\
-Not documented
+(autoload 'w3m-replace-symbol "emacs-w3m/w3m-symbol" "\
+
 
 \(fn)" nil nil)
 
 ;;;***
 
-;;;### (autoloads (w3m-about-weather w3m-weather) "w3m-weather" "emacs-w3m/w3m-weather.el"
-;;;;;;  (18197 61165))
+;;;### (autoloads (w3m-about-weather w3m-weather) "emacs-w3m/w3m-weather"
+;;;;;;  "emacs-w3m/w3m-weather.el" (20486 21104))
 ;;; Generated autoloads from emacs-w3m/w3m-weather.el
 
-(autoload 'w3m-weather "w3m-weather" "\
+(autoload 'w3m-weather "emacs-w3m/w3m-weather" "\
 Display weather report.
 
 \(fn AREA)" t nil)
 
-(autoload 'w3m-about-weather "w3m-weather" "\
-Not documented
+(autoload 'w3m-about-weather "emacs-w3m/w3m-weather" "\
+
 
 \(fn URL NO-DECODE NO-CACHE POST-DATA REFERER HANDLER)" nil nil)
 
 ;;;***
 
-;;;### (autoloads nil nil ("apel/site-lisp/apel/calist.el" "apel/site-lisp/apel/filename.el"
-;;;;;;  "apel/site-lisp/apel/install.el" "apel/site-lisp/emu/apel-ver.el"
-;;;;;;  "apel/site-lisp/emu/broken.el" "apel/site-lisp/emu/emu.el"
-;;;;;;  "apel/site-lisp/emu/inv-23.el" "apel/site-lisp/emu/invisible.el"
-;;;;;;  "apel/site-lisp/emu/mcharset.el" "apel/site-lisp/emu/mcs-20.el"
-;;;;;;  "apel/site-lisp/emu/mcs-e20.el" "apel/site-lisp/emu/mule-caesar.el"
-;;;;;;  "apel/site-lisp/emu/pccl-20.el" "apel/site-lisp/emu/pccl.el"
-;;;;;;  "apel/site-lisp/emu/pces-20.el" "apel/site-lisp/emu/pces-e20.el"
-;;;;;;  "apel/site-lisp/emu/pces.el" "apel/site-lisp/emu/pcustom.el"
-;;;;;;  "apel/site-lisp/emu/poe.el" "apel/site-lisp/emu/poem-e20.el"
-;;;;;;  "apel/site-lisp/emu/poem-e20_3.el" "apel/site-lisp/emu/poem.el"
-;;;;;;  "apel/site-lisp/emu/product.el" "apel/site-lisp/emu/pym.el"
-;;;;;;  "apel/site-lisp/emu/static.el" "auto-complete/auto-complete-config.el"
-;;;;;;  "auto-complete/auto-complete-pkg.el" "auto-complete/auto-complete.el"
-;;;;;;  "byte-code-cache/byte-code-cache.el" "color-theme/color-theme-autoloads.el"
-;;;;;;  "el-get/el-get-install.el" "el-get/el-get.el" "emacs-w3m/mew-w3m.el"
-;;;;;;  "emacs-w3m/w3m-bug.el" "emacs-w3m/w3m-ccl.el" "emacs-w3m/w3m-ems.el"
-;;;;;;  "emacs-w3m/w3m-favicon.el" "emacs-w3m/w3m-hist.el" "emacs-w3m/w3m-image.el"
-;;;;;;  "emacs-w3m/w3m-load.el" "emacs-w3m/w3m-mail.el" "emacs-w3m/w3m-proc.el"
-;;;;;;  "emacs-w3m/w3m-rss.el" "emacs-w3m/w3m-tabmenu.el" "emacs-w3m/w3m-ucs.el"
-;;;;;;  "emacs-w3m/w3m-util.el" "emacs-w3m/w3m-xmas.el" "emacs-w3m/w3mhack.el"
-;;;;;;  "escreen/escreen.el" "haskell-mode/haskell-checkers.el" "haskell-mode/haskell-font-lock.el"
-;;;;;;  "haskell-mode/haskell-ghci.el" "haskell-mode/haskell-hugs.el"
-;;;;;;  "haskell-mode/haskell-package.el" "haskell-mode/haskell-simple-indent.el"
-;;;;;;  "haskell-mode/haskell-site-file.el" "magit/50magit.el" "magit/magit-bisect.el"
-;;;;;;  "magit/magit-key-mode.el" "magit/magit-pkg.el" "magit/magit-wip.el"
-;;;;;;  "maxframe/maxframe.el" "popup/popup-test.el" "popup/popup.el"
-;;;;;;  "python-mode/pymacs.el" "python-mode/python-mode.el" "quack/quack.el"
-;;;;;;  "redo+/redo+.el" "slime-loads/slime-loads.el" "slime/contrib/bridge.el"
-;;;;;;  "slime/contrib/inferior-slime.el" "slime/contrib/slime-asdf.el"
-;;;;;;  "slime/contrib/slime-autodoc.el" "slime/contrib/slime-banner.el"
-;;;;;;  "slime/contrib/slime-c-p-c.el" "slime/contrib/slime-clipboard.el"
-;;;;;;  "slime/contrib/slime-compiler-notes-tree.el" "slime/contrib/slime-editing-commands.el"
-;;;;;;  "slime/contrib/slime-enclosing-context.el" "slime/contrib/slime-fancy-inspector.el"
-;;;;;;  "slime/contrib/slime-fancy.el" "slime/contrib/slime-fontifying-fu.el"
-;;;;;;  "slime/contrib/slime-fuzzy.el" "slime/contrib/slime-highlight-edits.el"
-;;;;;;  "slime/contrib/slime-hyperdoc.el" "slime/contrib/slime-indentation.el"
-;;;;;;  "slime/contrib/slime-mdot-fu.el" "slime/contrib/slime-media.el"
-;;;;;;  "slime/contrib/slime-motd.el" "slime/contrib/slime-mrepl.el"
-;;;;;;  "slime/contrib/slime-package-fu.el" "slime/contrib/slime-parse.el"
-;;;;;;  "slime/contrib/slime-presentation-streams.el" "slime/contrib/slime-presentations.el"
-;;;;;;  "slime/contrib/slime-references.el" "slime/contrib/slime-repl.el"
-;;;;;;  "slime/contrib/slime-sbcl-exts.el" "slime/contrib/slime-scheme.el"
-;;;;;;  "slime/contrib/slime-scratch.el" "slime/contrib/slime-snapshot.el"
-;;;;;;  "slime/contrib/slime-sprof.el" "slime/contrib/slime-tramp.el"
-;;;;;;  "slime/contrib/slime-typeout-frame.el" "slime/contrib/slime-xref-browser.el"
-;;;;;;  "slime/hyperspec.el" "slime/slime-autoloads.el" "tuareg-mode/append-tuareg.el"
-;;;;;;  "tuareg-mode/custom-tuareg.el" "tuareg-mode/sym-lock.el")
-;;;;;;  (20470 18796 429758))
+;;;### (autoloads nil nil ("auto-complete/auto-complete-config.el"
+;;;;;;  "auto-complete/auto-complete-pkg.el" "python-mode/pymacs.el"
+;;;;;;  "python-mode/python-mode.el") (20486 21661 885417))
 
 ;;;***
 

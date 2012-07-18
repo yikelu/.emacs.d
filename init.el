@@ -144,7 +144,7 @@
 (require 'redo+)
 (global-set-key (kbd "C-?") 'redo)
 
-(load "ess-12.04-2/lisp/ess-site")
+(load "~/.emacs.d/ess-12.04-2/lisp/ess-site")
 ;(load "ess-shift-enter.el")
 ;(load "r-font-lock-extra.el")
 (ess-toggle-underscore nil)
