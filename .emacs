@@ -141,6 +141,11 @@
 (setq comint-scroll-to-bottom-on-input t)
 (setq comint-scroll-to-bottom-on-output t)
 (setq comint-move-point-for-output t)
+(add-hook 'inferior-ess-mode-hook
+          (lambda ()
+            (define-key inferior-ess-mode-map "\C-cw"
+              'ess-execute-screen-options)))
+
 ;(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 ;(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
 ;(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))

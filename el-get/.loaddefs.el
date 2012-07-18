@@ -3,6 +3,30 @@
 ;;; Code:
 
 
+;;;### (autoloads (set-up-slime-ac) "ac-slime/ac-slime" "ac-slime/ac-slime.el"
+;;;;;;  (20469 5405))
+;;; Generated autoloads from ac-slime/ac-slime.el
+
+(defface ac-slime-menu-face '((t (:inherit 'ac-candidate-face))) "\
+Face for slime candidate menu." :group (quote auto-complete))
+
+(defface ac-slime-selection-face '((t (:inherit 'ac-selection-face))) "\
+Face for the slime selected candidate." :group (quote auto-complete))
+
+(defvar ac-source-slime-fuzzy '((init . ac-slime-init) (candidates . ac-source-slime-fuzzy-candidates) (candidate-face . ac-slime-menu-face) (selection-face . ac-slime-selection-face) (prefix . slime-symbol-start-pos) (symbol . "l") (match lambda (prefix candidates) candidates) (document . ac-slime-documentation)) "\
+Source for fuzzy slime completion")
+
+(defvar ac-source-slime-simple '((init . ac-slime-init) (candidates . ac-source-slime-simple-candidates) (candidate-face . ac-slime-menu-face) (selection-face . ac-slime-selection-face) (prefix . slime-symbol-start-pos) (symbol . "l") (document . ac-slime-documentation)) "\
+Source for slime completion")
+
+(autoload 'set-up-slime-ac "ac-slime/ac-slime" "\
+Add an optionally-fuzzy slime completion source to the
+front of `ac-sources' for the current buffer.
+
+\(fn &optional FUZZY)" t nil)
+
+;;;***
+
 ;;;### (autoloads (vassoc set-modified-alist modify-alist remove-alist
 ;;;;;;  set-alist del-alist put-alist) "apel/site-lisp/apel/alist"
 ;;;;;;  "apel/site-lisp/apel/alist.el" (20454 6127))
@@ -296,27 +320,6 @@ Submit your color-theme to the maintainer.
 Initialize the color theme package by loading color-theme-libraries.
 
 \(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "evil-core" "evil/evil-core.el" (20412 16654))
-;;; Generated autoloads from evil/evil-core.el
- (autoload 'evil-mode "evil")
-
-;;;***
-
-;;;### (autoloads (sha1) "flim/site-lisp/flim/sha1-el" "flim/site-lisp/flim/sha1-el.el"
-;;;;;;  (20454 7330))
-;;; Generated autoloads from flim/site-lisp/flim/sha1-el.el
-
-(autoload 'sha1 "flim/site-lisp/flim/sha1-el" "\
-Return the SHA1 (Secure Hash Algorithm) of an object.
-OBJECT is either a string or a buffer.
-Optional arguments BEG and END denote buffer positions for computing the
-hash of a portion of OBJECT.
-If BINARY is non-nil, return a string in binary form.
-
-\(fn OBJECT &optional BEG END BINARY)" nil nil)
 
 ;;;***
 
@@ -670,6 +673,101 @@ we load it.
 
 ;;;***
 
+;;;### (autoloads (magit-status) "magit/magit" "magit/magit.el" (20470
+;;;;;;  18794))
+;;; Generated autoloads from magit/magit.el
+
+(autoload 'magit-status "magit/magit" "\
+Open a Magit status buffer for the Git repository containing
+DIR.  If DIR is not within a Git repository, offer to create a
+Git repository in DIR.
+
+Interactively, a prefix argument means to ask the user which Git
+repository to use even if `default-directory' is under Git control.
+Two prefix arguments means to ignore `magit-repo-dirs' when asking for
+user input.
+
+\(fn DIR)" t nil)
+
+;;;***
+
+;;;### (autoloads (magit-blame-mode) "magit/magit-blame" "magit/magit-blame.el"
+;;;;;;  (20470 18794))
+;;; Generated autoloads from magit/magit-blame.el
+
+(autoload 'magit-blame-mode "magit/magit-blame" "\
+Display blame information inline.
+
+\(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads (turn-on-magit-stgit magit-stgit-mode) "magit/magit-stgit"
+;;;;;;  "magit/magit-stgit.el" (20470 18794))
+;;; Generated autoloads from magit/magit-stgit.el
+
+(autoload 'magit-stgit-mode "magit/magit-stgit" "\
+StGit support for Magit
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'turn-on-magit-stgit "magit/magit-stgit" "\
+Unconditionally turn on `magit-stgit-mode'.
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads (turn-on-magit-svn magit-svn-mode) "magit/magit-svn"
+;;;;;;  "magit/magit-svn.el" (20470 18794))
+;;; Generated autoloads from magit/magit-svn.el
+
+(autoload 'magit-svn-mode "magit/magit-svn" "\
+SVN support for Magit
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'turn-on-magit-svn "magit/magit-svn" "\
+Unconditionally turn on `magit-svn-mode'.
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads (turn-on-magit-topgit magit-topgit-mode) "magit/magit-topgit"
+;;;;;;  "magit/magit-topgit.el" (20470 18794))
+;;; Generated autoloads from magit/magit-topgit.el
+
+(autoload 'magit-topgit-mode "magit/magit-topgit" "\
+Topgit support for Magit
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'turn-on-magit-topgit "magit/magit-topgit" "\
+Unconditionally turn on `magit-topgit-mode'.
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads (rebase-mode) "magit/rebase-mode" "magit/rebase-mode.el"
+;;;;;;  (20470 18794))
+;;; Generated autoloads from magit/rebase-mode.el
+
+(autoload 'rebase-mode "magit/rebase-mode" "\
+Major mode for editing of a Git rebase file.
+
+Rebase files are generated when you run 'git rebase -i' or run
+`magit-interactive-rebase'.  They describe how Git should perform
+the rebase.  See the documentation for git-rebase (e.g., by
+running 'man git-rebase' at the command line) for details.
+
+\(fn)" t nil)
+
+(add-to-list 'auto-mode-alist '("git-rebase-todo" . rebase-mode))
+
+;;;***
+
 ;;;### (autoloads (mime-w3m-preview-text/html) "mime-w3m" "emacs-w3m/mime-w3m.el"
 ;;;;;;  (19727 57154))
 ;;; Generated autoloads from emacs-w3m/mime-w3m.el
@@ -724,156 +822,6 @@ A method for mime-view to display octet message.
 Octet setting for MIME module.
 
 \(fn)" nil nil)
-
-;;;***
-
-;;;### (autoloads (mime-view-buffer mime-display-message) "semi/site-lisp/semi/mime-view"
-;;;;;;  "semi/site-lisp/semi/mime-view.el" (20454 9687))
-;;; Generated autoloads from semi/site-lisp/semi/mime-view.el
-
-(autoload 'mime-display-message "semi/site-lisp/semi/mime-view" "\
-View MESSAGE in MIME-View mode.
-
-Optional argument PREVIEW-BUFFER specifies the buffer of the
-presentation.  It must be either nil or a name of preview buffer.
-
-Optional argument MOTHER specifies mother-buffer of the preview-buffer.
-
-Optional argument DEFAULT-KEYMAP-OR-FUNCTION is nil, keymap or
-function.  If it is a keymap, keymap of MIME-View mode will be added
-to it.  If it is a function, it will be bound as default binding of
-keymap of MIME-View mode.
-
-Optional argument ORIGINAL-MAJOR-MODE is major-mode of representation
-buffer of MESSAGE.  If it is nil, current `major-mode' is used.
-
-Optional argument KEYMAP is keymap of MIME-View mode.  If it is
-non-nil, DEFAULT-KEYMAP-OR-FUNCTION is ignored.  If it is nil,
-`mime-view-mode-default-map' is used.
-
-\(fn MESSAGE &optional PREVIEW-BUFFER MOTHER DEFAULT-KEYMAP-OR-FUNCTION ORIGINAL-MAJOR-MODE KEYMAP)" nil nil)
-
-(autoload 'mime-view-buffer "semi/site-lisp/semi/mime-view" "\
-View RAW-BUFFER in MIME-View mode.
-Optional argument PREVIEW-BUFFER is either nil or a name of preview
-buffer.
-Optional argument DEFAULT-KEYMAP-OR-FUNCTION is nil, keymap or
-function.  If it is a keymap, keymap of MIME-View mode will be added
-to it.  If it is a function, it will be bound as default binding of
-keymap of MIME-View mode.
-Optional argument REPRESENTATION-TYPE is representation-type of
-message.  It must be nil, `binary' or `cooked'.  If it is nil,
-`cooked' is used as default.
-
-\(fn &optional RAW-BUFFER PREVIEW-BUFFER MOTHER DEFAULT-KEYMAP-OR-FUNCTION REPRESENTATION-TYPE)" t nil)
-
-;;;***
-
-;;;### (autoloads (pgg-snarf-keys-region pgg-insert-key pgg-verify-region
-;;;;;;  pgg-sign-region pgg-decrypt-region pgg-encrypt-region) "semi/site-lisp/semi/pgg"
-;;;;;;  "semi/site-lisp/semi/pgg.el" (20454 9687))
-;;; Generated autoloads from semi/site-lisp/semi/pgg.el
-
-(autoload 'pgg-encrypt-region "semi/site-lisp/semi/pgg" "\
-Encrypt the current region between START and END for RCPTS.
-
-\(fn START END RCPTS)" t nil)
-
-(autoload 'pgg-decrypt-region "semi/site-lisp/semi/pgg" "\
-Decrypt the current region between START and END.
-
-\(fn START END)" t nil)
-
-(autoload 'pgg-sign-region "semi/site-lisp/semi/pgg" "\
-Make the signature from text between START and END.
-If the optional 3rd argument CLEARTEXT is non-nil, it does not create
-a detached signature.
-
-\(fn START END &optional CLEARTEXT)" t nil)
-
-(autoload 'pgg-verify-region "semi/site-lisp/semi/pgg" "\
-Verify the current region between START and END.
-If the optional 3rd argument SIGNATURE is non-nil, it is treated as
-the detached signature of the current region.
-
-If the optional 4th argument FETCH is non-nil, we attempt to fetch the
-signer's public key from `pgg-default-keyserver-address'.
-
-\(fn START END &optional SIGNATURE FETCH)" t nil)
-
-(autoload 'pgg-insert-key "semi/site-lisp/semi/pgg" "\
-Insert the ASCII armored public key.
-
-\(fn)" t nil)
-
-(autoload 'pgg-snarf-keys-region "semi/site-lisp/semi/pgg" "\
-Import public keys in the current region between START and END.
-
-\(fn START END)" t nil)
-
-;;;***
-
-;;;### (autoloads (pgg-make-scheme-gpg) "semi/site-lisp/semi/pgg-gpg"
-;;;;;;  "semi/site-lisp/semi/pgg-gpg.el" (20454 9687))
-;;; Generated autoloads from semi/site-lisp/semi/pgg-gpg.el
-
-(autoload 'pgg-make-scheme-gpg "semi/site-lisp/semi/pgg-gpg" "\
-
-
-\(fn)" nil nil)
-
-;;;***
-
-;;;### (autoloads (pgg-make-scheme-pgp) "semi/site-lisp/semi/pgg-pgp"
-;;;;;;  "semi/site-lisp/semi/pgg-pgp.el" (20454 9687))
-;;; Generated autoloads from semi/site-lisp/semi/pgg-pgp.el
-
-(autoload 'pgg-make-scheme-pgp "semi/site-lisp/semi/pgg-pgp" "\
-
-
-\(fn)" nil nil)
-
-;;;***
-
-;;;### (autoloads (pgg-make-scheme-pgp5) "semi/site-lisp/semi/pgg-pgp5"
-;;;;;;  "semi/site-lisp/semi/pgg-pgp5.el" (20454 9687))
-;;; Generated autoloads from semi/site-lisp/semi/pgg-pgp5.el
-
-(autoload 'pgg-make-scheme-pgp5 "semi/site-lisp/semi/pgg-pgp5" "\
-
-
-\(fn)" nil nil)
-
-;;;***
-
-;;;### (autoloads (smime-verify-region smime-sign-region smime-decrypt-region
-;;;;;;  smime-encrypt-region) "semi/site-lisp/semi/smime" "semi/site-lisp/semi/smime.el"
-;;;;;;  (20454 9687))
-;;; Generated autoloads from semi/site-lisp/semi/smime.el
-
-(autoload 'smime-encrypt-region "semi/site-lisp/semi/smime" "\
-Encrypt the current region between START and END.
-
-\(fn START END)" nil nil)
-
-(autoload 'smime-decrypt-region "semi/site-lisp/semi/smime" "\
-Decrypt the current region between START and END.
-
-\(fn START END)" nil nil)
-
-(autoload 'smime-sign-region "semi/site-lisp/semi/smime" "\
-Make the signature from text between START and END.
-If the optional 3rd argument CLEARTEXT is non-nil, it does not create
-a detached signature.
-
-\(fn START END &optional CLEARTEXT)" nil nil)
-
-(autoload 'smime-verify-region "semi/site-lisp/semi/smime" "\
-Verify the current region between START and END.
-If the optional 3rd argument SIGNATURE is non-nil, it is treated as
-the detached signature of the current region.
-
-\(fn START END SIGNATURE)" nil nil)
 
 ;;;***
 
@@ -1614,28 +1562,6 @@ Not documented
 
 ;;;***
 
-;;;### (autoloads (bbdb-wl-setup) "wanderlust/utils/bbdb-wl" "wanderlust/utils/bbdb-wl.el"
-;;;;;;  (20454 9696))
-;;; Generated autoloads from wanderlust/utils/bbdb-wl.el
-
-(autoload 'bbdb-wl-setup "wanderlust/utils/bbdb-wl" "\
-
-
-\(fn)" nil nil)
-
-;;;***
-
-;;;### (autoloads (wl-draft-send-with-imput-async) "wanderlust/utils/im-wl"
-;;;;;;  "wanderlust/utils/im-wl.el" (20454 9696))
-;;; Generated autoloads from wanderlust/utils/im-wl.el
-
-(autoload 'wl-draft-send-with-imput-async "wanderlust/utils/im-wl" "\
-Send the message in the current buffer with imput asynchronously.
-
-\(fn EDITING-BUFFER KILL-WHEN-DONE)" nil nil)
-
-;;;***
-
 ;;;### (autoloads nil nil ("apel/site-lisp/apel/calist.el" "apel/site-lisp/apel/filename.el"
 ;;;;;;  "apel/site-lisp/apel/install.el" "apel/site-lisp/emu/apel-ver.el"
 ;;;;;;  "apel/site-lisp/emu/broken.el" "apel/site-lisp/emu/emu.el"
@@ -1657,96 +1583,34 @@ Send the message in the current buffer with imput asynchronously.
 ;;;;;;  "emacs-w3m/w3m-load.el" "emacs-w3m/w3m-mail.el" "emacs-w3m/w3m-proc.el"
 ;;;;;;  "emacs-w3m/w3m-rss.el" "emacs-w3m/w3m-tabmenu.el" "emacs-w3m/w3m-ucs.el"
 ;;;;;;  "emacs-w3m/w3m-util.el" "emacs-w3m/w3m-xmas.el" "emacs-w3m/w3mhack.el"
-;;;;;;  "escreen/escreen.el" "evil/evil-cjk.el" "evil/evil-commands.el"
-;;;;;;  "evil/evil-common.el" "evil/evil-digraphs.el" "evil/evil-ex.el"
-;;;;;;  "evil/evil-integration.el" "evil/evil-macros.el" "evil/evil-maps.el"
-;;;;;;  "evil/evil-pkg.el" "evil/evil-repeat.el" "evil/evil-search.el"
-;;;;;;  "evil/evil-states.el" "evil/evil-tests.el" "evil/evil-types.el"
-;;;;;;  "evil/evil-vars.el" "evil/evil.el" "flim/site-lisp/flim/hex-util.el"
-;;;;;;  "flim/site-lisp/flim/hmac-def.el" "flim/site-lisp/flim/hmac-md5.el"
-;;;;;;  "flim/site-lisp/flim/hmac-sha1.el" "flim/site-lisp/flim/luna.el"
-;;;;;;  "flim/site-lisp/flim/lunit.el" "flim/site-lisp/flim/md4.el"
-;;;;;;  "flim/site-lisp/flim/md5.el" "flim/site-lisp/flim/mel-b-ccl.el"
-;;;;;;  "flim/site-lisp/flim/mel-b-el.el" "flim/site-lisp/flim/mel-g.el"
-;;;;;;  "flim/site-lisp/flim/mel-q-ccl.el" "flim/site-lisp/flim/mel-q.el"
-;;;;;;  "flim/site-lisp/flim/mel-u.el" "flim/site-lisp/flim/mime-def.el"
-;;;;;;  "flim/site-lisp/flim/mime.el" "flim/site-lisp/flim/mmbuffer.el"
-;;;;;;  "flim/site-lisp/flim/mmcooked.el" "flim/site-lisp/flim/mmexternal.el"
-;;;;;;  "flim/site-lisp/flim/mmgeneric.el" "flim/site-lisp/flim/ntlm.el"
-;;;;;;  "flim/site-lisp/flim/sasl-cram.el" "flim/site-lisp/flim/sasl-digest.el"
-;;;;;;  "flim/site-lisp/flim/sasl-ntlm.el" "flim/site-lisp/flim/sasl-scram.el"
-;;;;;;  "flim/site-lisp/flim/sasl.el" "flim/site-lisp/flim/sha1.el"
-;;;;;;  "haskell-mode/haskell-checkers.el" "haskell-mode/haskell-font-lock.el"
+;;;;;;  "escreen/escreen.el" "haskell-mode/haskell-checkers.el" "haskell-mode/haskell-font-lock.el"
 ;;;;;;  "haskell-mode/haskell-ghci.el" "haskell-mode/haskell-hugs.el"
 ;;;;;;  "haskell-mode/haskell-package.el" "haskell-mode/haskell-simple-indent.el"
-;;;;;;  "haskell-mode/haskell-site-file.el" "maxframe/maxframe.el"
-;;;;;;  "popup/popup-test.el" "popup/popup.el" "python-mode/pymacs.el"
-;;;;;;  "python-mode/python-mode.el" "quack/quack.el" "redo+/redo+.el"
-;;;;;;  "semi/site-lisp/semi/mail-mime-setup.el" "semi/site-lisp/semi/mime-bbdb.el"
-;;;;;;  "semi/site-lisp/semi/mime-image.el" "semi/site-lisp/semi/mime-mac.el"
-;;;;;;  "semi/site-lisp/semi/mime-partial.el" "semi/site-lisp/semi/mime-pgp.el"
-;;;;;;  "semi/site-lisp/semi/mime-setup.el" "semi/site-lisp/semi/mime-w3.el"
-;;;;;;  "semi/site-lisp/semi/pgg-def.el" "semi/site-lisp/semi/pgg-parse.el"
-;;;;;;  "semi/site-lisp/semi/semi-def.el" "semi/site-lisp/semi/semi-setup.el"
-;;;;;;  "semi/site-lisp/semi/signature.el" "slime-loads/slime-loads.el"
-;;;;;;  "slime/contrib/bridge.el" "slime/contrib/inferior-slime.el"
-;;;;;;  "slime/contrib/slime-asdf.el" "slime/contrib/slime-autodoc.el"
-;;;;;;  "slime/contrib/slime-banner.el" "slime/contrib/slime-c-p-c.el"
-;;;;;;  "slime/contrib/slime-clipboard.el" "slime/contrib/slime-compiler-notes-tree.el"
-;;;;;;  "slime/contrib/slime-editing-commands.el" "slime/contrib/slime-enclosing-context.el"
-;;;;;;  "slime/contrib/slime-fancy-inspector.el" "slime/contrib/slime-fancy.el"
-;;;;;;  "slime/contrib/slime-fontifying-fu.el" "slime/contrib/slime-fuzzy.el"
-;;;;;;  "slime/contrib/slime-highlight-edits.el" "slime/contrib/slime-hyperdoc.el"
-;;;;;;  "slime/contrib/slime-indentation.el" "slime/contrib/slime-mdot-fu.el"
-;;;;;;  "slime/contrib/slime-media.el" "slime/contrib/slime-motd.el"
-;;;;;;  "slime/contrib/slime-mrepl.el" "slime/contrib/slime-package-fu.el"
-;;;;;;  "slime/contrib/slime-parse.el" "slime/contrib/slime-presentation-streams.el"
-;;;;;;  "slime/contrib/slime-presentations.el" "slime/contrib/slime-references.el"
-;;;;;;  "slime/contrib/slime-repl.el" "slime/contrib/slime-sbcl-exts.el"
-;;;;;;  "slime/contrib/slime-scheme.el" "slime/contrib/slime-scratch.el"
-;;;;;;  "slime/contrib/slime-snapshot.el" "slime/contrib/slime-sprof.el"
-;;;;;;  "slime/contrib/slime-tramp.el" "slime/contrib/slime-typeout-frame.el"
-;;;;;;  "slime/contrib/slime-xref-browser.el" "slime/hyperspec.el"
-;;;;;;  "slime/slime-autoloads.el" "slime/slime.el" "tuareg-mode/append-tuareg.el"
-;;;;;;  "tuareg-mode/custom-tuareg.el" "tuareg-mode/sym-lock.el"
-;;;;;;  "wanderlust/site-lisp/wl/acap.el" "wanderlust/site-lisp/wl/elmo-access.el"
-;;;;;;  "wanderlust/site-lisp/wl/elmo-archive.el" "wanderlust/site-lisp/wl/elmo-cache.el"
-;;;;;;  "wanderlust/site-lisp/wl/elmo-date.el" "wanderlust/site-lisp/wl/elmo-dop.el"
-;;;;;;  "wanderlust/site-lisp/wl/elmo-file.el" "wanderlust/site-lisp/wl/elmo-filter.el"
-;;;;;;  "wanderlust/site-lisp/wl/elmo-flag.el" "wanderlust/site-lisp/wl/elmo-imap4.el"
-;;;;;;  "wanderlust/site-lisp/wl/elmo-internal.el" "wanderlust/site-lisp/wl/elmo-localdir.el"
-;;;;;;  "wanderlust/site-lisp/wl/elmo-localnews.el" "wanderlust/site-lisp/wl/elmo-maildir.el"
-;;;;;;  "wanderlust/site-lisp/wl/elmo-map.el" "wanderlust/site-lisp/wl/elmo-mime.el"
-;;;;;;  "wanderlust/site-lisp/wl/elmo-msgdb.el" "wanderlust/site-lisp/wl/elmo-multi.el"
-;;;;;;  "wanderlust/site-lisp/wl/elmo-net.el" "wanderlust/site-lisp/wl/elmo-nntp.el"
-;;;;;;  "wanderlust/site-lisp/wl/elmo-null.el" "wanderlust/site-lisp/wl/elmo-pipe.el"
-;;;;;;  "wanderlust/site-lisp/wl/elmo-pop3.el" "wanderlust/site-lisp/wl/elmo-search.el"
-;;;;;;  "wanderlust/site-lisp/wl/elmo-sendlog.el" "wanderlust/site-lisp/wl/elmo-signal.el"
-;;;;;;  "wanderlust/site-lisp/wl/elmo-spam.el" "wanderlust/site-lisp/wl/elmo-util.el"
-;;;;;;  "wanderlust/site-lisp/wl/elmo-vars.el" "wanderlust/site-lisp/wl/elmo-version.el"
-;;;;;;  "wanderlust/site-lisp/wl/elsp-bogofilter.el" "wanderlust/site-lisp/wl/elsp-bsfilter.el"
-;;;;;;  "wanderlust/site-lisp/wl/elsp-sa.el" "wanderlust/site-lisp/wl/elsp-spamoracle.el"
-;;;;;;  "wanderlust/site-lisp/wl/mmimap.el" "wanderlust/site-lisp/wl/modb-entity.el"
-;;;;;;  "wanderlust/site-lisp/wl/modb-legacy.el" "wanderlust/site-lisp/wl/modb-standard.el"
-;;;;;;  "wanderlust/site-lisp/wl/modb.el" "wanderlust/site-lisp/wl/pldap.el"
-;;;;;;  "wanderlust/site-lisp/wl/rfc2368.el" "wanderlust/site-lisp/wl/slp.el"
-;;;;;;  "wanderlust/site-lisp/wl/ssl.el" "wanderlust/site-lisp/wl/utf7.el"
-;;;;;;  "wanderlust/site-lisp/wl/wl-acap.el" "wanderlust/site-lisp/wl/wl-action.el"
-;;;;;;  "wanderlust/site-lisp/wl/wl-addrbook.el" "wanderlust/site-lisp/wl/wl-address.el"
-;;;;;;  "wanderlust/site-lisp/wl/wl-batch.el" "wanderlust/site-lisp/wl/wl-complete.el"
-;;;;;;  "wanderlust/site-lisp/wl/wl-demo.el" "wanderlust/site-lisp/wl/wl-e21.el"
-;;;;;;  "wanderlust/site-lisp/wl/wl-expire.el" "wanderlust/site-lisp/wl/wl-fldmgr.el"
-;;;;;;  "wanderlust/site-lisp/wl/wl-folder.el" "wanderlust/site-lisp/wl/wl-highlight.el"
-;;;;;;  "wanderlust/site-lisp/wl/wl-mailto.el" "wanderlust/site-lisp/wl/wl-message.el"
-;;;;;;  "wanderlust/site-lisp/wl/wl-mime.el" "wanderlust/site-lisp/wl/wl-news.el"
-;;;;;;  "wanderlust/site-lisp/wl/wl-refile.el" "wanderlust/site-lisp/wl/wl-score.el"
-;;;;;;  "wanderlust/site-lisp/wl/wl-spam.el" "wanderlust/site-lisp/wl/wl-summary.el"
-;;;;;;  "wanderlust/site-lisp/wl/wl-template.el" "wanderlust/site-lisp/wl/wl-thread.el"
-;;;;;;  "wanderlust/site-lisp/wl/wl-util.el" "wanderlust/site-lisp/wl/wl-vars.el"
-;;;;;;  "wanderlust/site-lisp/wl/wl-version.el" "wanderlust/utils/ptexinfmt.el"
-;;;;;;  "wanderlust/utils/rfc2368.el" "wanderlust/utils/ssl.el" "wanderlust/utils/wl-addrbook.el"
-;;;;;;  "wanderlust/utils/wl-complete.el" "wanderlust/utils/wl-mailto.el")
-;;;;;;  (20454 25474 583970))
+;;;;;;  "haskell-mode/haskell-site-file.el" "magit/50magit.el" "magit/magit-bisect.el"
+;;;;;;  "magit/magit-key-mode.el" "magit/magit-pkg.el" "magit/magit-wip.el"
+;;;;;;  "maxframe/maxframe.el" "popup/popup-test.el" "popup/popup.el"
+;;;;;;  "python-mode/pymacs.el" "python-mode/python-mode.el" "quack/quack.el"
+;;;;;;  "redo+/redo+.el" "slime-loads/slime-loads.el" "slime/contrib/bridge.el"
+;;;;;;  "slime/contrib/inferior-slime.el" "slime/contrib/slime-asdf.el"
+;;;;;;  "slime/contrib/slime-autodoc.el" "slime/contrib/slime-banner.el"
+;;;;;;  "slime/contrib/slime-c-p-c.el" "slime/contrib/slime-clipboard.el"
+;;;;;;  "slime/contrib/slime-compiler-notes-tree.el" "slime/contrib/slime-editing-commands.el"
+;;;;;;  "slime/contrib/slime-enclosing-context.el" "slime/contrib/slime-fancy-inspector.el"
+;;;;;;  "slime/contrib/slime-fancy.el" "slime/contrib/slime-fontifying-fu.el"
+;;;;;;  "slime/contrib/slime-fuzzy.el" "slime/contrib/slime-highlight-edits.el"
+;;;;;;  "slime/contrib/slime-hyperdoc.el" "slime/contrib/slime-indentation.el"
+;;;;;;  "slime/contrib/slime-mdot-fu.el" "slime/contrib/slime-media.el"
+;;;;;;  "slime/contrib/slime-motd.el" "slime/contrib/slime-mrepl.el"
+;;;;;;  "slime/contrib/slime-package-fu.el" "slime/contrib/slime-parse.el"
+;;;;;;  "slime/contrib/slime-presentation-streams.el" "slime/contrib/slime-presentations.el"
+;;;;;;  "slime/contrib/slime-references.el" "slime/contrib/slime-repl.el"
+;;;;;;  "slime/contrib/slime-sbcl-exts.el" "slime/contrib/slime-scheme.el"
+;;;;;;  "slime/contrib/slime-scratch.el" "slime/contrib/slime-snapshot.el"
+;;;;;;  "slime/contrib/slime-sprof.el" "slime/contrib/slime-tramp.el"
+;;;;;;  "slime/contrib/slime-typeout-frame.el" "slime/contrib/slime-xref-browser.el"
+;;;;;;  "slime/hyperspec.el" "slime/slime-autoloads.el" "tuareg-mode/append-tuareg.el"
+;;;;;;  "tuareg-mode/custom-tuareg.el" "tuareg-mode/sym-lock.el")
+;;;;;;  (20470 18796 429758))
 
 ;;;***
 
