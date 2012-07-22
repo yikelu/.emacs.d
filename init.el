@@ -105,6 +105,10 @@
  '(ess-default-style (quote C++))
  '(fringe-mode (quote (nil . 0)) nil (fringe))
  '(inhibit-startup-screen t)
+ '(org-export-latex-classes (quote (("article" "\\documentclass[11pt]{article}
+            \\usepackage{amsmath}" ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}") ("\\paragraph{%s}" . "\\paragraph*{%s}") ("\\subparagraph{%s}" . "\\subparagraph*{%s}")) ("report" "\\documentclass[11pt]{report}
+            \\usepackage{amsmath}" ("\\part{%s}" . "\\part*{%s}") ("\\chapter{%s}" . "\\chapter*{%s}") ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}")) ("book" "\\documentclass[11pt]{book}
+            \\usepackage{amsmath}" ("\\part{%s}" . "\\part*{%s}") ("\\chapter{%s}" . "\\chapter*{%s}") ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}")) ("beamer" "\\documentclass{beamer}" org-beamer-sectioning))))
  '(package-archives (quote (("ELPA" . "http://tromey.com/elpa/") ("marmalade" . "http://marmalade-repo.org/packages/") ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(quack-default-program "racket")
  '(quack-pretty-lambda-p t)
@@ -196,7 +200,13 @@
 (setq auto-mode-alist (cons '("README" . org-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.txt$" . org-mode) auto-mode-alist))
 
+(setq org-latex-to-pdf-process '("texi2dvi --pdf --clean --verbose --batch %f"))
 
+(setq exec-path (append exec-path '("/usr/texbin/")))
+(setq exec-path (append exec-path '("/usr/local/bin")))
+
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))  
+(setenv "PATH" (concat "/usr/texbin:" (getenv "PATH"))) 
 
 ;; some ocaml stuff
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
