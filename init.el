@@ -89,6 +89,7 @@
 (add-to-list 'ac-dictionary-directories "/Users/yikelu/.emacs.d//ac-dict")
 (ac-config-default)
 (setq ess-use-auto-complete t)
+(setq ac-auto-show-menu nil)
 
 ; now customizations
 
