@@ -59,6 +59,7 @@
 
 ;(setq inferior-lisp-program "ccl64") ; your Lisp system
 (setq inferior-lisp-program "sbcl") ; sbcl for the tutorial
+(load "~/quicklisp/slime-helper.el")
 (require 'slime)
 (slime-setup '(slime-fancy slime-asdf slime-banner))
 
