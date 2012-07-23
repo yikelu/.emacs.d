@@ -1,3 +1,5 @@
 %backup%~
 byte-cache/
 backup/
+*.elc
+*/CVS/*

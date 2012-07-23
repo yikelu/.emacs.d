@@ -5,14 +5,10 @@
 ;(setq package-archives '(("ELPA" . "http://tromey.com/elpa/") 
 ;                         ("gnu" . "http://elpa.gnu.org/packages/")))
 
-(add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
 (add-to-list 'exec-path "/usr/local/bin/")
 (add-to-list 'load-path "~/.emacs.d/")
 (load "x11colors.el")
-;(cua-selection-mode t)
-;(delete-selection-mode 1)
-(column-number-mode 1)
-(global-subword-mode 1)
+
 (require 'hungry-delete)
 (global-hungry-delete-mode 1)
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get") 
@@ -35,7 +31,6 @@
 ;(setq color-theme-is-global t)
 
 (load "elscreen" "ElScreen" t)
-(autoload 'wl "wl" "Wanderlust" t)
 
 (require 'powerline)
 (setq powerline-arrow-shape 'arrow14)
@@ -94,10 +89,6 @@
 
 ; now customizations
 
-(setq-default indent-tabs-mode nil)
-(setq tab-width 4)
-(set-scroll-bar-mode 'right)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -108,6 +99,9 @@
  '(ess-default-style (quote C++))
  '(fringe-mode (quote (nil . 0)) nil (fringe))
  '(inhibit-startup-screen t)
+ '(indent-tabs-mode nil)
+ '(tab-width 4)
+ '(x-stretch-cursor t)
  '(org-export-latex-classes (quote (("article" "\\documentclass[11pt]{article}
             \\usepackage{amsmath}" ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}") ("\\paragraph{%s}" . "\\paragraph*{%s}") ("\\subparagraph{%s}" . "\\subparagraph*{%s}")) ("report" "\\documentclass[11pt]{report}
             \\usepackage{amsmath}" ("\\part{%s}" . "\\part*{%s}") ("\\chapter{%s}" . "\\chapter*{%s}") ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}")) ("book" "\\documentclass[11pt]{book}
@@ -134,11 +128,6 @@
 ;  '(mode-line ((t (:background "purple" :box nil)))))
 ;(enlarge-window 1)
 
-(blink-cursor-mode -1)
-(setq x-stretch-cursor t)
-;(show-paren-mode)
-;(setq blink-matching-paren t)
-;(setq blink-matching-delay 0.3)
 
 (defun kill-start-of-line ()
   "kill from point to start of line"
@@ -202,14 +191,20 @@
 (setq org-completion-use-ido t)
 (setq auto-mode-alist (cons '("README" . org-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.txt$" . org-mode) auto-mode-alist))
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "|" "DONE(d!)" "CANCELED(c@)")))
+(require 'org-special-blocks)
 
 (setq org-latex-to-pdf-process '("texi2dvi --pdf --clean --verbose --batch %f"))
 
-(setq exec-path (append exec-path '("/usr/texbin/")))
-(setq exec-path (append exec-path '("/usr/local/bin")))
+(when (eq system-type 'darwin)
+  (setq exec-path (append exec-path '("/usr/texbin/")))
+  (setq exec-path (append exec-path '("/usr/local/bin")))
 
-(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))  
-(setenv "PATH" (concat "/usr/texbin:" (getenv "PATH"))) 
+  (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))  
+  (setenv "PATH" (concat "/usr/texbin:" (getenv "PATH"))))
+
+
 
 ;; some ocaml stuff
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
@@ -225,9 +220,6 @@
 
 (global-set-key (kbd "C-c s") 'query-replace)
 (global-set-key (kbd "C-c r") 'query-replace-regexp)
-
-;
-(setq aquamacs-scratch-file nil initial-major-mode 'emacs-lisp-mode)
 
 
 (defun select-next-window ()
