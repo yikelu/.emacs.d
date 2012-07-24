@@ -96,12 +96,11 @@
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
  '(column-number-mode t)
+ '(doc-view-continuous t)
  '(ess-default-style (quote C++))
  '(fringe-mode (quote (nil . 0)) nil (fringe))
- '(inhibit-startup-screen t)
  '(indent-tabs-mode nil)
- '(tab-width 4)
- '(x-stretch-cursor t)
+ '(inhibit-startup-screen t)
  '(org-export-latex-classes (quote (("article" "\\documentclass[11pt]{article}
             \\usepackage{amsmath}" ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}") ("\\paragraph{%s}" . "\\paragraph*{%s}") ("\\subparagraph{%s}" . "\\subparagraph*{%s}")) ("report" "\\documentclass[11pt]{report}
             \\usepackage{amsmath}" ("\\part{%s}" . "\\part*{%s}") ("\\chapter{%s}" . "\\chapter*{%s}") ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}")) ("book" "\\documentclass[11pt]{book}
@@ -113,10 +112,12 @@
  '(scroll-bar-mode nil)
  '(semantic-c-dependency-system-include-path (quote ("/usr/include" "/usr/include/c++")))
  '(show-paren-mode t)
+ '(tab-width 4)
  '(tool-bar-mode nil)
  '(truncate-lines t)
  '(w3m-default-display-inline-images t)
- '(w3m-use-cookies t))
+ '(w3m-use-cookies t)
+ '(x-stretch-cursor t))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -234,7 +235,10 @@
 
 (if window-system
   (progn 
-         (global-linum-mode 1)
+         (global-linum-mode 1) ;; this makes doc-view really slow
+         ;; this is the fix
+         (add-hook 'doc-view-mode-hook (lambda () (linum-mode -1)))
+
          (global-set-key (kbd "M-]") 'select-next-window)
          (global-set-key (kbd "M-[")  'select-previous-window)
          (define-key w3m-mode-map "\M-]" nil)
