@@ -54,7 +54,7 @@
 
 ;(setq inferior-lisp-program "ccl64") ; your Lisp system
 (setq inferior-lisp-program "sbcl") ; sbcl for the tutorial
-(load "~/quicklisp/slime-helper.el")
+;(load "~/quicklisp/slime-helper.el")
 (require 'slime)
 (slime-setup '(slime-fancy slime-asdf slime-banner))
 
@@ -99,12 +99,14 @@
  '(doc-view-continuous t)
  '(ess-default-style (quote C++))
  '(fringe-mode (quote (nil . 0)) nil (fringe))
+ '(ido-enable-flex-matching t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(org-export-latex-classes (quote (("article" "\\documentclass[11pt]{article}
             \\usepackage{amsmath}" ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}") ("\\paragraph{%s}" . "\\paragraph*{%s}") ("\\subparagraph{%s}" . "\\subparagraph*{%s}")) ("report" "\\documentclass[11pt]{report}
             \\usepackage{amsmath}" ("\\part{%s}" . "\\part*{%s}") ("\\chapter{%s}" . "\\chapter*{%s}") ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}")) ("book" "\\documentclass[11pt]{book}
             \\usepackage{amsmath}" ("\\part{%s}" . "\\part*{%s}") ("\\chapter{%s}" . "\\chapter*{%s}") ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}")) ("beamer" "\\documentclass{beamer}" org-beamer-sectioning))))
+ '(org-file-apps (quote ((auto-mode . emacs) ("\\.mm\\'" . default) ("\\.x?html?\\'" . default))))
  '(package-archives (quote (("ELPA" . "http://tromey.com/elpa/") ("marmalade" . "http://marmalade-repo.org/packages/") ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(quack-default-program "racket")
  '(quack-pretty-lambda-p t)
@@ -124,7 +126,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "apple" :family "Anonymous_Pro"))))
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "apple" :family "Anonymous_Pro"))))
  '(elscreen-tab-other-screen-face ((t (:background "controlShadowColor" :foreground "black" :underline t)))))
 ;  '(mode-line ((t (:background "purple" :box nil)))))
 ;(enlarge-window 1)
@@ -182,6 +184,12 @@
 (require 'ido)
 (ido-mode 1)
 (require 'tramp)
+(require 'smex)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 (require 'org-install)
 (global-set-key "\C-cl" 'org-store-link)
@@ -193,7 +201,7 @@
 (setq auto-mode-alist (cons '("README" . org-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.txt$" . org-mode) auto-mode-alist))
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "|" "DONE(d!)" "CANCELED(c@)")))
+      '((sequence "TODO(t)" "|" "DONE(d@/!)" "CANCELED(c@)")))
 (require 'org-special-blocks)
 
 (setq org-latex-to-pdf-process '("texi2dvi --pdf --clean --verbose --batch %f"))
