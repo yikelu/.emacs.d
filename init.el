@@ -56,6 +56,7 @@
 (setq inferior-lisp-program "sbcl") ; sbcl for the tutorial
 ;(load "~/quicklisp/slime-helper.el")
 (require 'slime)
+(setq common-lisp-hyperspec-root "file://Users/yikelu/Documents/lisp/HyperSpec/")
 (slime-setup '(slime-fancy slime-asdf slime-banner))
 
 ;; BIG FAT NOTICE - the slime problem from source install is
