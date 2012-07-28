@@ -192,6 +192,9 @@
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
+(require 'mic-paren)
+(paren-activate)
+
 (require 'org-install)
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
