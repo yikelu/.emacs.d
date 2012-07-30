@@ -71,12 +71,14 @@
 (defun my-w3m-browse-url (url &optional new-session)
   (let ((w3m-exists (get-buffer-window "*w3m*")))
     (if w3m-exists
-        (progn (select-window w3m-exists)
-               (w3m-browse-url url))
-      (let ((splittable (split-window-sensibly
-                         (selected-window))))
+        (progn
+          (select-window w3m-exists)
+          (w3m-browse-url url))
+      (let ((splittable (split-window-sensibly (selected-window))))
         (if splittable
-            (progn (select-window splittable) (w3m-browse-url url new-session))
+            (progn
+              (select-window splittable)
+              (w3m-browse-url url new-session))
           (w3m-browse-url url new-session))))))
 
 (setq browse-url-browser-function 'my-w3m-browse-url)
@@ -109,6 +111,7 @@
             \\usepackage{amsmath}" ("\\part{%s}" . "\\part*{%s}") ("\\chapter{%s}" . "\\chapter*{%s}") ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}")) ("beamer" "\\documentclass{beamer}" org-beamer-sectioning))))
  '(org-file-apps (quote ((auto-mode . emacs) ("\\.mm\\'" . default) ("\\.x?html?\\'" . default))))
  '(package-archives (quote (("ELPA" . "http://tromey.com/elpa/") ("marmalade" . "http://marmalade-repo.org/packages/") ("gnu" . "http://elpa.gnu.org/packages/"))))
+ '(paren-sexp-mode t)
  '(quack-default-program "racket")
  '(quack-pretty-lambda-p t)
  '(ring-bell-function (quote ignore) t)
@@ -128,7 +131,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "apple" :family "Anonymous_Pro"))))
- '(elscreen-tab-other-screen-face ((t (:background "controlShadowColor" :foreground "black" :underline t)))))
+ '(elscreen-tab-other-screen-face ((t (:background "controlShadowColor" :foreground "black" :underline t))))
+ '(paren-face-match ((t (:background "grey92")))))
 ;  '(mode-line ((t (:background "purple" :box nil)))))
 ;(enlarge-window 1)
 
@@ -194,6 +198,20 @@
 
 (require 'mic-paren)
 (paren-activate)
+
+;; If the var is set, save its status on entry and set it to nil
+(add-hook 'minibuffer-setup-hook
+          '(lambda ()
+             (when (and (boundp paren-sexp-mode)
+                        paren-sexp-mode)
+               (setq paren-sexp-mode-status paren-sexp-mode)
+               (setq paren-sexp-mode nil))))
+
+;; then on exit, put it back to the way it was
+(add-hook 'minibuffer-exit-hook
+          '(lambda ()
+             (when (boundp paren-sexp-mode-status)
+               (setq paren-sexp-mode paren-sexp-mode-status))))
 
 (require 'org-install)
 (global-set-key "\C-cl" 'org-store-link)
