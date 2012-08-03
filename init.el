@@ -17,20 +17,23 @@
                        (goto-char (point-max)) (eval-print-last-sexp))) 
 (el-get 'sync)
 (require 'magit)
+(load "kdbp-mode")
 
 ;(let ((default-directory "~/.emacs.d/el-get/"))
 ;      (normal-top-level-add-subdirs-to-load-path))
 
-(color-theme-initialize)
+
 (load "color-theme-yike-white")
 (setq calender-location-name "New York, NY")
 (setq calender-latitude 40.714523)
 (setq calender-longitude -74.0066)
-(color-theme-yike-white)
+;; (color-theme-yike-white)
 
-;(setq color-theme-is-global t)
+(require 'midnight)
+(midnight-delay-set 'midnight-delay "4:30am")
 
 (load "elscreen" "ElScreen" t)
+(require 'elscreen-gf)
 
 (require 'powerline)
 (setq powerline-arrow-shape 'arrow14)
@@ -43,10 +46,6 @@
   (if my-fullscreen-p
 	  (restore-frame)
 	(maximize-frame)))
-
-;(setq mf-max-height 2560)
-;(setq mf-max-width 1440)  ;; Pixel width of main monitor.
-;(add-hook 'window-setup-hook 'maximize-frame t)
 
 (global-set-key (kbd "<s-return>") 'my-toggle-fullscreen)
 ;(global-set-key (kbd "<s-return>") 'ns-toggle-fullscreen)
@@ -87,8 +86,10 @@
 
 (add-to-list 'ac-dictionary-directories "/Users/yikelu/.emacs.d//ac-dict")
 (ac-config-default)
-(setq ess-use-auto-complete t)
-(setq ac-auto-show-menu nil)
+(setq ac-auto-show-menu 2)
+(require 'yasnippet)
+(yas/global-mode 1)
+(require 'auto-complete-yasnippet)
 
 ; now customizations
 
@@ -97,18 +98,29 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#ad7fa8" "#8cc4ff" "#eeeeec"])
  '(blink-cursor-mode nil)
+ '(clean-buffer-list-delay-general 2)
+ '(color-theme-is-cumulative nil)
  '(column-number-mode t)
+ '(custom-enabled-themes (quote (tango-dark)))
  '(doc-view-continuous t)
  '(ess-default-style (quote C++))
+ '(fill-column 80)
  '(fringe-mode (quote (nil . 0)) nil (fringe))
+ '(global-subword-mode t)
  '(ido-enable-flex-matching t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
+ '(midnight-delay "4:30am")
+ '(org-agenda-files nil)
  '(org-export-latex-classes (quote (("article" "\\documentclass[11pt]{article}
-            \\usepackage{amsmath}" ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}") ("\\paragraph{%s}" . "\\paragraph*{%s}") ("\\subparagraph{%s}" . "\\subparagraph*{%s}")) ("report" "\\documentclass[11pt]{report}
-            \\usepackage{amsmath}" ("\\part{%s}" . "\\part*{%s}") ("\\chapter{%s}" . "\\chapter*{%s}") ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}")) ("book" "\\documentclass[11pt]{book}
-            \\usepackage{amsmath}" ("\\part{%s}" . "\\part*{%s}") ("\\chapter{%s}" . "\\chapter*{%s}") ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}")) ("beamer" "\\documentclass{beamer}" org-beamer-sectioning))))
+            \\usepackage{amsmath}
+            \\usepackage{mathtools}" ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}") ("\\paragraph{%s}" . "\\paragraph*{%s}") ("\\subparagraph{%s}" . "\\subparagraph*{%s}")) ("report" "\\documentclass[11pt]{report}
+            \\usepackage{amsmath}
+            \\usepackage{mathtools}" ("\\part{%s}" . "\\part*{%s}") ("\\chapter{%s}" . "\\chapter*{%s}") ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}")) ("book" "\\documentclass[11pt]{book}
+            \\usepackage{amsmath}
+            \\usepackage{mathtools}" ("\\part{%s}" . "\\part*{%s}") ("\\chapter{%s}" . "\\chapter*{%s}") ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}") ("\\subsubsection{%s}" . "\\subsubsection*{%s}")) ("beamer" "\\documentclass{beamer}" org-beamer-sectioning))))
  '(org-file-apps (quote ((auto-mode . emacs) ("\\.mm\\'" . default) ("\\.x?html?\\'" . default))))
  '(package-archives (quote (("ELPA" . "http://tromey.com/elpa/") ("marmalade" . "http://marmalade-repo.org/packages/") ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(paren-sexp-mode t)
@@ -119,6 +131,7 @@
  '(semantic-c-dependency-system-include-path (quote ("/usr/include" "/usr/include/c++")))
  '(show-paren-mode t)
  '(tab-width 4)
+ '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
  '(tool-bar-mode nil)
  '(truncate-lines t)
  '(w3m-default-display-inline-images t)
@@ -131,8 +144,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 110 :width normal :foundry "apple" :family "Anonymous_Pro"))))
+ '(elscreen-tab-background-face ((t (:background "#1e2426"))))
+ '(elscreen-tab-control-face ((t (:background "#2e3436" :foreground "#eeeeec" :underline t))))
+ '(elscreen-tab-current-screen-face ((t (:background "#2e3436" :foreground "#eeeee2"))))
  '(elscreen-tab-other-screen-face ((t (:background "controlShadowColor" :foreground "black" :underline t))))
- '(paren-face-match ((t (:background "grey92")))))
+ '(font-lock-comment-face ((t (:foreground "grey60"))))
+ '(mode-line ((t (:background "midnightblue" :foreground "#eeeeec" :box (:line-width -1 :style released-button)))))
+ '(mode-line-inactive ((t (:background "#555753" :foreground "#eeeeec"))))
+ '(paren-face-match ((t (:background "grey20")))))
 ;  '(mode-line ((t (:background "purple" :box nil)))))
 ;(enlarge-window 1)
 
@@ -148,9 +167,9 @@
 (require 'redo+)
 (global-set-key (kbd "C-?") 'redo)
 
-(load "~/.emacs.d/ess-12.04-2/lisp/ess-site")
-;(load "ess-shift-enter.el")
-;(load "r-font-lock-extra.el")
+(add-to-list 'load-path "~/.emacs.d/ess-12.04-4/lisp/")
+(require 'ess-site)
+(setq ess-use-auto-complete t)
 (ess-toggle-underscore nil)
 (setq ess-ask-for-ess-directory nil)
 (setq ess-eval-visibly-p nil)
@@ -161,15 +180,32 @@
 (setq comint-move-point-for-output t)
 (setq ess-tracebug-prefix (kbd "M-c"))
 (setq ess-use-tracebug t)
+(require 'r-autoyas)
+(add-hook 'ess-mode-hook 'r-autoyas-ess-activate)
 (add-hook 'inferior-ess-mode-hook
           (lambda ()
             (define-key inferior-ess-mode-map "\C-cw"
-              'ess-execute-screen-options)))
+              'ess-execute-screen-options))
+          (lambda ()
+            (define-key inferior-ess-mode-map (kbd "C-_")
+              'ess-smart-underscore)))
+          ;; (lambda ()
+          ;;   (setq ac-sources (append 'ac-source-R
+          ;;                            'ac-source-R-objects
+          ;;                            'ac-source-R-args
+          ;;                            'ac-sources))))
+
 (global-unset-key (kbd "C-_"))
 (add-hook 'ess-mode-hook
           (lambda ()
             (define-key ess-mode-map (kbd "C-_")
               'ess-smart-underscore)))
+          ;; (lambda ()
+          ;;   (setq ac-sources (append 'ac-source-R
+          ;;                            'ac-source-R-objects
+          ;;                            'ac-source-R-args
+          ;;                            'ac-sources))))
+
 
 ;(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 ;(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
@@ -228,6 +264,8 @@
 
 (setq org-latex-to-pdf-process '("texi2dvi --pdf --clean --verbose --batch %f"))
 
+(add-hook 'org-mode-hook 'turn-on-org-cdlatex)
+
 (when (eq system-type 'darwin)
   (setq exec-path (append exec-path '("/usr/texbin/")))
   (setq exec-path (append exec-path '("/usr/local/bin")))
@@ -276,6 +314,7 @@
          (semantic-load-enable-gaudy-code-helpers)
          (require 'semantic-ia)
          (require 'semantic-gcc)
+         (setq semantic-load-turn-useful-things-on t)
          (semantic-add-system-include "/usr/include" 'c++-mode)
          (semantic-add-system-include "/usr/include/c++" 'c++-mode)
          )

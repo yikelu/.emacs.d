@@ -5,7 +5,7 @@
 
 ;;;### (autoloads (vassoc set-modified-alist modify-alist remove-alist
 ;;;;;;  set-alist del-alist put-alist) "apel/site-lisp/apel/alist"
-;;;;;;  "apel/site-lisp/apel/alist.el" (20486 21104))
+;;;;;;  "apel/site-lisp/apel/alist.el" (20508 12229))
 ;;; Generated autoloads from apel/site-lisp/apel/alist.el
 
 (autoload 'put-alist "apel/site-lisp/apel/alist" "\
@@ -54,7 +54,7 @@ See also `assoc'.
 
 ;;;### (autoloads (module-installed-p exec-installed-p file-installed-p
 ;;;;;;  get-latest-path add-latest-path add-path) "apel/site-lisp/apel/path-util"
-;;;;;;  "apel/site-lisp/apel/path-util.el" (20486 21104))
+;;;;;;  "apel/site-lisp/apel/path-util.el" (20508 12229))
 ;;; Generated autoloads from apel/site-lisp/apel/path-util.el
 
 (autoload 'add-path "apel/site-lisp/apel/path-util" "\
@@ -117,7 +117,7 @@ If PATHS is omitted, `load-path' is used.
 ;;;***
 
 ;;;### (autoloads (richtext-decode richtext-encode) "apel/site-lisp/emu/richtext"
-;;;;;;  "apel/site-lisp/emu/richtext.el" (20486 21104))
+;;;;;;  "apel/site-lisp/emu/richtext.el" (20508 12229))
 ;;; Generated autoloads from apel/site-lisp/emu/richtext.el
 
 (autoload 'richtext-encode "apel/site-lisp/emu/richtext" "\
@@ -133,7 +133,7 @@ If PATHS is omitted, `load-path' is used.
 ;;;***
 
 ;;;### (autoloads (turn-on-bib-cite bib-cite-minor-mode) "auctex/bib-cite"
-;;;;;;  "auctex/bib-cite.el" (18341 54637))
+;;;;;;  "auctex/bib-cite.el" (20508 12229))
 ;;; Generated autoloads from auctex/bib-cite.el
 
 (autoload 'bib-cite-minor-mode "auctex/bib-cite" "\
@@ -152,7 +152,7 @@ Unconditionally turn on Bib Cite mode.
 ;;;***
 
 ;;;### (autoloads (context-mode) "auctex/context" "auctex/context.el"
-;;;;;;  (19707 64211))
+;;;;;;  (20508 12229))
 ;;; Generated autoloads from auctex/context.el
 
 (defalias 'ConTeXt-mode 'context-mode)
@@ -172,7 +172,7 @@ of context-mode-hook.
 ;;;***
 
 ;;;### (autoloads (context-en-mode) "auctex/context-en" "auctex/context-en.el"
-;;;;;;  (19618 16518))
+;;;;;;  (20508 12229))
 ;;; Generated autoloads from auctex/context-en.el
 
 (autoload 'context-en-mode "auctex/context-en" "\
@@ -190,7 +190,7 @@ of context-mode-hook.
 ;;;***
 
 ;;;### (autoloads (context-nl-mode) "auctex/context-nl" "auctex/context-nl.el"
-;;;;;;  (19618 16529))
+;;;;;;  (20508 12229))
 ;;; Generated autoloads from auctex/context-nl.el
 
 (autoload 'context-nl-mode "auctex/context-nl" "\
@@ -208,7 +208,7 @@ of context-mode-hook.
 ;;;***
 
 ;;;### (autoloads (font-latex-setup) "auctex/font-latex" "auctex/font-latex.el"
-;;;;;;  (20467 57006))
+;;;;;;  (20508 12229))
 ;;; Generated autoloads from auctex/font-latex.el
 
 (autoload 'font-latex-setup "auctex/font-latex" "\
@@ -219,7 +219,7 @@ Setup this buffer for LaTeX font-lock.  Usually called from a hook.
 ;;;***
 
 ;;;### (autoloads (docTeX-mode TeX-latex-mode BibTeX-auto-store)
-;;;;;;  "auctex/latex" "auctex/latex.el" (20030 45082))
+;;;;;;  "auctex/latex" "auctex/latex.el" (20508 12229))
 ;;; Generated autoloads from auctex/latex.el
 
 (autoload 'BibTeX-auto-store "auctex/latex" "\
@@ -257,7 +257,7 @@ runs the hooks in `docTeX-mode-hook'.
 ;;;***
 
 ;;;### (autoloads (multi-prompt-key-value multi-prompt) "auctex/multi-prompt"
-;;;;;;  "auctex/multi-prompt.el" (18915 28236))
+;;;;;;  "auctex/multi-prompt.el" (20508 12229))
 ;;; Generated autoloads from auctex/multi-prompt.el
 
 (autoload 'multi-prompt "auctex/multi-prompt" "\
@@ -287,7 +287,7 @@ The return value is the string as entered in the minibuffer.
 ;;;***
 
 ;;;### (autoloads (ams-tex-mode TeX-plain-tex-mode) "auctex/plain-tex"
-;;;;;;  "auctex/plain-tex.el" (19707 64159))
+;;;;;;  "auctex/plain-tex.el" (20508 12229))
 ;;; Generated autoloads from auctex/plain-tex.el
 
 (autoload 'TeX-plain-tex-mode "auctex/plain-tex" "\
@@ -319,8 +319,8 @@ of `AmS-TeX-mode-hook'.
 ;;;***
 
 ;;;### (autoloads (preview-report-bug LaTeX-preview-setup preview-install-styles)
-;;;;;;  "auctex/preview/preview" "auctex/preview/preview.el" (19772
-;;;;;;  31043))
+;;;;;;  "auctex/preview/preview" "auctex/preview/preview.el" (20508
+;;;;;;  12229))
 ;;; Generated autoloads from auctex/preview/preview.el
 
 (autoload 'preview-install-styles "auctex/preview/preview" "\
@@ -353,7 +353,7 @@ Report a bug in the preview-latex package.
 
 ;;;### (autoloads (TeX-submit-bug-report TeX-auto-generate-global
 ;;;;;;  TeX-auto-generate TeX-tex-mode) "auctex/tex" "auctex/tex.el"
-;;;;;;  (20452 4092))
+;;;;;;  (20508 12229))
 ;;; Generated autoloads from auctex/tex.el
 
 (autoload 'TeX-tex-mode "auctex/tex" "\
@@ -395,7 +395,7 @@ information about your AUCTeX version and AUCTeX configuration.
 ;;;***
 
 ;;;### (autoloads (LaTeX-install-toolbar TeX-install-toolbar) "auctex/tex-bar"
-;;;;;;  "auctex/tex-bar.el" (18580 49499))
+;;;;;;  "auctex/tex-bar.el" (20508 12229))
 ;;; Generated autoloads from auctex/tex-bar.el
 
 (autoload 'TeX-install-toolbar "auctex/tex-bar" "\
@@ -410,8 +410,8 @@ Install toolbar buttons for LaTeX mode.
 
 ;;;***
 
-;;;### (autoloads nil "auctex/tex-fold" "auctex/tex-fold.el" (19887
-;;;;;;  15736))
+;;;### (autoloads nil "auctex/tex-fold" "auctex/tex-fold.el" (20508
+;;;;;;  12229))
 ;;; Generated autoloads from auctex/tex-fold.el
  (autoload 'TeX-fold-mode "tex-fold" "Minor mode for hiding and revealing macros and environments." t)
 
@@ -420,7 +420,7 @@ Install toolbar buttons for LaTeX mode.
 ;;;***
 
 ;;;### (autoloads (tex-font-setup) "auctex/tex-font" "auctex/tex-font.el"
-;;;;;;  (18341 54636))
+;;;;;;  (20508 12229))
 ;;; Generated autoloads from auctex/tex-font.el
 
 (autoload 'tex-font-setup "auctex/tex-font" "\
@@ -431,7 +431,7 @@ Setup font lock support for TeX.
 ;;;***
 
 ;;;### (autoloads (TeX-texinfo-mode) "auctex/tex-info" "auctex/tex-info.el"
-;;;;;;  (19994 65094))
+;;;;;;  (20508 12229))
 ;;; Generated autoloads from auctex/tex-info.el
 
 (defalias 'Texinfo-mode 'texinfo-mode)
@@ -450,7 +450,7 @@ value of `Texinfo-mode-hook'.
 ;;;***
 
 ;;;### (autoloads (japanese-latex-mode japanese-plain-tex-mode) "auctex/tex-jp"
-;;;;;;  "auctex/tex-jp.el" (18768 5174))
+;;;;;;  "auctex/tex-jp.el" (20508 12229))
 ;;; Generated autoloads from auctex/tex-jp.el
 
 (autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
@@ -468,7 +468,7 @@ Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
 ;;;***
 
 ;;;### (autoloads (texmathp-match-switch texmathp) "auctex/texmathp"
-;;;;;;  "auctex/texmathp.el" (18489 3128))
+;;;;;;  "auctex/texmathp.el" (20508 12229))
 ;;; Generated autoloads from auctex/texmathp.el
 
 (autoload 'texmathp "auctex/texmathp" "\
@@ -488,15 +488,15 @@ Limit searched to BOUND.
 
 ;;;***
 
-;;;### (autoloads nil "auctex/toolbar-x" "auctex/toolbar-x.el" (18580
-;;;;;;  49487))
+;;;### (autoloads nil "auctex/toolbar-x" "auctex/toolbar-x.el" (20508
+;;;;;;  12229))
 ;;; Generated autoloads from auctex/toolbar-x.el
  (autoload 'toolbarx-install-toolbar "toolbar-x")
 
 ;;;***
 
 ;;;### (autoloads (auto-complete) "auto-complete/auto-complete" "auto-complete/auto-complete.el"
-;;;;;;  (20486 21583))
+;;;;;;  (20508 15994))
 ;;; Generated autoloads from auto-complete/auto-complete.el
 
 (autoload 'auto-complete "auto-complete/auto-complete" "\
@@ -507,7 +507,7 @@ Start auto-completion at current point.
 ;;;***
 
 ;;;### (autoloads (bookmark-w3m-bookmark-jump) "emacs-w3m/bookmark-w3m"
-;;;;;;  "emacs-w3m/bookmark-w3m.el" (20486 21104))
+;;;;;;  "emacs-w3m/bookmark-w3m.el" (20508 12230))
 ;;; Generated autoloads from emacs-w3m/bookmark-w3m.el
 
 (autoload 'bookmark-w3m-bookmark-jump "emacs-w3m/bookmark-w3m" "\
@@ -517,8 +517,207 @@ Default bookmark handler for w3m buffers.
 
 ;;;***
 
+;;;### (autoloads (magit-status) "magit/magit" "magit/magit.el" (20508
+;;;;;;  12376))
+;;; Generated autoloads from magit/magit.el
+
+(autoload 'magit-status "magit/magit" "\
+Open a Magit status buffer for the Git repository containing
+DIR.  If DIR is not within a Git repository, offer to create a
+Git repository in DIR.
+
+Interactively, a prefix argument means to ask the user which Git
+repository to use even if `default-directory' is under Git control.
+Two prefix arguments means to ignore `magit-repo-dirs' when asking for
+user input.
+
+\(fn DIR)" t nil)
+
+;;;***
+
+;;;### (autoloads (magit-blame-mode) "magit/magit-blame" "magit/magit-blame.el"
+;;;;;;  (20508 12376))
+;;; Generated autoloads from magit/magit-blame.el
+
+(autoload 'magit-blame-mode "magit/magit-blame" "\
+Display blame information inline.
+
+\(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads (turn-on-magit-stgit magit-stgit-mode) "magit/magit-stgit"
+;;;;;;  "magit/magit-stgit.el" (20508 12376))
+;;; Generated autoloads from magit/magit-stgit.el
+
+(autoload 'magit-stgit-mode "magit/magit-stgit" "\
+StGit support for Magit
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'turn-on-magit-stgit "magit/magit-stgit" "\
+Unconditionally turn on `magit-stgit-mode'.
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads (turn-on-magit-svn magit-svn-mode) "magit/magit-svn"
+;;;;;;  "magit/magit-svn.el" (20508 12376))
+;;; Generated autoloads from magit/magit-svn.el
+
+(autoload 'magit-svn-mode "magit/magit-svn" "\
+SVN support for Magit
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'turn-on-magit-svn "magit/magit-svn" "\
+Unconditionally turn on `magit-svn-mode'.
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads (turn-on-magit-topgit magit-topgit-mode) "magit/magit-topgit"
+;;;;;;  "magit/magit-topgit.el" (20508 12376))
+;;; Generated autoloads from magit/magit-topgit.el
+
+(autoload 'magit-topgit-mode "magit/magit-topgit" "\
+Topgit support for Magit
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'turn-on-magit-topgit "magit/magit-topgit" "\
+Unconditionally turn on `magit-topgit-mode'.
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads (rebase-mode) "magit/rebase-mode" "magit/rebase-mode.el"
+;;;;;;  (20508 12376))
+;;; Generated autoloads from magit/rebase-mode.el
+
+(autoload 'rebase-mode "magit/rebase-mode" "\
+Major mode for editing of a Git rebase file.
+
+Rebase files are generated when you run 'git rebase -i' or run
+`magit-interactive-rebase'.  They describe how Git should perform
+the rebase.  See the documentation for git-rebase (e.g., by
+running 'man git-rebase' at the command line) for details.
+
+\(fn)" t nil)
+
+(add-to-list 'auto-mode-alist '("git-rebase-todo" . rebase-mode))
+
+;;;***
+
+;;;### (autoloads (paren-backward-sexp paren-forward-sexp paren-toggle-open-paren-context
+;;;;;;  paren-toggle-matching-quoted-paren paren-toggle-matching-paired-delimiter
+;;;;;;  paren-deactivate paren-activate) "mic-paren/mic-paren" "mic-paren/mic-paren.el"
+;;;;;;  (20508 12628))
+;;; Generated autoloads from mic-paren/mic-paren.el
+
+(autoload 'paren-activate "mic-paren/mic-paren" "\
+Activate mic-paren parenthesis highlighting.
+Note: This also deactivates the paren.el
+and stig-paren.el packages if they are active!
+
+The following options are available via the customize-feature:
+  `paren-priority'
+  `paren-overlay-priority'
+  `paren-sexp-mode'
+  `paren-highlight-at-point'
+  `paren-highlight-offscreen'
+  `paren-display-message'
+  `paren-message-linefeed-display'
+  `paren-message-no-match'
+  `paren-message-show-linenumber'
+  `paren-message-truncate-lines'
+  `paren-ding-unmatched'
+  `paren-delay'
+  `paren-dont-touch-blink'
+  `paren-match-face'
+  `paren-mismatch-face'
+  `paren-no-match-face'
+  `paren-bind-modified-sexp-functions'
+
+The following options are settable via toggling functions (look at the
+documentation of these options for the names of these functions):
+  `paren-match-quoted-paren'
+  `paren-match-paired-delimiter'
+  `paren-open-paren-context-backward'
+
+\(fn)" t nil)
+
+(autoload 'paren-deactivate "mic-paren/mic-paren" "\
+Deactivate mic-paren parenthesis highlighting.
+
+\(fn)" t nil)
+
+(autoload 'paren-toggle-matching-paired-delimiter "mic-paren/mic-paren" "\
+Toggle matching paired delimiter.
+Force on with positive ARG.  Use this in mode hooks to activate or
+deactivate paired delimiter matching.  If optional second argument
+NO-MESSAGE is non-nil then don't display a message about the
+current activation state of the paired-delimiter-matching feature.
+
+\(fn ARG &optional NO-MESSAGE)" t nil)
+
+(autoload 'paren-toggle-matching-quoted-paren "mic-paren/mic-paren" "\
+Toggle matching quoted parens.
+Force on with positive ARG.  Use this in mode hooks to activate or
+deactivate quoted paren matching.  If optional second argument
+NO-MESSAGE is non-nil then don't display a message about the
+current activation state of the quoted-paren-matching feature.
+
+\(fn ARG &optional NO-MESSAGE)" t nil)
+
+(autoload 'paren-toggle-open-paren-context "mic-paren/mic-paren" "\
+Toggle whether or not to determine context of the matching open-paren.
+Force backward context with positive ARG.  Use this in mode-hooks.
+See `paren-open-paren-context-backward'.
+
+\(fn ARG)" t nil)
+
+(autoload 'paren-forward-sexp "mic-paren/mic-paren" "\
+Act like `forward-sexp' but also handle quoted parens.
+See `paren-match-quoted-paren'.
+
+\(fn &optional ARG)" t nil)
+
+(autoload 'paren-backward-sexp "mic-paren/mic-paren" "\
+Act like `backward-sexp' but also match quoted parens.
+See `paren-match-quoted-paren'.
+
+\(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads (r-autoyas-ess-activate) "r-autoyas/r-autoyas"
+;;;;;;  "r-autoyas/r-autoyas.el" (20508 19609))
+;;; Generated autoloads from r-autoyas/r-autoyas.el
+
+(autoload 'r-autoyas-ess-activate "r-autoyas/r-autoyas" "\
+R autoyas ESS hook
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads (smex-initialize) "smex/smex" "smex/smex.el" (20508
+;;;;;;  12605))
+;;; Generated autoloads from smex/smex.el
+
+(autoload 'smex-initialize "smex/smex" "\
+
+
+\(fn)" t nil)
+
+;;;***
+
 ;;;### (autoloads (camldebug) "tuareg-mode/camldebug" "tuareg-mode/camldebug.el"
-;;;;;;  (20486 21104))
+;;;;;;  (20508 12231))
 ;;; Generated autoloads from tuareg-mode/camldebug.el
 
 (defvar camldebug-command-name "ocamldebug" "\
@@ -538,8 +737,8 @@ the camldebug commands `cd DIR' and `directory'.
 ;;;;;;  color-theme-compare color-theme-make-snapshot color-theme-analyze-defun
 ;;;;;;  color-theme-print color-theme-install-at-point-for-current-frame
 ;;;;;;  color-theme-install-at-mouse color-theme-describe color-theme-select)
-;;;;;;  "color-theme/color-theme" "color-theme/color-theme.el" (20486
-;;;;;;  21104))
+;;;;;;  "color-theme/color-theme" "color-theme/color-theme.el" (20508
+;;;;;;  12229))
 ;;; Generated autoloads from color-theme/color-theme.el
 
 (autoload 'color-theme-select "color-theme/color-theme" "\
@@ -675,7 +874,7 @@ Initialize the color theme package by loading color-theme-libraries.
 ;;;***
 
 ;;;### (autoloads (ghc-core-mode ghc-core-create-core) "haskell-mode/ghc-core"
-;;;;;;  "haskell-mode/ghc-core.el" (20486 21104))
+;;;;;;  "haskell-mode/ghc-core.el" (20508 12230))
 ;;; Generated autoloads from haskell-mode/ghc-core.el
 
 (autoload 'ghc-core-create-core "haskell-mode/ghc-core" "\
@@ -693,7 +892,7 @@ Major mode for GHC Core files.
 ;;;***
 
 ;;;### (autoloads (haskell-align-imports) "haskell-mode/haskell-align-imports"
-;;;;;;  "haskell-mode/haskell-align-imports.el" (20486 21104))
+;;;;;;  "haskell-mode/haskell-align-imports.el" (20508 12230))
 ;;; Generated autoloads from haskell-mode/haskell-align-imports.el
 
 (autoload 'haskell-align-imports "haskell-mode/haskell-align-imports" "\
@@ -704,7 +903,7 @@ Align all the imports in the buffer.
 ;;;***
 
 ;;;### (autoloads (haskell-c-mode) "haskell-mode/haskell-c" "haskell-mode/haskell-c.el"
-;;;;;;  (20486 21104))
+;;;;;;  (20508 12230))
 ;;; Generated autoloads from haskell-mode/haskell-c.el
 
 (add-to-list 'auto-mode-alist '("\\.hsc\\'" . haskell-c-mode))
@@ -717,7 +916,7 @@ Major mode for Haskell FFI files.
 ;;;***
 
 ;;;### (autoloads (haskell-cabal-mode) "haskell-mode/haskell-cabal"
-;;;;;;  "haskell-mode/haskell-cabal.el" (20486 21104))
+;;;;;;  "haskell-mode/haskell-cabal.el" (20508 12230))
 ;;; Generated autoloads from haskell-mode/haskell-cabal.el
 
 (add-to-list 'auto-mode-alist '("\\.cabal\\'" . haskell-cabal-mode))
@@ -730,7 +929,7 @@ Major mode for Cabal package description files.
 ;;;***
 
 ;;;### (autoloads (haskell-decl-scan-mode) "haskell-mode/haskell-decl-scan"
-;;;;;;  "haskell-mode/haskell-decl-scan.el" (20486 21104))
+;;;;;;  "haskell-mode/haskell-decl-scan.el" (20508 12230))
 ;;; Generated autoloads from haskell-mode/haskell-decl-scan.el
 
 (autoload 'haskell-decl-scan-mode "haskell-mode/haskell-decl-scan" "\
@@ -780,7 +979,7 @@ Invokes `haskell-decl-scan-mode-hook'.
 ;;;***
 
 ;;;### (autoloads (haskell-doc-show-type haskell-doc-mode) "haskell-mode/haskell-doc"
-;;;;;;  "haskell-mode/haskell-doc.el" (20486 21104))
+;;;;;;  "haskell-mode/haskell-doc.el" (20508 12230))
 ;;; Generated autoloads from haskell-mode/haskell-doc.el
 
 (autoload 'haskell-doc-mode "haskell-mode/haskell-doc" "\
@@ -803,7 +1002,7 @@ current buffer.
 ;;;***
 
 ;;;### (autoloads (haskell-indent-mode) "haskell-mode/haskell-indent"
-;;;;;;  "haskell-mode/haskell-indent.el" (20486 21104))
+;;;;;;  "haskell-mode/haskell-indent.el" (20508 12230))
 ;;; Generated autoloads from haskell-mode/haskell-indent.el
 
 (autoload 'haskell-indent-mode "haskell-mode/haskell-indent" "\
@@ -835,7 +1034,7 @@ Invokes `haskell-indent-hook' if not nil.
 ;;;***
 
 ;;;### (autoloads (haskell-indentation-mode) "haskell-mode/haskell-indentation"
-;;;;;;  "haskell-mode/haskell-indentation.el" (20486 21104))
+;;;;;;  "haskell-mode/haskell-indentation.el" (20508 12230))
 ;;; Generated autoloads from haskell-mode/haskell-indentation.el
 
 (autoload 'haskell-indentation-mode "haskell-mode/haskell-indentation" "\
@@ -850,7 +1049,7 @@ autofill-mode.
 
 ;;;### (autoloads (haskell-hayoo haskell-hoogle literate-haskell-mode
 ;;;;;;  haskell-mode) "haskell-mode/haskell-mode" "haskell-mode/haskell-mode.el"
-;;;;;;  (20486 21104))
+;;;;;;  (20508 12230))
 ;;; Generated autoloads from haskell-mode/haskell-mode.el
 
 (add-to-list 'load-path (or (file-name-directory load-file-name) (car load-path)))
@@ -919,7 +1118,7 @@ Do a Hayoo search for QUERY.
 ;;;***
 
 ;;;### (autoloads (haskell-move-nested) "haskell-mode/haskell-move-nested"
-;;;;;;  "haskell-mode/haskell-move-nested.el" (20486 21104))
+;;;;;;  "haskell-mode/haskell-move-nested.el" (20508 12230))
 ;;; Generated autoloads from haskell-mode/haskell-move-nested.el
 
 (autoload 'haskell-move-nested "haskell-mode/haskell-move-nested" "\
@@ -931,7 +1130,7 @@ Do a Hayoo search for QUERY.
 
 ;;;### (autoloads (haskell-navigate-imports-return haskell-navigate-imports-go
 ;;;;;;  haskell-navigate-imports) "haskell-mode/haskell-navigate-imports"
-;;;;;;  "haskell-mode/haskell-navigate-imports.el" (20486 21104))
+;;;;;;  "haskell-mode/haskell-navigate-imports.el" (20508 12230))
 ;;; Generated autoloads from haskell-mode/haskell-navigate-imports.el
 
 (autoload 'haskell-navigate-imports "haskell-mode/haskell-navigate-imports" "\
@@ -953,7 +1152,7 @@ Return to the non-import point we were at before going to the module list.
 ;;;***
 
 ;;;### (autoloads (haskell-sort-imports) "haskell-mode/haskell-sort-imports"
-;;;;;;  "haskell-mode/haskell-sort-imports.el" (20486 21104))
+;;;;;;  "haskell-mode/haskell-sort-imports.el" (20508 12230))
 ;;; Generated autoloads from haskell-mode/haskell-sort-imports.el
 
 (autoload 'haskell-sort-imports "haskell-mode/haskell-sort-imports" "\
@@ -966,7 +1165,7 @@ Sort the import list at the point.
 ;;;### (autoloads (inferior-haskell-find-haddock inferior-haskell-find-definition
 ;;;;;;  inferior-haskell-info inferior-haskell-type inferior-haskell-load-and-run
 ;;;;;;  inferior-haskell-load-file switch-to-haskell) "haskell-mode/inf-haskell"
-;;;;;;  "haskell-mode/inf-haskell.el" (20486 21104))
+;;;;;;  "haskell-mode/inf-haskell.el" (20508 12230))
 ;;; Generated autoloads from haskell-mode/inf-haskell.el
 
 (defalias 'run-haskell 'switch-to-haskell)
@@ -1025,7 +1224,7 @@ we load it.
 ;;;***
 
 ;;;### (autoloads (mime-w3m-preview-text/html) "emacs-w3m/mime-w3m"
-;;;;;;  "emacs-w3m/mime-w3m.el" (20486 21104))
+;;;;;;  "emacs-w3m/mime-w3m.el" (20508 12230))
 ;;; Generated autoloads from emacs-w3m/mime-w3m.el
 
 (autoload 'mime-w3m-preview-text/html "emacs-w3m/mime-w3m" "\
@@ -1036,7 +1235,7 @@ we load it.
 ;;;***
 
 ;;;### (autoloads (multi-term) "multi-term/multi-term" "multi-term/multi-term.el"
-;;;;;;  (20486 21104))
+;;;;;;  (20508 12230))
 ;;; Generated autoloads from multi-term/multi-term.el
 
 (autoload 'multi-term "multi-term/multi-term" "\
@@ -1049,7 +1248,7 @@ Will prompt you shell name when you type `C-u' before this command.
 
 ;;;### (autoloads (octet-mime-setup mime-view-octet mime-preview-octet
 ;;;;;;  octet-find-file octet-buffer) "emacs-w3m/octet" "emacs-w3m/octet.el"
-;;;;;;  (20486 21104))
+;;;;;;  (20508 12230))
 ;;; Generated autoloads from emacs-w3m/octet.el
 
 (autoload 'octet-buffer "emacs-w3m/octet" "\
@@ -1082,7 +1281,7 @@ Octet setting for MIME module.
 ;;;***
 
 ;;;### (autoloads (common-lisp-indent-function) "slime/contrib/slime-cl-indent"
-;;;;;;  "slime/contrib/slime-cl-indent.el" (20486 21104))
+;;;;;;  "slime/contrib/slime-cl-indent.el" (20508 12230))
 ;;; Generated autoloads from slime/contrib/slime-cl-indent.el
 
 (autoload 'common-lisp-indent-function "slime/contrib/slime-cl-indent" "\
@@ -1164,7 +1363,7 @@ For example, the function `case' has an indent property
 ;;;***
 
 ;;;### (autoloads (tuareg-mode) "tuareg-mode/tuareg" "tuareg-mode/tuareg.el"
-;;;;;;  (20486 21104))
+;;;;;;  (20508 12231))
 ;;; Generated autoloads from tuareg-mode/tuareg.el
  (add-to-list 'auto-mode-alist '("\\.ml[ily]?\\'" . tuareg-mode))
 
@@ -1246,7 +1445,7 @@ Special keys for Tuareg mode:\\{tuareg-mode-map}
 ;;;### (autoloads (w3m-buffer w3m-region w3m-find-file w3m-browse-url
 ;;;;;;  w3m w3m-create-empty-session w3m-gohome w3m-goto-url-new-session
 ;;;;;;  w3m-goto-url w3m-download w3m-retrieve) "emacs-w3m/w3m" "emacs-w3m/w3m.el"
-;;;;;;  (20486 21104))
+;;;;;;  (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m.el
 
 (autoload 'w3m-retrieve "emacs-w3m/w3m" "\
@@ -1397,7 +1596,7 @@ See `w3m-region' for the optional arguments.
 ;;;***
 
 ;;;### (autoloads (w3m-antenna w3m-about-antenna) "emacs-w3m/w3m-antenna"
-;;;;;;  "emacs-w3m/w3m-antenna.el" (20486 21104))
+;;;;;;  "emacs-w3m/w3m-antenna.el" (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m-antenna.el
 
 (autoload 'w3m-about-antenna "emacs-w3m/w3m-antenna" "\
@@ -1415,7 +1614,7 @@ Report changes of WEB sites, which is specified in `w3m-antenna-sites'.
 ;;;### (autoloads (w3m-setup-bookmark-menu w3m-about-bookmark w3m-bookmark-view-new-session
 ;;;;;;  w3m-bookmark-view w3m-bookmark-add-current-url-group w3m-bookmark-add-all-urls
 ;;;;;;  w3m-bookmark-add-current-url w3m-bookmark-add-this-url) "emacs-w3m/w3m-bookmark"
-;;;;;;  "emacs-w3m/w3m-bookmark.el" (20486 21104))
+;;;;;;  "emacs-w3m/w3m-bookmark.el" (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m-bookmark.el
 
 (autoload 'w3m-bookmark-add-this-url "emacs-w3m/w3m-bookmark" "\
@@ -1463,7 +1662,7 @@ Setup w3m bookmark items in menubar.
 
 ;;;### (autoloads (w3m-about-cookie w3m-cookie w3m-cookie-get w3m-cookie-set
 ;;;;;;  w3m-cookie-shutdown) "emacs-w3m/w3m-cookie" "emacs-w3m/w3m-cookie.el"
-;;;;;;  (20486 21104))
+;;;;;;  (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m-cookie.el
 
 (autoload 'w3m-cookie-shutdown "emacs-w3m/w3m-cookie" "\
@@ -1495,7 +1694,7 @@ Make the html contents to display and to enable you to manage cookies.
 ;;;***
 
 ;;;### (autoloads (w3m-dtree w3m-about-dtree) "emacs-w3m/w3m-dtree"
-;;;;;;  "emacs-w3m/w3m-dtree.el" (20486 21104))
+;;;;;;  "emacs-w3m/w3m-dtree.el" (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m-dtree.el
 
 (autoload 'w3m-about-dtree "emacs-w3m/w3m-dtree" "\
@@ -1512,7 +1711,7 @@ If called with 'prefix argument', display all directorys and files.
 ;;;***
 
 ;;;### (autoloads (w3m-fb-mode) "emacs-w3m/w3m-fb" "emacs-w3m/w3m-fb.el"
-;;;;;;  (20486 21104))
+;;;;;;  (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m-fb.el
 
 (defvar w3m-fb-mode nil "\
@@ -1533,7 +1732,7 @@ This allows frame-local lists of buffers (tabs).
 ;;;***
 
 ;;;### (autoloads (w3m-filter) "emacs-w3m/w3m-filter" "emacs-w3m/w3m-filter.el"
-;;;;;;  (20486 21104))
+;;;;;;  (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m-filter.el
 
 (autoload 'w3m-filter "emacs-w3m/w3m-filter" "\
@@ -1544,7 +1743,7 @@ Apply filtering rule of URL against a content in this buffer.
 ;;;***
 
 ;;;### (autoloads (w3m-fontify-forms) "emacs-w3m/w3m-form" "emacs-w3m/w3m-form.el"
-;;;;;;  (20486 21104))
+;;;;;;  (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m-form.el
 
 (autoload 'w3m-fontify-forms "emacs-w3m/w3m-form" "\
@@ -1558,7 +1757,7 @@ Process half-dumped data and fontify forms in this buffer.
 ;;;;;;  w3m-lnum-print-this-url w3m-lnum-edit-this-url w3m-lnum-external-view-this-url
 ;;;;;;  w3m-lnum-save-image w3m-lnum-view-image w3m-lnum-toggle-inline-image
 ;;;;;;  w3m-lnum-universal w3m-lnum-follow w3m-lnum-goto w3m-lnum-mode)
-;;;;;;  "emacs-w3m/w3m-lnum" "emacs-w3m/w3m-lnum.el" (20486 21104))
+;;;;;;  "emacs-w3m/w3m-lnum" "emacs-w3m/w3m-lnum.el" (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m-lnum.el
 
 (autoload 'w3m-lnum-mode "emacs-w3m/w3m-lnum" "\
@@ -1650,7 +1849,7 @@ If no link under point, activate numbering and ask for one.
 ;;;***
 
 ;;;### (autoloads (w3m-namazu w3m-about-namazu) "emacs-w3m/w3m-namazu"
-;;;;;;  "emacs-w3m/w3m-namazu.el" (20486 21104))
+;;;;;;  "emacs-w3m/w3m-namazu.el" (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m-namazu.el
 
 (autoload 'w3m-about-namazu "emacs-w3m/w3m-namazu" "\
@@ -1666,7 +1865,7 @@ Search indexed files with Namazu.
 ;;;***
 
 ;;;### (autoloads (w3m-perldoc w3m-about-perldoc) "emacs-w3m/w3m-perldoc"
-;;;;;;  "emacs-w3m/w3m-perldoc.el" (20486 21104))
+;;;;;;  "emacs-w3m/w3m-perldoc.el" (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m-perldoc.el
 
 (autoload 'w3m-about-perldoc "emacs-w3m/w3m-perldoc" "\
@@ -1683,7 +1882,7 @@ View Perl documents.
 
 ;;;### (autoloads (w3m-search-uri-replace w3m-search-new-session
 ;;;;;;  w3m-search) "emacs-w3m/w3m-search" "emacs-w3m/w3m-search.el"
-;;;;;;  (20486 21104))
+;;;;;;  (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m-search.el
 
 (autoload 'w3m-search "emacs-w3m/w3m-search" "\
@@ -1711,7 +1910,7 @@ Generate query string for ENGINE from URI matched by last search.
 ;;;### (autoloads (w3m-session-last-crashed-session w3m-session-last-autosave-session
 ;;;;;;  w3m-setup-session-menu w3m-session-select w3m-session-crash-recovery-remove
 ;;;;;;  w3m-session-save) "emacs-w3m/w3m-session" "emacs-w3m/w3m-session.el"
-;;;;;;  (20486 21104))
+;;;;;;  (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m-session.el
 
 (autoload 'w3m-session-save "emacs-w3m/w3m-session" "\
@@ -1747,7 +1946,7 @@ Setup w3m session items in menubar.
 ;;;***
 
 ;;;### (autoloads (w3m-replace-symbol) "emacs-w3m/w3m-symbol" "emacs-w3m/w3m-symbol.el"
-;;;;;;  (20486 21104))
+;;;;;;  (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m-symbol.el
 
 (autoload 'w3m-replace-symbol "emacs-w3m/w3m-symbol" "\
@@ -1758,7 +1957,7 @@ Setup w3m session items in menubar.
 ;;;***
 
 ;;;### (autoloads (w3m-about-weather w3m-weather) "emacs-w3m/w3m-weather"
-;;;;;;  "emacs-w3m/w3m-weather.el" (20486 21104))
+;;;;;;  "emacs-w3m/w3m-weather.el" (20508 12230))
 ;;; Generated autoloads from emacs-w3m/w3m-weather.el
 
 (autoload 'w3m-weather "emacs-w3m/w3m-weather" "\
@@ -1773,14 +1972,57 @@ Display weather report.
 
 ;;;***
 
-;;;### (autoloads nil nil ("auctex/auctex.el" "auctex/auto-loads.el"
-;;;;;;  "auctex/lpath.el" "auctex/preview/auto.el" "auctex/preview/preview-latex.el"
-;;;;;;  "auctex/preview/prv-emacs.el" "auctex/preview/prv-install.el"
-;;;;;;  "auctex/preview/prv-xemacs.el" "auctex/tex-buf.el" "auctex/tex-mik.el"
-;;;;;;  "auctex/tex-site.el" "auctex/tex-style.el" "auctex/tex-wizard.el"
+;;;### (autoloads (yas/global-mode yas/minor-mode) "yasnippet/yasnippet"
+;;;;;;  "yasnippet/yasnippet.el" (20508 19588))
+;;; Generated autoloads from yasnippet/yasnippet.el
+
+(autoload 'yas/minor-mode "yasnippet/yasnippet" "\
+Toggle YASnippet mode.
+
+When YASnippet mode is enabled, the `yas/trigger-key' key expands
+snippets of code depending on the mode.
+
+With no argument, this command toggles the mode.
+positive prefix argument turns on the mode.
+Negative prefix argument turns off the mode.
+
+You can customize the key through `yas/trigger-key'.
+
+Key bindings:
+\\{yas/minor-mode-map}
+
+\(fn &optional ARG)" t nil)
+
+(defvar yas/global-mode nil "\
+Non-nil if Yas/Global mode is enabled.
+See the command `yas/global-mode' for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `yas/global-mode'.")
+
+(custom-autoload 'yas/global-mode "yasnippet/yasnippet" nil)
+
+(autoload 'yas/global-mode "yasnippet/yasnippet" "\
+Toggle Yas/Minor mode in all buffers.
+With prefix ARG, enable Yas/Global mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Yas/Minor mode is enabled in all buffers where
+`yas/minor-mode-on' would do it.
+See `yas/minor-mode' for more information on Yas/Minor mode.
+
+\(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads nil nil ("auto-complete-yasnippet/auto-complete-yasnippet.el"
 ;;;;;;  "auto-complete/auto-complete-config.el" "auto-complete/auto-complete-pkg.el"
-;;;;;;  "python-mode/pymacs.el" "python-mode/python-mode.el") (20493
-;;;;;;  57060 437198))
+;;;;;;  "magit/50magit.el" "magit/magit-bisect.el" "magit/magit-key-mode.el"
+;;;;;;  "magit/magit-pkg.el" "magit/magit-wip.el" "python-mode/pymacs.el"
+;;;;;;  "python-mode/python-mode.el" "yasnippet/dropdown-list.el"
+;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el")
+;;;;;;  (20508 19609 818351))
 
 ;;;***
 
