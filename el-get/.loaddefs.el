@@ -506,6 +506,23 @@ Start auto-completion at current point.
 
 ;;;***
 
+;;;### (autoloads (camldebug) "caml-mode/camldebug" "caml-mode/camldebug.el"
+;;;;;;  (20511 7956))
+;;; Generated autoloads from caml-mode/camldebug.el
+
+(defvar camldebug-command-name "ocamldebug" "\
+*Pathname for executing camldebug.")
+
+(autoload 'camldebug "caml-mode/camldebug" "\
+Run camldebug on program FILE in buffer *camldebug-FILE*.
+The directory containing FILE becomes the initial working directory
+and source-file directory for camldebug.  If you wish to change this, use
+the camldebug commands `cd DIR' and `directory'.
+
+\(fn PATH)" t nil)
+
+;;;***
+
 ;;;### (autoloads (bookmark-w3m-bookmark-jump) "emacs-w3m/bookmark-w3m"
 ;;;;;;  "emacs-w3m/bookmark-w3m.el" (20508 12230))
 ;;; Generated autoloads from emacs-w3m/bookmark-w3m.el
@@ -705,6 +722,52 @@ R autoyas ESS hook
 
 ;;;***
 
+;;;### (autoloads (resume save-current-configuration wipe restore-window-configuration
+;;;;;;  current-window-configuration-printable) "revive/revive" "revive/revive.el"
+;;;;;;  (20512 39596))
+;;; Generated autoloads from revive/revive.el
+
+(autoload 'current-window-configuration-printable "revive/revive" "\
+Return the printable current-window-configuration.
+This configuration will be stored by restore-window-configuration.
+Returned configurations are list of:
+'(Screen-Width Screen-Height Edge-List Buffer-List)
+
+Edge-List is a return value of revive:all-window-edges, list of all
+window-edges whose first member is always of north west window.
+
+Buffer-List is a list of buffer property list of all windows.  This
+property lists are stored in order corresponding to Edge-List.  Buffer
+property list is formed as
+'((buffer-file-name) (buffer-name) (point) (window-start)).
+
+\(fn)" nil nil)
+
+(autoload 'restore-window-configuration "revive/revive" "\
+Restore the window configuration.
+Configuration CONFIG should be created by
+current-window-configuration-printable.
+
+\(fn CONFIG)" nil nil)
+
+(autoload 'wipe "revive/revive" "\
+Wipe Emacs.
+
+\(fn)" t nil)
+
+(autoload 'save-current-configuration "revive/revive" "\
+Save current window/buffer configuration into configuration file.
+
+\(fn &optional NUM)" t nil)
+
+(autoload 'resume "revive/revive" "\
+Resume window/buffer configuration.
+Configuration should be saved by save-current-configuration.
+
+\(fn &optional NUM)" t nil)
+
+;;;***
+
 ;;;### (autoloads (smex-initialize) "smex/smex" "smex/smex.el" (20508
 ;;;;;;  12605))
 ;;; Generated autoloads from smex/smex.el
@@ -713,23 +776,6 @@ R autoyas ESS hook
 
 
 \(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads (camldebug) "tuareg-mode/camldebug" "tuareg-mode/camldebug.el"
-;;;;;;  (20508 12231))
-;;; Generated autoloads from tuareg-mode/camldebug.el
-
-(defvar camldebug-command-name "ocamldebug" "\
-Pathname for executing Caml debugger.")
-
-(autoload 'camldebug "tuareg-mode/camldebug" "\
-Run camldebug on program FILE in buffer *camldebug-FILE*.
-The directory containing FILE becomes the initial working directory
-and source-file directory for camldebug.  If you wish to change this, use
-the camldebug commands `cd DIR' and `directory'.
-
-\(fn PATH)" t nil)
 
 ;;;***
 
@@ -1362,86 +1408,6 @@ For example, the function `case' has an indent property
 
 ;;;***
 
-;;;### (autoloads (tuareg-mode) "tuareg-mode/tuareg" "tuareg-mode/tuareg.el"
-;;;;;;  (20508 12231))
-;;; Generated autoloads from tuareg-mode/tuareg.el
- (add-to-list 'auto-mode-alist '("\\.ml[ily]?\\'" . tuareg-mode))
-
-(autoload 'tuareg-mode "tuareg-mode/tuareg" "\
-Major mode for editing Caml code.
-
-Dedicated to Emacs and XEmacs, version 21 and higher. Provides
-automatic indentation and compilation interface. Performs font/color
-highlighting using Font-Lock. It is designed for Objective Caml but
-handles Objective Labl and Caml Light as well.
-
-Report bugs, remarks and questions to Albert.Cohen@prism.uvsq.fr.
-
-The Font-Lock minor-mode is used according to your customization
-options. Within XEmacs (non-MULE versions only) you may also want to
-use Sym-Lock:
-
-\(if (and (boundp 'window-system) window-system)
-    (when (string-match \"XEmacs\" emacs-version)
-       	(if (not (and (boundp 'mule-x-win-initted) mule-x-win-initted))
-            (require 'sym-lock))
-       	(require 'font-lock)))
-
-You have better byte-compile tuareg.el (and sym-lock.el if you use it)
-because symbol highlighting is very time consuming.
-
-For customization purposes, you should use `tuareg-mode-hook'
-\(run for every file) or `tuareg-load-hook' (run once) and not patch
-the mode itself. You should add to your configuration file something like:
-  (add-hook 'tuareg-mode-hook
-            (lambda ()
-               ... ; your customization code
-            ))
-For example you can change the indentation of some keywords, the
-`electric' flags, Font-Lock colors... Every customizable variable is
-documented, use `C-h-v' or look at the mode's source code.
-
-A special case is Sym-Lock customization: You may set
-`tuareg-sym-lock-keywords' in your `.emacs' configuration file
-to override default Sym-Lock patterns.
-
-`custom-tuareg.el' is a sample customization file for standard changes.
-You can append it to your `.emacs' or use it as a tutorial.
-
-`M-x camldebug' FILE starts the Caml debugger camldebug on the executable
-FILE, with input and output in an Emacs buffer named *camldebug-FILE*.
-
-A Tuareg Interactive Mode to evaluate expressions in a toplevel is included.
-Type `M-x tuareg-run-caml' or see special-keys below.
-
-Some elementary rules have to be followed in order to get the best of
-indentation facilities.
-  - Because the `function' keyword has a special indentation (to handle
-    case matches) use the `fun' keyword when no case match is performed.
-  - In OCaml, `;;' is no longer necessary for correct indentation,
-    except before top level phrases not introduced by `type', `val', `let'
-    etc. (i.e., phrases used for their side-effects or to be executed
-    in a top level.)
-  - Long sequences of `and's may slow down indentation slightly, since
-    some computations (few) require to go back to the beginning of the
-    sequence. Some very long nested blocks may also lead to slow
-    processing of `end's, `else's, `done's...
-  - Multiline strings are handled properly, but the string concatenation `^'
-    is preferred to break long strings (the C-j keystroke can help).
-
-Known bugs:
-  - When writting a line with mixed code and comments, avoid putting
-    comments at the beginning or middle of the text. More precisely, 
-    writing comments immediately after `=' or parentheses then writing
-    some more code on the line leads to indentation errors. You may write
-    `let x (* blah *) = blah' but should avoid `let x = (* blah *) blah'.
-
-Special keys for Tuareg mode:\\{tuareg-mode-map}
-
-\(fn)" t nil)
-
-;;;***
-
 ;;;### (autoloads (w3m-buffer w3m-region w3m-find-file w3m-browse-url
 ;;;;;;  w3m w3m-create-empty-session w3m-gohome w3m-goto-url-new-session
 ;;;;;;  w3m-goto-url w3m-download w3m-retrieve) "emacs-w3m/w3m" "emacs-w3m/w3m.el"
@@ -2018,11 +1984,14 @@ See `yas/minor-mode' for more information on Yas/Minor mode.
 
 ;;;### (autoloads nil nil ("auto-complete-yasnippet/auto-complete-yasnippet.el"
 ;;;;;;  "auto-complete/auto-complete-config.el" "auto-complete/auto-complete-pkg.el"
-;;;;;;  "magit/50magit.el" "magit/magit-bisect.el" "magit/magit-key-mode.el"
-;;;;;;  "magit/magit-pkg.el" "magit/magit-wip.el" "python-mode/pymacs.el"
-;;;;;;  "python-mode/python-mode.el" "yasnippet/dropdown-list.el"
-;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el")
-;;;;;;  (20508 19609 818351))
+;;;;;;  "caml-mode/caml-compat.el" "caml-mode/caml-emacs.el" "caml-mode/caml-font-old.el"
+;;;;;;  "caml-mode/caml-font.el" "caml-mode/caml-help.el" "caml-mode/caml-hilit.el"
+;;;;;;  "caml-mode/caml-types.el" "caml-mode/caml-xemacs.el" "caml-mode/caml.el"
+;;;;;;  "caml-mode/inf-caml.el" "magit/50magit.el" "magit/magit-bisect.el"
+;;;;;;  "magit/magit-key-mode.el" "magit/magit-pkg.el" "magit/magit-wip.el"
+;;;;;;  "python-mode/pymacs.el" "python-mode/python-mode.el" "switch-window/switch-window.el"
+;;;;;;  "yasnippet/dropdown-list.el" "yasnippet/yasnippet-debug.el"
+;;;;;;  "yasnippet/yasnippet-tests.el") (20512 39596 719621))
 
 ;;;***
 

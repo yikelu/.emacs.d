@@ -47,8 +47,8 @@
 	  (restore-frame)
 	(maximize-frame)))
 
-(global-set-key (kbd "<s-return>") 'my-toggle-fullscreen)
-;(global-set-key (kbd "<s-return>") 'ns-toggle-fullscreen)
+;(global-set-key (kbd "<s-return>") 'my-toggle-fullscreen)
+(global-set-key (kbd "<s-return>") 'ns-toggle-fullscreen)
 ;(my-toggle-fullscreen)
 
 ;(setq inferior-lisp-program "ccl64") ; your Lisp system
@@ -100,7 +100,8 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#ad7fa8" "#8cc4ff" "#eeeeec"])
  '(blink-cursor-mode nil)
- '(clean-buffer-list-delay-general 2)
+ '(clean-buffer-list-delay-general 5)
+ '(clean-buffer-list-delay-special 3600)
  '(color-theme-is-cumulative nil)
  '(column-number-mode t)
  '(custom-enabled-themes (quote (tango-dark)))
@@ -189,22 +190,18 @@
           (lambda ()
             (define-key inferior-ess-mode-map (kbd "C-_")
               'ess-smart-underscore)))
-          ;; (lambda ()
-          ;;   (setq ac-sources (append 'ac-source-R
-          ;;                            'ac-source-R-objects
-          ;;                            'ac-source-R-args
-          ;;                            'ac-sources))))
 
 (global-unset-key (kbd "C-_"))
 (add-hook 'ess-mode-hook
           (lambda ()
             (define-key ess-mode-map (kbd "C-_")
               'ess-smart-underscore)))
-          ;; (lambda ()
-          ;;   (setq ac-sources (append 'ac-source-R
-          ;;                            'ac-source-R-objects
-          ;;                            'ac-source-R-args
-          ;;                            'ac-sources))))
+
+(setq ac-source-R
+      '((prefix . ess-ac-start)
+       (requires . 2)
+       (candidates . ess-ac-candidates)
+       (document . ess-ac-help)))
 
 
 ;(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
@@ -275,17 +272,106 @@
 
 
 
-;; some ocaml stuff
-(autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
-(autoload 'camldebug "camldebug" "Run the Caml debugger" t)
-(autoload 'tuareg-imenu-set-imenu "tuareg-imenu" 
- "Configuration of imenu for tuareg" t) 
-(add-hook 'tuareg-mode-hook 'tuareg-imenu-set-imenu)
-(setq auto-mode-alist 
-     (append '(("\\.ml[ily]?$" . tuareg-mode)
-               ("\\.topml$" . tuareg-mode))
-             auto-mode-alist))
+;; ;; some ocaml stuff
+;; (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
+;; (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
+;; (autoload 'tuareg-imenu-set-imenu "tuareg-imenu" 
+;;  "Configuration of imenu for tuareg" t) 
+;; (add-hook 'tuareg-mode-hook 'tuareg-imenu-set-imenu)
+;; (setq auto-mode-alist 
+;;      (append '(("\\.ml[ily]?$" . tuareg-mode)
+;;                ("\\.topml$" . tuareg-mode))
+;;              auto-mode-alist))
 
+;; (setq auto-mode-alist
+;;           (cons '("\\.ml[iyl]?$" .  caml-mode) auto-mode-alist))
+
+;; ;; you should probably comment the next line or replace ~remy by another path 
+;; (add-to-list 'load-path "~/.emacs.d/ocaml-mode/")
+
+;; (autoload 'caml-mode "ocaml" (interactive)
+;;   "Major mode for editing Caml code." t)
+;; (autoload 'camldebug "camldebug" (interactive) "Debug caml mode")
+
+(add-to-list 'auto-mode-alist '("\\.ml[iylp]?$" . caml-mode))
+(autoload 'caml-mode "caml" "Major mode for editing OCaml code." t)
+(autoload 'run-caml "inf-caml" "Run an inferior OCaml process." t)
+(autoload 'camldebug "camldebug" "Run ocamldebug on program." t)
+(add-to-list 'interpreter-mode-alist '("ocamlrun" . caml-mode))
+(add-to-list 'interpreter-mode-alist '("ocaml" . caml-mode))
+
+(require 'caml-font)
+
+
+ ;; Comment from the point to the end of line or, if the point is at the end
+ ;; of a line and not following a comment, insert one.
+ ;; If the current line already ends with a comment, remove it.
+(defun caml-toggle-comment-endofline (u)
+  (interactive "P")
+  (if (eq u nil)
+      (let ((init (point)) beg end end_comment)
+        (progn
+          (end-of-line)
+          (setq end (point))
+          (if (looking-back (regexp-quote comment-end))
+              (progn ; remove the ending comment (naive)
+                (beginning-of-line)
+                (uncomment-region (point) end)
+                (setq end (- end (string-width comment-start)
+                             (string-width comment-end)))
+                (goto-char (min init end)))
+            (if (eq init end)
+                (indent-for-comment)
+              (progn
+                (beginning-of-line)
+                (search-forward-regexp "[^ \t]" end t)
+                (backward-char 1); now at the 1st non-space of the line
+                (setq beg (point))
+                (if (eq beg nil)
+                    ;; line is composed of spaces => new comment
+                    (indent-for-comment)
+                  (progn
+                    (comment-region (max init beg) end)
+                    (goto-char init))))))))
+    (progn ; C-u prefix
+      (insert "(**  *)")
+      (forward-char 4))))
+
+(add-hook 'caml-mode-hook
+          '(lambda ()
+             (define-key caml-mode-map "\C-c;"
+               'caml-toggle-comment-endofline)))
+
+(add-hook 'inferior-caml-mode-hooks
+          '(lambda ()
+             (define-key inferior-caml-mode-map "\C-c;"
+               'caml-toggle-comment-endofline)))
+
+(defun ac-ocaml-candidates (prefix)
+  "Candidates for OCaml auto-completion"
+  (let ((candidates)
+	(module-name 
+	  (when (string-match "\\([A-Za-z_][A-Za-z0-9_']*\\)[.]" prefix)
+	    (match-string 1 prefix))))
+    (if module-name
+        (iter '(lambda (sym) (push (concat module-name "." sym) candidates))
+              (ocaml-module-symbols (assoc module-name (ocaml-module-alist))))
+      (iter
+       '(lambda (mod)
+	  (iter '(lambda (sym) (push sym candidates))
+		(ocaml-module-symbols mod)))
+       (ocaml-visible-modules))
+      (iter '(lambda (mod) (push (car mod) candidates)) (ocaml-module-alist)))
+    candidates))
+        
+(ac-define-source ocaml
+  '((available . (require 'caml-help nil t))
+    (candidates . (ac-ocaml-candidates ac-prefix))
+    (prefix . "\\(?:[^A-Za-z0-9_.']\\|\\`\\)\\(\\(?:[A-Za-z_][A-Za-z0-9_']*[.]\\)?[A-Za-z0-9_']*\\)")
+    (symbol . "s")))
+
+;; (autoload 'utop "utop" "Toplevel for OCaml" t)
+;; (setq inferior-caml-program "utop") ;; this didn't work
 
 (global-set-key (kbd "C-c s") 'query-replace)
 (global-set-key (kbd "C-c r") 'query-replace-regexp)
